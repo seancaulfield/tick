@@ -154,27 +154,25 @@
 </layers>
 <board>
 <plain>
-<wire x1="96" y1="2.5" x2="96" y2="50.5" width="0" layer="20"/>
-<wire x1="96" y1="50.5" x2="93.5" y2="53" width="0" layer="20" curve="90"/>
-<wire x1="93.5" y1="53" x2="2.5" y2="53" width="0" layer="20"/>
-<wire x1="2.5" y1="53" x2="0" y2="50.5" width="0" layer="20" curve="90"/>
-<wire x1="0" y1="50.5" x2="0" y2="2.5" width="0" layer="20"/>
-<wire x1="0" y1="2.5" x2="2.5" y2="0" width="0" layer="20" curve="90"/>
-<wire x1="2.5" y1="0" x2="93.5" y2="0" width="0" layer="20"/>
+<wire x1="2.5" y1="54" x2="93.5" y2="54" width="0" layer="20"/>
+<wire x1="93.5" y1="54" x2="96" y2="51.5" width="0" layer="20" curve="-90"/>
+<wire x1="96" y1="51.5" x2="96" y2="2.5" width="0" layer="20"/>
+<wire x1="0" y1="2.5" x2="0" y2="51.5" width="0" layer="20"/>
+<wire x1="0" y1="51.5" x2="2.5" y2="54" width="0" layer="20" curve="-90"/>
+<wire x1="93.5" y1="0" x2="2.5" y2="0" width="0" layer="20"/>
+<wire x1="2.5" y1="0" x2="0" y2="2.5" width="0" layer="20" curve="-90"/>
 <wire x1="93.5" y1="0" x2="96" y2="2.5" width="0" layer="20" curve="90"/>
-<wire x1="0" y1="14" x2="0" y2="47.5" width="0.2" layer="22"/>
+<wire x1="0" y1="14" x2="0" y2="48" width="0.2" layer="22"/>
 <wire x1="0" y1="14" x2="24" y2="14" width="0.2" layer="22"/>
 <wire x1="24" y1="14" x2="48" y2="14" width="0.2" layer="22"/>
 <wire x1="48" y1="14" x2="72" y2="14" width="0.2" layer="22"/>
 <wire x1="72" y1="14" x2="96" y2="14" width="0.2" layer="22"/>
-<wire x1="96" y1="14" x2="96" y2="47.5" width="0.2" layer="22"/>
-<wire x1="96" y1="47.5" x2="72" y2="47.5" width="0.2" layer="22"/>
-<wire x1="72" y1="47.5" x2="48" y2="47.5" width="0.2" layer="22"/>
-<wire x1="48" y1="47.5" x2="24" y2="47.5" width="0.2" layer="22"/>
-<wire x1="24" y1="47.5" x2="0" y2="47.5" width="0.2" layer="22"/>
-<wire x1="24" y1="47.5" x2="24" y2="14" width="0.2" layer="22"/>
-<wire x1="48" y1="47.5" x2="48" y2="14" width="0.2" layer="22"/>
-<wire x1="72" y1="47.5" x2="72" y2="14" width="0.2" layer="22"/>
+<wire x1="96" y1="14" x2="96" y2="48" width="0.2" layer="22"/>
+<wire x1="96" y1="48" x2="72" y2="48" width="0.2" layer="22"/>
+<wire x1="72" y1="48" x2="48" y2="48" width="0.2" layer="22"/>
+<wire x1="24" y1="48" x2="24" y2="14" width="0.2" layer="22"/>
+<wire x1="48" y1="48" x2="48" y2="14" width="0.2" layer="22"/>
+<wire x1="72" y1="48" x2="72" y2="14" width="0.2" layer="22"/>
 <wire x1="84" y1="22" x2="84" y2="40" width="2.5" layer="22"/>
 <wire x1="78" y1="40" x2="84" y2="40" width="2.5" layer="22"/>
 <wire x1="84" y1="40" x2="90" y2="40" width="2.5" layer="22"/>
@@ -199,18 +197,35 @@
 <circle x="51" y="22" radius="1.25" width="0" layer="22"/>
 <circle x="75" y="22.2" radius="1.25" width="0" layer="22"/>
 <circle x="75" y="22" radius="1.25" width="0" layer="22"/>
-<text x="60.5" y="50.5" size="1.6" layer="21" font="vector" ratio="12" align="center">Terribly Illuminated Chronology Keeper</text>
-<rectangle x1="86.25" y1="34.55" x2="92.75" y2="44.55" layer="29"/>
-<text x="60.5" y="50.5" size="1.6" layer="22" font="vector" ratio="12" rot="MR0" align="center">Terribly Illuminated Chronology Keeper</text>
-<text x="60.4" y="49" size="0.8" layer="21" font="vector" ratio="12" align="center">v4.6</text>
-<text x="60.3" y="49" size="0.8" layer="22" font="vector" ratio="12" rot="MR0" align="center">v4.6</text>
-<text x="10.7" y="50.2" size="0.8" layer="22" font="vector" ratio="12" rot="MR0" align="center">by schizobovine
+<text x="60.5" y="51" size="1.6" layer="21" font="vector" ratio="12" align="center">Terribly Illuminated Chronology Keeper</text>
+<text x="60.5" y="51" size="1.6" layer="22" font="vector" ratio="12" rot="MR0" align="center">Terribly Illuminated Chronology Keeper</text>
+<text x="60.5" y="49.5" size="0.8" layer="21" font="vector" ratio="12" align="center">v4.6</text>
+<text x="60.5" y="49.5" size="0.8" layer="22" font="vector" ratio="12" rot="MR0" align="center">v4.6</text>
+<text x="12.5" y="51" size="0.7" layer="22" font="vector" ratio="12" rot="MR0" align="center">by schizobovine
 &lt;sean@yak.net&gt;</text>
 <text x="55" y="39.5" size="0.8" layer="21" font="vector" ratio="12" align="center">by schizobovine
 &lt;sean@yak.net&gt;</text>
-<wire x1="87.5" y1="10.5" x2="88.5" y2="10.5" width="0.4" layer="21"/>
-<wire x1="88" y1="10" x2="88" y2="11" width="0.4" layer="21"/>
-<wire x1="88" y1="8.5" x2="88" y2="7.5" width="0.4" layer="21"/>
+<wire x1="92.3" y1="26.5" x2="92.3" y2="25.5" width="0.4" layer="21"/>
+<wire x1="91.8" y1="26" x2="92.8" y2="26" width="0.4" layer="21"/>
+<wire x1="90.3" y1="26" x2="89.3" y2="26" width="0.4" layer="21"/>
+<dimension x1="0" y1="50.5" x2="96" y2="49.2" x3="48" y3="57" textsize="0.8" textratio="12" layer="47" dtype="horizontal" width="0.1" visible="yes"/>
+<dimension x1="2.5" y1="0" x2="6" y2="53" x3="-3" y3="26.5" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<dimension x1="7.9" y1="6.2" x2="88.1" y2="1" x3="48" y3="-1.5" textsize="0.8" textratio="12" layer="47" dtype="horizontal" width="0.1" visible="yes"/>
+<dimension x1="5.75" y1="50" x2="90.25" y2="50" x3="48" y3="55" textsize="0.8" textratio="12" layer="47" width="0.1" visible="yes"/>
+<dimension x1="5.75" y1="49.6" x2="0" y2="49.7" x3="2.875" y3="55" textsize="0.8" textratio="12" layer="47" dtype="horizontal" width="0.1" visible="yes"/>
+<dimension x1="90.25" y1="49.6" x2="96" y2="55" x3="93.125" y3="55" textsize="0.8" textratio="12" layer="47" dtype="horizontal" width="0.1" visible="yes"/>
+<dimension x1="96" y1="14" x2="94.6" y2="48" x3="100" y3="31" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<dimension x1="5.75" y1="10.5" x2="5.75" y2="50" x3="-1" y3="30.25" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<dimension x1="5.75" y1="10.5" x2="5.9" y2="0" x3="-1" y3="5.25" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<wire x1="0" y1="48" x2="17.3" y2="48" width="0.2" layer="22"/>
+<wire x1="18.9" y1="48" x2="19.2" y2="48" width="0.2" layer="22"/>
+<wire x1="21.2" y1="48" x2="26.8" y2="48" width="0.2" layer="22"/>
+<wire x1="28.8" y1="48" x2="48" y2="48" width="0.2" layer="22"/>
+<dimension x1="93.5" y1="0" x2="84.6" y2="14" x3="100" y3="7" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<dimension x1="93.5" y1="0" x2="90.25" y2="10.5" x3="98" y3="5.25" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<dimension x1="5.75" y1="50" x2="4.9" y2="54" x3="-1" y3="52" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<dimension x1="96" y1="48" x2="93" y2="54" x3="100" y3="51" textsize="0.8" textratio="12" layer="47" dtype="vertical" width="0.1" visible="yes"/>
+<text x="84.5" y="30.5" size="0.8" layer="21" font="vector" ratio="12" align="center">7.5-12V</text>
 </plain>
 <libraries>
 <library name="A_butts">
@@ -696,7 +711,7 @@ grid 2.54 mm, diameter 6 mm</description>
 <text x="0" y="0" size="0.8" layer="21" font="vector" ratio="12" align="bottom-center">G</text>
 <text x="-2.54" y="0" size="0.8" layer="21" font="vector" ratio="12" align="bottom-center">I</text>
 <text x="2.54" y="0" size="0.8" layer="21" font="vector" ratio="12" align="bottom-center">O</text>
-<smd name="4" x="0" y="11" dx="10" dy="6.5" layer="1" stop="no" cream="no"/>
+<smd name="4" x="0" y="11" dx="10" dy="6.5" layer="1" cream="no"/>
 <rectangle x1="-2.79" y1="-3.9" x2="-2.29" y2="-1.5" layer="51"/>
 <rectangle x1="-0.25" y1="-3.9" x2="0.25" y2="-1.5" layer="51"/>
 <rectangle x1="2.29" y1="-3.9" x2="2.79" y2="-1.5" layer="51"/>
@@ -771,140 +786,6 @@ grid 2.54 mm, diameter 6 mm</description>
 <wire x1="-1.27" y1="-2.286" x2="-0.762" y2="-1.27" width="0.3048" layer="21" curve="-75"/>
 <wire x1="1.27" y1="-2.286" x2="0.762" y2="-1.27" width="0.3048" layer="21" curve="75"/>
 <text x="0" y="-4.064" size="0.6096" layer="21" font="vector" ratio="15" align="center">deathbycow</text>
-</package>
-<package name="OSHWLOGO_MINI">
-<polygon width="0.2" layer="21">
-<vertex x="-0.5" y="0" curve="-90"/>
-<vertex x="0" y="0.5"/>
-<vertex x="0" y="0.7" curve="90"/>
-<vertex x="-0.7" y="0"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="0" y="0.5" curve="-90"/>
-<vertex x="0.5" y="0"/>
-<vertex x="0.7" y="0" curve="90"/>
-<vertex x="0" y="0.7"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="-0.7" y="0"/>
-<vertex x="-0.5" y="0" curve="60"/>
-<vertex x="-0.25" y="-0.45"/>
-<vertex x="-0.35" y="-0.6" curve="-60"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="0.25" y="-0.45" curve="60"/>
-<vertex x="0.5" y="0"/>
-<vertex x="0.7" y="0" curve="-60"/>
-<vertex x="0.35" y="-0.6"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="-0.5" y="0" curve="-90"/>
-<vertex x="0" y="0.5"/>
-<vertex x="0" y="0.7" curve="90"/>
-<vertex x="-0.7" y="0"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="0" y="0.5" curve="-90"/>
-<vertex x="0.5" y="0"/>
-<vertex x="0.7" y="0" curve="90"/>
-<vertex x="0" y="0.7"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="-0.7" y="0"/>
-<vertex x="-0.5" y="0" curve="60"/>
-<vertex x="-0.25" y="-0.45"/>
-<vertex x="-0.35" y="-0.6" curve="-60"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="0.25" y="-0.45" curve="60"/>
-<vertex x="0.5" y="0"/>
-<vertex x="0.7" y="0" curve="-60"/>
-<vertex x="0.35" y="-0.6"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="-0.5" y="-0.155"/>
-<vertex x="-0.5" y="0.155"/>
-<vertex x="-1" y="0.1"/>
-<vertex x="-1" y="-0.1"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="-0.155" y="0.5"/>
-<vertex x="0.155" y="0.5"/>
-<vertex x="0.1" y="1"/>
-<vertex x="-0.1" y="1"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="0.5" y="0.155"/>
-<vertex x="0.5" y="-0.155"/>
-<vertex x="1" y="-0.1"/>
-<vertex x="1" y="0.1"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="-0.25" y="0.47"/>
-<vertex x="-0.47" y="0.25"/>
-<vertex x="-0.8" y="0.66"/>
-<vertex x="-0.66" y="0.8"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="0.47" y="0.25"/>
-<vertex x="0.25" y="0.47"/>
-<vertex x="0.66" y="0.8"/>
-<vertex x="0.8" y="0.66"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="-0.465" y="-0.25"/>
-<vertex x="-0.26" y="-0.465"/>
-<vertex x="-0.66" y="-0.8"/>
-<vertex x="-0.8" y="-0.66"/>
-</polygon>
-<polygon width="0.2" layer="21">
-<vertex x="0.26" y="-0.47"/>
-<vertex x="0.47" y="-0.25"/>
-<vertex x="0.8" y="-0.66"/>
-<vertex x="0.66" y="-0.8"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="-0.5" y="-0.155"/>
-<vertex x="-0.5" y="0.155"/>
-<vertex x="-1" y="0.1"/>
-<vertex x="-1" y="-0.1"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="-0.155" y="0.5"/>
-<vertex x="0.155" y="0.5"/>
-<vertex x="0.1" y="1"/>
-<vertex x="-0.1" y="1"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="0.5" y="0.155"/>
-<vertex x="0.5" y="-0.155"/>
-<vertex x="1" y="-0.1"/>
-<vertex x="1" y="0.1"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="-0.25" y="0.47"/>
-<vertex x="-0.47" y="0.25"/>
-<vertex x="-0.8" y="0.66"/>
-<vertex x="-0.66" y="0.8"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="0.47" y="0.25"/>
-<vertex x="0.25" y="0.47"/>
-<vertex x="0.66" y="0.8"/>
-<vertex x="0.8" y="0.66"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="-0.465" y="-0.25"/>
-<vertex x="-0.26" y="-0.465"/>
-<vertex x="-0.66" y="-0.8"/>
-<vertex x="-0.8" y="-0.66"/>
-</polygon>
-<polygon width="0.2" layer="1">
-<vertex x="0.26" y="-0.47"/>
-<vertex x="0.47" y="-0.25"/>
-<vertex x="0.8" y="-0.66"/>
-<vertex x="0.66" y="-0.8"/>
-</polygon>
 </package>
 <package name="HC49U-V">
 <description>&lt;b&gt;CRYSTAL&lt;/b&gt;</description>
@@ -1069,6 +950,91 @@ IC needs to have legs bent before insertion.</description>
 <wire x1="-0.457" y1="-0.435" x2="2.8" y2="-0.435" width="0.1524" layer="21"/>
 <wire x1="-0.457" y1="-0.435" x2="-2.8" y2="-0.435" width="0.1524" layer="21" curve="-120"/>
 <wire x1="-2.8" y1="-1.4" x2="2.8" y2="-1.4" width="0.1524" layer="21"/>
+</package>
+<package name="OSHWLOGO_TOP_0.2">
+<wire x1="0.6683" y1="-1.6134" x2="0.9254" y2="-1.4809" width="0.254" layer="21" curve="9.500616"/>
+<wire x1="0.9254" y1="-1.4809" x2="1.5638" y2="-2.0015" width="0.254" layer="21"/>
+<wire x1="1.5638" y1="-2.0015" x2="2.0015" y2="-1.5638" width="0.254" layer="21"/>
+<wire x1="2.0015" y1="-1.5638" x2="1.4809" y2="-0.9254" width="0.254" layer="21"/>
+<wire x1="1.4809" y1="-0.9254" x2="1.7015" y2="-0.3928" width="0.254" layer="21" curve="19.001712"/>
+<wire x1="1.7015" y1="-0.3928" x2="2.5211" y2="-0.3095" width="0.254" layer="21"/>
+<wire x1="2.5211" y1="-0.3095" x2="2.5211" y2="0.3095" width="0.254" layer="21"/>
+<wire x1="2.5211" y1="0.3095" x2="1.7015" y2="0.3928" width="0.254" layer="21"/>
+<wire x1="1.7015" y1="0.3928" x2="1.4809" y2="0.9254" width="0.254" layer="21" curve="19.001712"/>
+<wire x1="1.4809" y1="0.9254" x2="2.0015" y2="1.5638" width="0.254" layer="21"/>
+<wire x1="2.0015" y1="1.5638" x2="1.5638" y2="2.0015" width="0.254" layer="21"/>
+<wire x1="1.5638" y1="2.0015" x2="0.9254" y2="1.4809" width="0.254" layer="21"/>
+<wire x1="0.9254" y1="1.4809" x2="0.3928" y2="1.7015" width="0.254" layer="21" curve="19.001712"/>
+<wire x1="0.3928" y1="1.7015" x2="0.3095" y2="2.5211" width="0.254" layer="21"/>
+<wire x1="0.3095" y1="2.5211" x2="-0.3095" y2="2.5211" width="0.254" layer="21"/>
+<wire x1="-0.3095" y1="2.5211" x2="-0.3928" y2="1.7015" width="0.254" layer="21"/>
+<wire x1="-0.3928" y1="1.7015" x2="-0.9254" y2="1.4809" width="0.254" layer="21" curve="19.001712"/>
+<wire x1="-0.9254" y1="1.4809" x2="-1.5638" y2="2.0015" width="0.254" layer="21"/>
+<wire x1="-1.5638" y1="2.0015" x2="-2.0015" y2="1.5638" width="0.254" layer="21"/>
+<wire x1="-2.0015" y1="1.5638" x2="-1.4809" y2="0.9254" width="0.254" layer="21"/>
+<wire x1="-1.4809" y1="0.9254" x2="-1.7015" y2="0.3928" width="0.254" layer="21" curve="19.001712"/>
+<wire x1="-1.7015" y1="0.3928" x2="-2.5211" y2="0.3095" width="0.254" layer="21"/>
+<wire x1="-2.5211" y1="0.3095" x2="-2.5211" y2="-0.3095" width="0.254" layer="21"/>
+<wire x1="-2.5211" y1="-0.3095" x2="-1.7015" y2="-0.3928" width="0.254" layer="21"/>
+<wire x1="-1.7015" y1="-0.3928" x2="-1.4809" y2="-0.9254" width="0.254" layer="21" curve="19.001712"/>
+<wire x1="-1.4809" y1="-0.9254" x2="-2.0015" y2="-1.5638" width="0.254" layer="21"/>
+<wire x1="-2.0015" y1="-1.5638" x2="-1.5638" y2="-2.0015" width="0.254" layer="21"/>
+<wire x1="-1.5638" y1="-2.0015" x2="-0.9254" y2="-1.4809" width="0.254" layer="21"/>
+<wire x1="-0.9254" y1="-1.4809" x2="-0.6683" y2="-1.6134" width="0.254" layer="21" curve="9.500616"/>
+<wire x1="-0.6683" y1="-1.6134" x2="-0.3038" y2="-0.7334" width="0.254" layer="21"/>
+<wire x1="-0.3038" y1="-0.7334" x2="-0.7938" y2="0" width="0.254" layer="21" curve="-67.510161"/>
+<wire x1="-0.7938" y1="0" x2="0.3038" y2="-0.7334" width="0.254" layer="21" curve="-247.486078"/>
+<wire x1="0.3038" y1="-0.7334" x2="0.6683" y2="-1.6134" width="0.254" layer="21"/>
+<polygon width="0.254" layer="1">
+<vertex x="0.6683" y="-1.6134" curve="9.500616"/>
+<vertex x="0.9254" y="-1.4809"/>
+<vertex x="1.5638" y="-2.0015"/>
+<vertex x="2.0015" y="-1.5638"/>
+<vertex x="1.4809" y="-0.9254" curve="19.001712"/>
+<vertex x="1.7015" y="-0.3928"/>
+<vertex x="2.5211" y="-0.3095"/>
+<vertex x="2.5211" y="0.3095"/>
+<vertex x="1.7015" y="0.3928" curve="19.001712"/>
+<vertex x="1.4809" y="0.9254"/>
+<vertex x="2.0015" y="1.5638"/>
+<vertex x="1.5638" y="2.0015"/>
+<vertex x="0.9254" y="1.4809" curve="19.001712"/>
+<vertex x="0.3928" y="1.7015"/>
+<vertex x="0.3095" y="2.5211"/>
+<vertex x="-0.3095" y="2.5211"/>
+<vertex x="-0.3928" y="1.7015" curve="19.001712"/>
+<vertex x="-0.9254" y="1.4809"/>
+<vertex x="-1.5638" y="2.0015"/>
+<vertex x="-2.0015" y="1.5638"/>
+<vertex x="-1.4809" y="0.9254" curve="19.001712"/>
+<vertex x="-1.7015" y="0.3928"/>
+<vertex x="-2.5211" y="0.3095"/>
+<vertex x="-2.5211" y="-0.3095"/>
+<vertex x="-1.7015" y="-0.3928" curve="19.001712"/>
+<vertex x="-1.4809" y="-0.9254"/>
+<vertex x="-2.0015" y="-1.5638"/>
+<vertex x="-1.5638" y="-2.0015"/>
+<vertex x="-0.9254" y="-1.4809" curve="9.500616"/>
+<vertex x="-0.6683" y="-1.6134"/>
+<vertex x="-0.3038" y="-0.7334" curve="-67.510161"/>
+<vertex x="-0.7938" y="0" curve="-247.486078"/>
+<vertex x="0.3038" y="-0.7334"/>
+</polygon>
+<wire x1="-1.524" y1="1.524" x2="-0.762" y2="0.762" width="0.8128" layer="21"/>
+<wire x1="0" y1="2.032" x2="0" y2="1.27" width="0.8128" layer="21"/>
+<wire x1="1.524" y1="1.524" x2="0.762" y2="0.762" width="0.8128" layer="21"/>
+<wire x1="2.032" y1="0" x2="1.27" y2="0" width="0.8128" layer="21"/>
+<wire x1="1.524" y1="-1.524" x2="1.016" y2="-1.016" width="0.8128" layer="21"/>
+<wire x1="1.016" y1="-1.016" x2="0.762" y2="-0.762" width="0.8128" layer="21"/>
+<wire x1="-1.524" y1="-1.524" x2="-1.016" y2="-1.016" width="0.8128" layer="21"/>
+<wire x1="-1.016" y1="-1.016" x2="-0.762" y2="-0.762" width="0.8128" layer="21"/>
+<wire x1="-2.032" y1="0" x2="-1.27" y2="0" width="0.8128" layer="21"/>
+<wire x1="-1.016" y1="-1.016" x2="-1.016" y2="-0.762" width="1.016" layer="21"/>
+<wire x1="-1.016" y1="0.762" x2="-1.27" y2="-0.254" width="1.016" layer="21"/>
+<wire x1="-0.508" y1="1.27" x2="0.508" y2="1.27" width="1.016" layer="21"/>
+<wire x1="1.016" y1="0.762" x2="1.27" y2="0.254" width="1.016" layer="21"/>
+<wire x1="1.016" y1="-0.762" x2="1.27" y2="-0.254" width="1.016" layer="21"/>
+<wire x1="1.016" y1="-1.016" x2="1.016" y2="-0.762" width="1.016" layer="21"/>
 </package>
 </packages>
 </library>
@@ -1254,10 +1220,10 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="H1" library="A_butts" package="HOLE-#2" value="HOLE#2" x="2.5" y="2.5" locked="yes"/>
-<element name="H2" library="A_butts" package="HOLE-#2" value="HOLE#2" x="2.5" y="50.5" locked="yes"/>
-<element name="H3" library="A_butts" package="HOLE-#2" value="HOLE#2" x="93.5" y="2.5" locked="yes"/>
-<element name="H4" library="A_butts" package="HOLE-#2" value="HOLE#2" x="93.5" y="50.5" locked="yes"/>
+<element name="H1" library="A_butts" package="HOLE-#2" value="HOLE#2" x="5.75" y="10.5"/>
+<element name="H2" library="A_butts" package="HOLE-#2" value="HOLE#2" x="5.75" y="50"/>
+<element name="H3" library="A_butts" package="HOLE-#2" value="HOLE#2" x="90.25" y="10.5"/>
+<element name="H4" library="A_butts" package="HOLE-#2" value="HOLE#2" x="90.25" y="50"/>
 <element name="DISPLAY2" library="A_butts" package="7SEG_4DIG_10MM" value="7SEG_4DIGIT_COLON_APOS" x="28" y="7" locked="yes" smashed="yes" rot="MR0"/>
 <element name="DIGIT2" library="A_butts" package="7SEG_1DIG_25.4MM_NOSILK" value="7SEG_1DIGPTH-25.4MM-BARE" x="12" y="31" locked="yes" rot="MR0"/>
 <element name="DIGIT1" library="A_butts" package="7SEG_1DIG_25.4MM_NOSILK" value="7SEG_1DIGPTH-25.4MM-BARE" x="36" y="31" locked="yes" rot="MR0"/>
@@ -1276,40 +1242,38 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="R2" library="A_butts" package="RESISTOR-AXIAL-PTH-7.62MM" value="4.7k" x="25.5" y="31" rot="R90"/>
 <element name="R3" library="A_butts" package="RESISTOR-AXIAL-PTH-7.62MM" value="4.7k" x="28" y="31" rot="R90"/>
-<element name="TVS1" library="A_butts" package="DO-41-TVS-BI-10.16MM" value="5.6V" x="83" y="20"/>
-<element name="F1" library="A_butts" package="PTC-PTH-5.08MM" value="500mA" x="92" y="22.46" rot="R90"/>
+<element name="TVS1" library="A_butts" package="DO-41-TVS-BI-10.16MM" value="5.6V" x="83" y="19"/>
+<element name="F1" library="A_butts" package="PTC-PTH-5.08MM" value="500mA" x="92.27" y="21.54" rot="R270"/>
 <element name="C4" library="A_butts" package="E2-5" value="10uF" x="78.936" y="30"/>
 <element name="C5" library="A_butts" package="E2,5-6" value="100uF" x="70.5" y="30" rot="R270"/>
 <element name="IC3" library="A_butts" package="TO220-IGO-THERMPAD" value="L7805" x="78.51" y="39.54" rot="R270"/>
-<element name="D1" library="A_butts" package="DIODE-10.16MM" value="1N5819" x="83" y="25" rot="R180"/>
+<element name="D1" library="A_butts" package="DIODE-10.16MM" value="1N5819" x="83" y="24" rot="R180"/>
 <element name="BAT1" library="A_butts" package="BATTCON_20MM_MINE" value="20mm coincell" x="11" y="31" rot="R180"/>
-<element name="U$4" library="A_butts" package="COW_SMALL" value="" x="4" y="10" rot="MR0"/>
-<element name="U$7" library="A_butts" package="OSHWLOGO_MINI" value="" x="88" y="50.5"/>
-<element name="U$6" library="A_butts" package="OSHWLOGO_MINI" value="" x="88" y="50.5" rot="MR0"/>
+<element name="U$4" library="A_butts" package="COW_SMALL" value="" x="4.5" y="5.2" rot="MR0"/>
 <element name="Y1" library="A_butts" package="HC49U-V" value="16MHz" x="53" y="23.5" rot="R180"/>
 <element name="C6" library="A_butts" package="C025-024X044" value="22pF" x="50.75" y="19.5"/>
 <element name="C7" library="A_butts" package="C025-024X044" value="22pF" x="55.75" y="19.5" rot="R180"/>
 <element name="IC1" library="A_butts" package="DIL28-3" value="ATMEGA328P" x="48" y="31" locked="yes"/>
 <element name="IC2" library="A_butts" package="DIL08" value="DS1307" x="24" y="47.1" rot="R270"/>
 <element name="Y2" library="A_butts" package="TC26H" value="32.768kHz" x="18.1" y="49.64" rot="R90"/>
-<element name="U$1" library="A_butts" package="COW_SMALL" value="" x="4" y="10"/>
-<element name="JP1" library="A_butts" package="JST-2-XH-VERT-PTH" value="M02JST-XH-VERT" x="92" y="9" smashed="yes" rot="R270">
-<attribute name="NAME" x="92" y="12.94" size="0.8128" layer="25" font="vector" ratio="12" align="bottom-center"/>
-</element>
-<element name="U$2" library="A_butts" package="CC-BY-SA-4.0-NO-URL" value="" x="24" y="50" rot="MR0"/>
-<element name="U$3" library="A_butts" package="CC-BY-SA-4.0-NO-URL" value="" x="13.3" y="2.3"/>
+<element name="U$1" library="A_butts" package="COW_SMALL" value="" x="4.5" y="5.2"/>
+<element name="JP1" library="A_butts" package="JST-2-XH-VERT-PTH" value="M02JST-XH-VERT" x="91" y="30.5" rot="R180"/>
+<element name="U$2" library="A_butts" package="CC-BY-SA-4.0-NO-URL" value="" x="24" y="51" rot="MR0"/>
+<element name="U$3" library="A_butts" package="CC-BY-SA-4.0-NO-URL" value="" x="84" y="3.5"/>
+<element name="U$5" library="A_butts" package="OSHWLOGO_TOP_0.2" value="" x="91.5" y="3.5"/>
+<element name="U$8" library="A_butts" package="OSHWLOGO_TOP_0.2" value="" x="91.5" y="3.5" rot="MR0"/>
 </elements>
 <signals>
 <signal name="GND">
 <polygon width="0.1524" layer="16">
-<vertex x="2.5" y="53"/>
-<vertex x="93.5" y="53" curve="-90"/>
-<vertex x="96" y="50.5"/>
-<vertex x="96" y="2.5" curve="-90"/>
 <vertex x="93.5" y="0"/>
 <vertex x="2.5" y="0" curve="-90"/>
 <vertex x="0" y="2.5"/>
-<vertex x="0" y="50.5" curve="-90"/>
+<vertex x="0" y="51.5" curve="-90"/>
+<vertex x="2.5" y="54"/>
+<vertex x="93.5" y="54" curve="-90"/>
+<vertex x="96" y="51.5"/>
+<vertex x="96" y="2.5" curve="-90"/>
 </polygon>
 <contactref element="C1" pad="2"/>
 <contactref element="AVR_ISP" pad="6"/>
@@ -1328,14 +1292,14 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="IC2" pad="4"/>
 <contactref element="IC2" pad="4"/>
 <polygon width="0.1524" layer="1">
-<vertex x="2.5" y="53"/>
-<vertex x="93.5" y="53" curve="-90"/>
-<vertex x="96" y="50.5"/>
-<vertex x="96" y="2.5" curve="-90"/>
 <vertex x="93.5" y="0"/>
 <vertex x="2.5" y="0" curve="-90"/>
 <vertex x="0" y="2.5"/>
-<vertex x="0" y="50.5" curve="-90"/>
+<vertex x="0" y="51.5" curve="-90"/>
+<vertex x="2.5" y="54"/>
+<vertex x="93.5" y="54" curve="-90"/>
+<vertex x="96" y="51.5"/>
+<vertex x="96" y="2.5" curve="-90"/>
 </polygon>
 <wire x1="0.9" y1="31" x2="11" y2="31" width="1" layer="1"/>
 <wire x1="11" y1="31" x2="21.5" y2="31" width="1" layer="1"/>
@@ -1816,7 +1780,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C4" pad="+"/>
 <contactref element="IC3" pad="IN"/>
 <contactref element="D1" pad="C"/>
-<wire x1="77.92" y1="25" x2="77.92" y2="30" width="0.4" layer="1"/>
+<wire x1="77.92" y1="24" x2="77.92" y2="30" width="0.4" layer="1"/>
 <wire x1="74.7" y1="42.08" x2="75.42" y2="42.08" width="0.4" layer="1"/>
 <wire x1="75.42" y1="42.08" x2="77.92" y2="39.58" width="0.4" layer="1"/>
 <wire x1="77.92" y1="39.58" x2="77.92" y2="30" width="0.4" layer="1"/>
@@ -1824,9 +1788,9 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$4">
 <contactref element="TVS1" pad="P$2"/>
 <contactref element="D1" pad="A"/>
-<wire x1="88.08" y1="20" x2="88.08" y2="25" width="0.4" layer="1"/>
+<wire x1="88.08" y1="19" x2="88.08" y2="24" width="0.4" layer="1"/>
 <contactref element="F1" pad="P$2"/>
-<wire x1="88.08" y1="25" x2="92" y2="25" width="0.4" layer="1"/>
+<wire x1="88.08" y1="19" x2="92.27" y2="19" width="0.4" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="BAT1" pad="TOP@1"/>
@@ -1883,17 +1847,15 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$7">
 <contactref element="JP1" pad="1"/>
 <contactref element="F1" pad="P$1"/>
-<wire x1="92" y1="10.27" x2="92" y2="19.92" width="0.4" layer="1"/>
+<wire x1="92.27" y1="24.08" x2="92.27" y2="30.5" width="0.4" layer="1"/>
 </signal>
 </signals>
 <errors>
-<approved hash="18,30,6f8b4b3cc1f8694f"/>
-<approved hash="18,30,546e30da36155ea2"/>
-<approved hash="18,30,5b75bb15b3185378"/>
 <approved hash="18,30,58f5b895b59855f8"/>
+<approved hash="18,30,5b75bb15b3185378"/>
 <approved hash="18,30,d685b2f74fe9820e"/>
-<approved hash="18,30,7233d893d5127e86"/>
 <approved hash="18,30,71b3db13d4ae7632"/>
+<approved hash="18,30,7233d893d5127e86"/>
 <approved hash="18,30,c83a270ac767284f"/>
 <approved hash="18,30,e5f10c41edbc0504"/>
 </errors>
