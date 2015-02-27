@@ -8,20 +8,20 @@
 </settings>
 <grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="2" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,17 +39,17 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="5" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="5" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -17085,7 +17085,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <part name="IC4" library="A_butts" deviceset="MAX7219" device="SOIC-W" value="MAX7219"/>
 <part name="SUPPLY11" library="A_butts" deviceset="VCC" device=""/>
 <part name="SUPPLY13" library="A_butts" deviceset="VCC" device=""/>
-<part name="R5" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="4.7k"/>
+<part name="R4" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="20R"/>
 <part name="GND4" library="A_butts" deviceset="GND" device=""/>
 <part name="GND6" library="A_butts" deviceset="GND" device=""/>
 <part name="C4" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
@@ -17096,7 +17096,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <part name="IC5" library="A_butts" deviceset="MAX7219" device="SOIC-W" value="MAX7219"/>
 <part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
 <part name="SUPPLY12" library="A_butts" deviceset="VCC" device=""/>
-<part name="R4" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="4.7k"/>
+<part name="R5" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="27R"/>
 <part name="GND3" library="A_butts" deviceset="GND" device=""/>
 </parts>
 <sheets>
@@ -17154,7 +17154,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <instance part="IC4" gate="G$1" x="322.58" y="78.74"/>
 <instance part="SUPPLY11" gate="G$1" x="304.8" y="101.6"/>
 <instance part="SUPPLY13" gate="G$1" x="353.06" y="81.28"/>
-<instance part="R5" gate="G$1" x="353.06" y="73.66" rot="R90"/>
+<instance part="R4" gate="G$1" x="353.06" y="73.66" rot="R90"/>
 <instance part="GND4" gate="1" x="304.8" y="55.88"/>
 <instance part="GND6" gate="1" x="195.58" y="93.98"/>
 <instance part="C4" gate="G$1" x="195.58" y="104.14"/>
@@ -17165,7 +17165,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <instance part="IC5" gate="G$1" x="386.08" y="78.74"/>
 <instance part="SUPPLY2" gate="G$1" x="368.3" y="101.6"/>
 <instance part="SUPPLY12" gate="G$1" x="416.56" y="81.28"/>
-<instance part="R4" gate="G$1" x="416.56" y="73.66" rot="R90"/>
+<instance part="R5" gate="G$1" x="416.56" y="73.66" rot="R90"/>
 <instance part="GND3" gate="1" x="368.3" y="55.88"/>
 </instances>
 <busses>
@@ -17281,7 +17281,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="SUPPLY11" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="R4" gate="G$1" pin="2"/>
 <pinref part="SUPPLY13" gate="G$1" pin="VCC"/>
 <wire x1="353.06" y1="78.74" x2="353.06" y2="81.28" width="0.1524" layer="91"/>
 </segment>
@@ -17302,7 +17302,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="SUPPLY12" gate="G$1" pin="VCC"/>
 <wire x1="416.56" y1="78.74" x2="416.56" y2="81.28" width="0.1524" layer="91"/>
 </segment>
@@ -17542,7 +17542,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <net name="N$12" class="0">
 <segment>
 <pinref part="IC4" gate="G$1" pin="ISET"/>
-<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="353.06" y1="68.58" x2="353.06" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="353.06" y1="66.04" x2="337.82" y2="66.04" width="0.1524" layer="91"/>
 </segment>
@@ -18100,7 +18100,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <net name="N$11" class="0">
 <segment>
 <pinref part="IC5" gate="G$1" pin="ISET"/>
-<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="416.56" y1="68.58" x2="416.56" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="416.56" y1="66.04" x2="401.32" y2="66.04" width="0.1524" layer="91"/>
 </segment>
