@@ -11669,6 +11669,121 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <vertex x="18.16" y="-3.1"/>
 </polygon>
 </package>
+<package name="FTDI_CONN">
+<description>Package for devices meant to mate to an FTDI connector.</description>
+<pad name="DTR" x="-6.35" y="0" drill="1.016" diameter="1.8796" shape="square"/>
+<pad name="TXO" x="-3.81" y="0" drill="1.016" diameter="1.8796"/>
+<pad name="RXI" x="-1.27" y="0" drill="1.016" diameter="1.8796"/>
+<pad name="VCC" x="1.27" y="0" drill="1.016" diameter="1.8796"/>
+<pad name="CTS" x="3.81" y="0" drill="1.016" diameter="1.8796"/>
+<pad name="GND" x="6.35" y="0" drill="1.016" diameter="1.8796"/>
+<wire x1="-7.62" y1="1.27" x2="7.62" y2="1.27" width="0.127" layer="21"/>
+<wire x1="7.62" y1="1.27" x2="7.62" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="7.62" y1="-1.27" x2="-7.62" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-7.62" y1="-1.27" x2="-7.62" y2="1.27" width="0.127" layer="21"/>
+<text x="-7.874" y="-0.889" size="1.27" layer="21" font="vector" ratio="15" rot="R90">GRN</text>
+<text x="9.144" y="-0.889" size="1.27" layer="21" font="vector" ratio="15" rot="R90">BLK</text>
+<text x="-4.826" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">TXO</text>
+<text x="-2.286" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">RXI</text>
+<text x="0.254" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">VCC</text>
+<text x="-7.366" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">DTR</text>
+<text x="5.334" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">GND</text>
+<text x="2.794" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">CTS</text>
+</package>
+<package name="FTDI_CONN_JST_PH_RA_PTH">
+<pad name="DTR" x="-5" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="TXO" x="-3" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="RXI" x="-1" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="VCC" x="1" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="CTS" x="3" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="GND" x="5" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<text x="0" y="-2" size="0.762" layer="25" font="vector" ratio="12" align="top-center">&gt;NAME</text>
+<wire x1="-8" y1="6.25" x2="-8" y2="-1.35" width="0.1524" layer="21"/>
+<wire x1="8" y1="6.25" x2="8" y2="-1.35" width="0.1524" layer="21"/>
+<wire x1="-8" y1="-1.35" x2="-7" y2="-1.35" width="0.1524" layer="21"/>
+<wire x1="7" y1="-1.35" x2="8" y2="-1.35" width="0.1524" layer="21"/>
+<wire x1="-7" y1="0.25" x2="-7" y2="-1.35" width="0.1524" layer="21"/>
+<wire x1="7" y1="0.25" x2="7" y2="-1.35" width="0.1524" layer="21"/>
+<wire x1="-7" y1="0.25" x2="-5.9" y2="0.25" width="0.1524" layer="21"/>
+<wire x1="-4.1" y1="0.25" x2="-3.9" y2="0.25" width="0.1524" layer="21"/>
+<wire x1="-2.1" y1="0.25" x2="-1.9" y2="0.25" width="0.1524" layer="21"/>
+<wire x1="-0.1" y1="0.25" x2="0.1" y2="0.25" width="0.1524" layer="21"/>
+<wire x1="1.9" y1="0.25" x2="2.1" y2="0.25" width="0.1524" layer="21"/>
+<wire x1="3.9" y1="0.25" x2="4.1" y2="0.25" width="0.1524" layer="21"/>
+<wire x1="5.9" y1="0.25" x2="7" y2="0.25" width="0.1524" layer="21"/>
+<wire x1="-8" y1="6.25" x2="8" y2="6.25" width="0.1524" layer="21"/>
+<text x="5" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">GND</text>
+<text x="3" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">CTS</text>
+<text x="1" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">VCC</text>
+<text x="-1" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">RXI</text>
+<text x="-3" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">TXO</text>
+<text x="-5" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">DTR</text>
+<text x="3" y="-2" size="0.4" layer="21" font="vector" ratio="12" align="bottom-center">(GND)</text>
+<text x="-5" y="-2" size="0.4" layer="21" font="vector" ratio="12" align="bottom-center">(RST)</text>
+<text x="-6.7" y="0.1" size="0.5" layer="21" font="vector" ratio="12" rot="R90" align="top-right">GREEN</text>
+<text x="6.8" y="0.1" size="0.5" layer="21" font="vector" ratio="12" rot="R90" align="bottom-right">BLACK</text>
+</package>
+<package name="FTDI_CONN_SMT">
+<text x="-7.974" y="-4.989" size="1.27" layer="21" font="vector" ratio="15" rot="R90">GREEN</text>
+<text x="8" y="-5" size="1.27" layer="21" font="vector" ratio="15" rot="R90" align="top-left">BLACK</text>
+<text x="-4.826" y="1.824" size="0.8128" layer="21" font="vector" ratio="15" rot="SR180" align="top-right">TXO</text>
+<text x="-2.286" y="1.824" size="0.8128" layer="21" font="vector" ratio="15" rot="SR180" align="top-right">RXI</text>
+<text x="0.254" y="1.824" size="0.8128" layer="21" font="vector" ratio="15" rot="SR180" align="top-right">VCC</text>
+<text x="-7.366" y="1.824" size="0.8128" layer="21" font="vector" ratio="15" rot="SR180" align="top-right">DTR</text>
+<text x="5.334" y="1.824" size="0.8128" layer="21" font="vector" ratio="15" rot="SR180" align="top-right">GND</text>
+<text x="2.794" y="1.824" size="0.8128" layer="21" font="vector" ratio="15" rot="SR180" align="top-right">CTS</text>
+<wire x1="7.62" y1="-3.75" x2="-7.62" y2="-3.75" width="0.127" layer="51"/>
+<wire x1="-7.62" y1="-3.75" x2="-7.62" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="-7.62" y1="-6.25" x2="-6.35" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="-6.35" y1="-6.25" x2="-3.81" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="-3.81" y1="-6.25" x2="-1.27" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="-1.27" y1="-6.25" x2="1.27" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="1.27" y1="-6.25" x2="3.81" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="3.81" y1="-6.25" x2="6.35" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="6.35" y1="-6.25" x2="7.62" y2="-6.25" width="0.127" layer="51"/>
+<wire x1="7.62" y1="-6.25" x2="7.62" y2="-3.75" width="0.127" layer="51"/>
+<wire x1="6.35" y1="-6.25" x2="6.35" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="3.81" y1="-6.25" x2="3.81" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="1.27" y1="-6.25" x2="1.27" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="-1.27" y1="-6.25" x2="-1.27" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="-3.81" y1="-6.25" x2="-3.81" y2="-12.25" width="0.127" layer="51"/>
+<wire x1="-6.35" y1="-6.25" x2="-6.35" y2="-12.25" width="0.127" layer="51"/>
+<smd name="VCC" x="1.27" y="0" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="CTS" x="3.81" y="0" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="GND" x="6.35" y="0" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="RXI" x="-1.27" y="0" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="TXO" x="-3.81" y="0" dx="3" dy="1" layer="1" rot="R90"/>
+<smd name="DTR" x="-6.35" y="0" dx="3" dy="1" layer="1" rot="R90"/>
+<hole x="-5.08" y="-5" drill="1.4"/>
+<hole x="5.08" y="-5" drill="1.4"/>
+</package>
+<package name="FTDI_CONN_JST_PH_VERT_PTH">
+<wire x1="-6" y1="-1.7" x2="-6" y2="2.8" width="0.2032" layer="21"/>
+<wire x1="-6" y1="2.8" x2="6" y2="2.8" width="0.2032" layer="21"/>
+<wire x1="6" y1="-1.7" x2="1" y2="-1.7" width="0.2032" layer="21"/>
+<wire x1="-1" y1="-1.7" x2="-6" y2="-1.7" width="0.2032" layer="21"/>
+<wire x1="-1" y1="-1.2" x2="1" y2="-1.2" width="0.2032" layer="21"/>
+<wire x1="1" y1="-1.2" x2="1" y2="-1.7" width="0.2032" layer="21"/>
+<wire x1="-1" y1="-1.2" x2="-1" y2="-1.7" width="0.2032" layer="21"/>
+<wire x1="6" y1="2.8" x2="6" y2="-1.7" width="0.2032" layer="21"/>
+<pad name="TXO" x="-3" y="0" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
+<pad name="RXI" x="-1" y="0" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
+<pad name="VCC" x="1" y="0" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
+<pad name="CTS" x="3" y="0" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
+<text x="0" y="3.05" size="0.6096" layer="25" font="vector" ratio="12" rot="R180" align="top-center">&gt;NAME</text>
+<pad name="GND" x="5" y="0" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
+<pad name="DTR" x="-5" y="0" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
+<text x="5" y="-2" size="0.5" layer="21" font="vector" ratio="12" align="top-center">GND</text>
+<text x="3" y="-2" size="0.5" layer="21" font="vector" ratio="12" align="top-center">CTS</text>
+<text x="1" y="-2" size="0.5" layer="21" font="vector" ratio="12" align="top-center">VCC</text>
+<text x="-1" y="-2" size="0.5" layer="21" font="vector" ratio="12" align="top-center">RXI</text>
+<text x="-3" y="-2" size="0.5" layer="21" font="vector" ratio="12" align="top-center">TXO</text>
+<text x="-5" y="-2" size="0.5" layer="21" font="vector" ratio="12" align="top-center">DTR</text>
+<text x="3" y="-2.6" size="0.4" layer="21" font="vector" ratio="12" align="top-center">(GND)</text>
+<text x="-5" y="-2.6" size="0.4" layer="21" font="vector" ratio="12" align="top-center">(RST)</text>
+<text x="-6.2" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" rot="R270" align="top-right">GREEN</text>
+<text x="6.2" y="-1.5" size="0.5" layer="21" font="vector" ratio="12" rot="R270" align="bottom-right">BLACK</text>
+</package>
 </packages>
 <symbols>
 <symbol name="HOLE">
@@ -11971,17 +12086,17 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="-3.81" y="5.842" size="1.016" layer="94" ratio="15">F</text>
 <text x="1.016" y="-0.508" size="1.016" layer="94" ratio="15">G</text>
 <text x="8.128" y="-13.208" size="1.016" layer="94" ratio="15">DP</text>
-<pin name="A" x="-15.24" y="10.16" visible="pin" length="short"/>
-<pin name="B" x="-15.24" y="7.62" visible="pin" length="short"/>
-<pin name="C" x="-15.24" y="5.08" visible="pin" length="short"/>
-<pin name="D" x="-15.24" y="2.54" visible="pin" length="short"/>
-<pin name="DP" x="-15.24" y="-10.16" visible="pin" length="short"/>
-<pin name="E" x="-15.24" y="0" visible="pin" length="short"/>
-<pin name="F" x="-15.24" y="-2.54" visible="pin" length="short"/>
-<pin name="G" x="-15.24" y="-5.08" visible="pin" length="short"/>
-<pin name="K1" x="15.24" y="2.54" visible="pin" length="short" rot="R180"/>
+<pin name="A" x="-15.24" y="10.16" length="short"/>
+<pin name="B" x="-15.24" y="7.62" length="short"/>
+<pin name="C" x="-15.24" y="5.08" length="short"/>
+<pin name="D" x="-15.24" y="2.54" length="short"/>
+<pin name="DP" x="-15.24" y="-10.16" length="short"/>
+<pin name="E" x="-15.24" y="0" length="short"/>
+<pin name="F" x="-15.24" y="-2.54" length="short"/>
+<pin name="G" x="-15.24" y="-5.08" length="short"/>
+<pin name="K1" x="15.24" y="2.54" length="short" rot="R180"/>
 <text x="0" y="15.875" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
-<pin name="K2" x="15.24" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="K2" x="15.24" y="-2.54" length="short" rot="R180"/>
 </symbol>
 <symbol name="CPOL-US">
 <wire x1="-2.54" y1="0.635" x2="0" y2="0.635" width="0.254" layer="94"/>
@@ -12198,6 +12313,20 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="0" y="8.382" size="1.778" layer="95">&gt;NAME</text>
 <pin name="1" x="10.16" y="2.54" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="10.16" y="5.08" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="FTDI_CONN">
+<pin name="DTR" x="-5.08" y="5.08" visible="pin" length="middle"/>
+<pin name="TXO" x="-5.08" y="2.54" visible="pin" length="middle"/>
+<pin name="RXI" x="-5.08" y="0" visible="pin" length="middle"/>
+<pin name="VCC" x="-5.08" y="-2.54" visible="pin" length="middle"/>
+<pin name="CTS" x="-5.08" y="-5.08" visible="pin" length="middle"/>
+<pin name="GND" x="-5.08" y="-7.62" visible="pin" length="middle"/>
+<wire x1="0" y1="7.62" x2="0" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="0" y1="-10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="0" y2="7.62" width="0.254" layer="94"/>
+<text x="0" y="10.16" size="1.778" layer="95">&gt;NAME</text>
+<text x="0" y="7.62" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -16888,6 +17017,66 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 </device>
 </devices>
 </deviceset>
+<deviceset name="FTDI_CONN" prefix="JP">
+<description>Connector which mates to FTDI basic or FTDI cable.</description>
+<gates>
+<gate name="G$1" symbol="FTDI_CONN" x="-2.54" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="FTDI_CONN">
+<connects>
+<connect gate="G$1" pin="CTS" pad="CTS"/>
+<connect gate="G$1" pin="DTR" pad="DTR"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RXI" pad="RXI"/>
+<connect gate="G$1" pin="TXO" pad="TXO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="JST_PH_RA_PTH" package="FTDI_CONN_JST_PH_RA_PTH">
+<connects>
+<connect gate="G$1" pin="CTS" pad="CTS"/>
+<connect gate="G$1" pin="DTR" pad="DTR"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RXI" pad="RXI"/>
+<connect gate="G$1" pin="TXO" pad="TXO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMT" package="FTDI_CONN_SMT">
+<connects>
+<connect gate="G$1" pin="CTS" pad="CTS"/>
+<connect gate="G$1" pin="DTR" pad="DTR"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RXI" pad="RXI"/>
+<connect gate="G$1" pin="TXO" pad="TXO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="JST_PH_VERT_PTH" package="FTDI_CONN_JST_PH_VERT_PTH">
+<connects>
+<connect gate="G$1" pin="CTS" pad="CTS"/>
+<connect gate="G$1" pin="DTR" pad="DTR"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RXI" pad="RXI"/>
+<connect gate="G$1" pin="TXO" pad="TXO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -16905,12 +17094,12 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <part name="H2" library="A_butts" deviceset="HOLE" device="#2" value="HOLE#2"/>
 <part name="H3" library="A_butts" deviceset="HOLE" device="#2" value="HOLE#2"/>
 <part name="H4" library="A_butts" deviceset="HOLE" device="#2" value="HOLE#2"/>
-<part name="DISPLAY2" library="A_butts" deviceset="7SEG_4DIGIT_COLON_APOS" device=""/>
+<part name="DISPLAY1" library="A_butts" deviceset="7SEG_4DIGIT_COLON_APOS" device=""/>
 <part name="DIGIT2" library="A_butts" deviceset="7SEG_1DIG" device="PTH-25.4MM-BARE" value="7SEG_1DIGPTH-25.4MM-BARE"/>
 <part name="DIGIT1" library="A_butts" deviceset="7SEG_1DIG" device="PTH-25.4MM-BARE" value="7SEG_1DIGPTH-25.4MM-BARE"/>
 <part name="DIGIT3" library="A_butts" deviceset="7SEG_1DIG" device="PTH-25.4MM-BARE" value="7SEG_1DIGPTH-25.4MM-BARE"/>
 <part name="DIGIT4" library="A_butts" deviceset="7SEG_1DIG" device="PTH-25.4MM-BARE" value="7SEG_1DIGPTH-25.4MM-BARE"/>
-<part name="DISPLAY1" library="A_butts" deviceset="7SEG_4DIGIT_COLON_APOS" device=""/>
+<part name="DISPLAY2" library="A_butts" deviceset="7SEG_4DIGIT_COLON_APOS" device=""/>
 <part name="GND4" library="A_butts" deviceset="GND" device=""/>
 <part name="GND5" library="A_butts" deviceset="GND" device=""/>
 <part name="C1" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
@@ -16951,40 +17140,25 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <part name="C4" library="A_butts" deviceset="CAPACITOR-POLARIZED" device="E2-5" value="10uF"/>
 <part name="C5" library="A_butts" deviceset="CAPACITOR-POLARIZED" device="E2-5" value="10uF"/>
 <part name="SUPPLY1" library="A_butts" deviceset="VCC" device=""/>
+<part name="JP1" library="A_butts" deviceset="FTDI_CONN" device="JST_PH_VERT_PTH" value="FTDI_CONNJST_PH_VERT_PTH"/>
+<part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
+<part name="GND3" library="A_butts" deviceset="GND" device=""/>
+<part name="C8" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="7.62" y="58.42" size="1.778" layer="109" align="bottom-right">D1</text>
-<text x="7.62" y="55.88" size="1.778" layer="109" align="bottom-right">D2</text>
-<text x="7.62" y="60.96" size="1.778" layer="109" align="bottom-right">D0</text>
-<text x="7.62" y="53.34" size="1.778" layer="109" align="bottom-right">D3</text>
-<text x="7.62" y="50.8" size="1.778" layer="109" align="bottom-right">D4</text>
-<text x="7.62" y="48.26" size="1.778" layer="109" align="bottom-right">D5</text>
-<text x="7.62" y="45.72" size="1.778" layer="109" align="bottom-right">D6</text>
-<text x="7.62" y="43.18" size="1.778" layer="109" align="bottom-right">D7</text>
-<text x="7.62" y="40.64" size="1.778" layer="109" align="bottom-right">D8</text>
-<text x="7.62" y="38.1" size="1.778" layer="109" align="bottom-right">D9</text>
-<text x="7.62" y="35.56" size="1.778" layer="109" align="bottom-right">D10</text>
-<text x="7.62" y="33.02" size="1.778" layer="109" align="bottom-right">A0</text>
-<text x="7.62" y="30.48" size="1.778" layer="109" align="bottom-right">A1</text>
-<text x="7.62" y="27.94" size="1.778" layer="109" align="bottom-right">A2</text>
-<text x="7.62" y="25.4" size="1.778" layer="109" align="bottom-right">A3</text>
-<text x="12.7" y="63.5" size="1.778" layer="109" rot="R90">D1</text>
-<text x="15.24" y="63.5" size="1.778" layer="109" rot="R90">D2</text>
-<text x="10.16" y="63.5" size="1.778" layer="109" rot="R90">D0</text>
-<text x="17.78" y="63.5" size="1.778" layer="109" rot="R90">D3</text>
-<text x="20.32" y="63.5" size="1.778" layer="109" rot="R90">D4</text>
-<text x="22.86" y="63.5" size="1.778" layer="109" rot="R90">D5</text>
-<text x="25.4" y="63.5" size="1.778" layer="109" rot="R90">D6</text>
-<text x="27.94" y="63.5" size="1.778" layer="109" rot="R90">D7</text>
-<text x="30.48" y="63.5" size="1.778" layer="109" rot="R90">D8</text>
-<text x="33.02" y="63.5" size="1.778" layer="109" rot="R90">D9</text>
-<text x="35.56" y="63.5" size="1.778" layer="109" rot="R90">D10</text>
-<text x="38.1" y="63.5" size="1.778" layer="109" rot="R90">A0</text>
-<text x="40.64" y="63.5" size="1.778" layer="109" rot="R90">A1</text>
-<text x="43.18" y="63.5" size="1.778" layer="109" rot="R90">A2</text>
-<text x="45.72" y="63.5" size="1.778" layer="109" rot="R90">A3</text>
+<text x="7.62" y="60.96" size="1.778" layer="109" align="bottom-right">D2</text>
+<text x="7.62" y="58.42" size="1.778" layer="109" align="bottom-right">D3</text>
+<text x="7.62" y="55.88" size="1.778" layer="109" align="bottom-right">D4</text>
+<text x="7.62" y="53.34" size="1.778" layer="109" align="bottom-right">D5</text>
+<text x="7.62" y="50.8" size="1.778" layer="109" align="bottom-right">D6</text>
+<text x="7.62" y="48.26" size="1.778" layer="109" align="bottom-right">D7</text>
+<text x="7.62" y="45.72" size="1.778" layer="109" align="bottom-right">D8</text>
+<text x="7.62" y="43.18" size="1.778" layer="109" align="bottom-right">D9</text>
+<text x="7.62" y="40.64" size="1.778" layer="109" align="bottom-right">D10</text>
+<text x="7.62" y="27.94" size="1.778" layer="109" align="bottom-right">A1</text>
+<text x="7.62" y="25.4" size="1.778" layer="109" align="bottom-right">A2</text>
 <wire x1="7.62" y1="25.4" x2="7.62" y2="63.5" width="0.3048" layer="109"/>
 <wire x1="7.62" y1="63.5" x2="45.72" y2="63.5" width="0.3048" layer="109"/>
 <wire x1="45.72" y1="63.5" x2="45.72" y2="25.4" width="0.3048" layer="109"/>
@@ -17004,72 +17178,113 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <rectangle x1="38.1" y1="30.48" x2="40.64" y2="33.02" layer="109"/>
 <rectangle x1="40.64" y1="27.94" x2="43.18" y2="30.48" layer="109"/>
 <rectangle x1="43.18" y1="25.4" x2="45.72" y2="27.94" layer="109"/>
-<rectangle x1="25.4" y1="45.72" x2="45.72" y2="55.88" layer="212"/>
-<text x="8.89" y="30.48" size="1.27" layer="216" rot="R90" align="center">digit1</text>
-<text x="11.43" y="30.48" size="1.27" layer="216" rot="R90" align="center">digit2</text>
-<text x="13.97" y="30.48" size="1.27" layer="216" rot="R90" align="center">digit3</text>
-<text x="16.51" y="30.48" size="1.27" layer="216" rot="R90" align="center">digit4</text>
-<rectangle x1="35.56" y1="35.56" x2="45.72" y2="45.72" layer="213"/>
-<text x="35.56" y="50.8" size="1.778" layer="216" align="center">Display1</text>
-<rectangle x1="7.62" y1="50.8" x2="10.16" y2="60.96" layer="214"/>
-<rectangle x1="7.62" y1="25.4" x2="10.16" y2="35.56" layer="214"/>
-<rectangle x1="10.16" y1="50.8" x2="12.7" y2="58.42" layer="210"/>
-<rectangle x1="10.16" y1="60.96" x2="12.7" y2="63.5" layer="210"/>
-<rectangle x1="10.16" y1="25.4" x2="12.7" y2="35.56" layer="210"/>
-<rectangle x1="12.7" y1="25.4" x2="15.24" y2="35.56" layer="211"/>
-<rectangle x1="12.7" y1="50.8" x2="15.24" y2="55.88" layer="211"/>
-<rectangle x1="12.7" y1="58.42" x2="15.24" y2="63.5" layer="211"/>
-<rectangle x1="15.24" y1="25.4" x2="17.78" y2="35.56" layer="209"/>
-<rectangle x1="15.24" y1="50.8" x2="17.78" y2="53.34" layer="209"/>
-<rectangle x1="15.24" y1="55.88" x2="17.78" y2="63.5" layer="209"/>
-<text x="8.89" y="55.88" size="1.27" layer="216" rot="R90" align="center">digit1</text>
-<text x="11.43" y="54.61" size="1.27" layer="216" rot="R90" align="center">digit2</text>
-<text x="13.97" y="60.96" size="1.27" layer="216" rot="R90" align="center">digit3</text>
-<text x="13.97" y="53.34" size="1.27" layer="216" rot="R90" align="center">digit3</text>
-<text x="16.51" y="59.69" size="1.27" layer="216" rot="R90" align="center">digit4</text>
-<rectangle x1="7.62" y1="35.56" x2="17.78" y2="45.72" layer="213"/>
-<text x="40.64" y="40.64" size="1.778" layer="216" align="center">Display2</text>
-<text x="12.7" y="40.64" size="1.778" layer="216" align="center">Display2</text>
+<text x="7.62" y="38.1" size="1.778" layer="109" rot="MR0">D11</text>
+<text x="7.62" y="35.56" size="1.778" layer="109" rot="MR0">D12</text>
+<text x="7.62" y="33.02" size="1.778" layer="109" rot="MR0">D13</text>
+<text x="10.16" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D2</text>
+<text x="12.7" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D3</text>
+<text x="15.24" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D4</text>
+<text x="17.78" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D5</text>
+<text x="20.32" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D6</text>
+<text x="22.86" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D7</text>
+<text x="25.4" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D8</text>
+<text x="27.94" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D9</text>
+<text x="30.48" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">D10</text>
+<text x="43.18" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">A1</text>
+<text x="45.72" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">A2</text>
+<text x="33.02" y="63.5" size="1.778" layer="109" rot="R90">D11</text>
+<text x="35.56" y="63.5" size="1.778" layer="109" rot="R90">D12</text>
+<text x="38.1" y="63.5" size="1.778" layer="109" rot="R90">D13</text>
+<polygon width="0.1524" layer="213">
+<vertex x="7.62" y="43.18"/>
+<vertex x="7.62" y="33.02"/>
+<vertex x="20.32" y="33.02"/>
+<vertex x="20.32" y="43.18"/>
+</polygon>
+<polygon width="0.1524" layer="214">
+<vertex x="7.62" y="53.34"/>
+<vertex x="17.78" y="53.34"/>
+<vertex x="17.78" y="43.18"/>
+<vertex x="7.62" y="43.18"/>
+</polygon>
+<polygon width="0.1524" layer="209">
+<vertex x="25.4" y="60.96"/>
+<vertex x="25.4" y="58.42"/>
+<vertex x="45.72" y="58.42"/>
+<vertex x="45.72" y="60.96"/>
+</polygon>
+<polygon width="0.1524" layer="210">
+<vertex x="25.4" y="63.5"/>
+<vertex x="45.72" y="63.5"/>
+<vertex x="45.72" y="60.96"/>
+<vertex x="25.4" y="60.96"/>
+</polygon>
+<text x="7.62" y="30.48" size="1.778" layer="109" align="bottom-right">A0</text>
+<text x="40.64" y="63.5" size="1.778" layer="109" rot="MR270" align="bottom-right">A0</text>
+<polygon width="0.1524" layer="214">
+<vertex x="35.56" y="53.34"/>
+<vertex x="45.72" y="53.34"/>
+<vertex x="45.72" y="43.18"/>
+<vertex x="35.56" y="43.18"/>
+</polygon>
+<polygon width="0.1524" layer="211">
+<vertex x="25.4" y="58.42"/>
+<vertex x="45.72" y="58.42"/>
+<vertex x="45.72" y="55.88"/>
+<vertex x="25.4" y="55.88"/>
+</polygon>
+<polygon width="0.1524" layer="212">
+<vertex x="25.4" y="55.88"/>
+<vertex x="45.72" y="55.88"/>
+<vertex x="45.72" y="53.34"/>
+<vertex x="25.4" y="53.34"/>
+</polygon>
+<polygon width="0.1524" layer="213">
+<vertex x="38.1" y="43.18"/>
+<vertex x="38.1" y="33.02"/>
+<vertex x="45.72" y="33.02"/>
+<vertex x="45.72" y="43.18"/>
+</polygon>
 </plain>
 <instances>
-<instance part="H1" gate="G$1" x="181.61" y="11.43"/>
-<instance part="H2" gate="G$1" x="186.69" y="11.43"/>
-<instance part="H3" gate="G$1" x="191.77" y="11.43"/>
-<instance part="H4" gate="G$1" x="196.85" y="11.43"/>
-<instance part="DISPLAY2" gate="G$1" x="187.96" y="30.48"/>
+<instance part="H1" gate="G$1" x="196.85" y="11.43"/>
+<instance part="H2" gate="G$1" x="201.93" y="11.43"/>
+<instance part="H3" gate="G$1" x="207.01" y="11.43"/>
+<instance part="H4" gate="G$1" x="212.09" y="11.43"/>
+<instance part="DISPLAY1" gate="G$1" x="203.2" y="66.04"/>
 <instance part="DIGIT2" gate="G$1" x="78.74" y="27.94"/>
 <instance part="DIGIT1" gate="G$1" x="78.74" y="63.5"/>
-<instance part="DIGIT3" gate="G$1" x="124.46" y="63.5"/>
-<instance part="DIGIT4" gate="G$1" x="124.46" y="27.94"/>
-<instance part="DISPLAY1" gate="G$1" x="187.96" y="66.04"/>
+<instance part="DIGIT3" gate="G$1" x="132.08" y="63.5"/>
+<instance part="DIGIT4" gate="G$1" x="132.08" y="27.94"/>
+<instance part="DISPLAY2" gate="G$1" x="203.2" y="30.48"/>
 <instance part="GND4" gate="1" x="33.02" y="93.98"/>
-<instance part="GND5" gate="1" x="231.14" y="25.4"/>
-<instance part="C1" gate="G$1" x="231.14" y="35.56"/>
-<instance part="R1" gate="G$1" x="261.62" y="35.56" rot="MR270"/>
-<instance part="SUPPLY5" gate="G$1" x="261.62" y="43.18"/>
-<instance part="SUPPLY3" gate="G$1" x="231.14" y="43.18"/>
-<instance part="AVR_ISP" gate="G$1" x="256.54" y="63.5"/>
-<instance part="SUPPLY4" gate="G$1" x="269.24" y="68.58"/>
-<instance part="GND8" gate="1" x="269.24" y="55.88"/>
+<instance part="GND5" gate="1" x="246.38" y="25.4"/>
+<instance part="C1" gate="G$1" x="246.38" y="35.56"/>
+<instance part="R1" gate="G$1" x="276.86" y="35.56" rot="MR270"/>
+<instance part="SUPPLY5" gate="G$1" x="276.86" y="43.18"/>
+<instance part="SUPPLY3" gate="G$1" x="246.38" y="43.18"/>
+<instance part="AVR_ISP" gate="G$1" x="271.78" y="63.5"/>
+<instance part="SUPPLY4" gate="G$1" x="284.48" y="68.58"/>
+<instance part="GND8" gate="1" x="284.48" y="55.88"/>
 <instance part="SUPPLY6" gate="G$1" x="132.08" y="139.7"/>
 <instance part="GND9" gate="1" x="124.46" y="99.06"/>
-<instance part="GND10" gate="1" x="241.3" y="25.4"/>
-<instance part="C2" gate="G$1" x="241.3" y="35.56"/>
-<instance part="SUPPLY7" gate="G$1" x="241.3" y="43.18"/>
-<instance part="GND11" gate="1" x="251.46" y="25.4"/>
-<instance part="C3" gate="G$1" x="251.46" y="35.56"/>
-<instance part="SUPPLY8" gate="G$1" x="251.46" y="43.18"/>
-<instance part="R2" gate="G$1" x="269.24" y="35.56" rot="R270"/>
-<instance part="SUPPLY9" gate="G$1" x="269.24" y="43.18"/>
-<instance part="R3" gate="G$1" x="276.86" y="35.56" rot="R270"/>
-<instance part="SUPPLY10" gate="G$1" x="276.86" y="43.18"/>
+<instance part="GND10" gate="1" x="256.54" y="25.4"/>
+<instance part="C2" gate="G$1" x="256.54" y="35.56"/>
+<instance part="SUPPLY7" gate="G$1" x="256.54" y="43.18"/>
+<instance part="GND11" gate="1" x="266.7" y="25.4"/>
+<instance part="C3" gate="G$1" x="266.7" y="35.56"/>
+<instance part="SUPPLY8" gate="G$1" x="266.7" y="43.18"/>
+<instance part="R2" gate="G$1" x="284.48" y="35.56" rot="R270"/>
+<instance part="SUPPLY9" gate="G$1" x="284.48" y="43.18"/>
+<instance part="R3" gate="G$1" x="292.1" y="35.56" rot="R270"/>
+<instance part="SUPPLY10" gate="G$1" x="292.1" y="43.18"/>
 <instance part="SUPPLY15" gate="G$1" x="259.08" y="121.92"/>
 <instance part="GND12" gate="1" x="246.38" y="99.06"/>
 <instance part="TVS1" gate="G$1" x="210.82" y="111.76" rot="R90"/>
 <instance part="F1" gate="G$1" x="200.66" y="119.38"/>
 <instance part="IC3" gate="G$1" x="246.38" y="119.38"/>
 <instance part="D1" gate="G$1" x="220.98" y="119.38"/>
-<instance part="BAT1" gate="G$1" x="147.32" y="116.84"/>
+<instance part="BAT1" gate="G$1" x="152.4" y="116.84"/>
 <instance part="GND1" gate="1" x="160.02" y="106.68"/>
 <instance part="Y1" gate="G$1" x="22.86" y="124.46" rot="MR0"/>
 <instance part="C6" gate="G$1" x="12.7" y="116.84"/>
@@ -17082,6 +17297,10 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <instance part="C4" gate="G$1" x="231.14" y="111.76"/>
 <instance part="C5" gate="G$1" x="259.08" y="111.76"/>
 <instance part="SUPPLY1" gate="G$1" x="25.4" y="154.94"/>
+<instance part="JP1" gate="G$1" x="175.26" y="142.24" rot="MR0"/>
+<instance part="SUPPLY2" gate="G$1" x="190.5" y="142.24"/>
+<instance part="GND3" gate="1" x="190.5" y="129.54"/>
+<instance part="C8" gate="G$1" x="203.2" y="139.7"/>
 </instances>
 <busses>
 </busses>
@@ -17093,103 +17312,105 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PC1(ADC1)"/>
 </segment>
 <segment>
-<wire x1="60.96" y1="71.12" x2="63.5" y2="71.12" width="0.1524" layer="91"/>
-<label x="60.96" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="B"/>
+<wire x1="60.96" y1="58.42" x2="63.5" y2="58.42" width="0.1524" layer="91"/>
+<label x="60.96" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="G"/>
 </segment>
 <segment>
-<wire x1="60.96" y1="35.56" x2="63.5" y2="35.56" width="0.1524" layer="91"/>
-<label x="60.96" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="B"/>
+<wire x1="60.96" y1="22.86" x2="63.5" y2="22.86" width="0.1524" layer="91"/>
+<label x="60.96" y="22.86" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="G"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="71.12" x2="109.22" y2="71.12" width="0.1524" layer="91"/>
-<label x="106.68" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="B"/>
+<wire x1="114.3" y1="58.42" x2="116.84" y2="58.42" width="0.1524" layer="91"/>
+<label x="114.3" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="G"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="35.56" x2="109.22" y2="35.56" width="0.1524" layer="91"/>
-<label x="106.68" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="B"/>
+<wire x1="114.3" y1="22.86" x2="116.84" y2="22.86" width="0.1524" layer="91"/>
+<label x="114.3" y="22.86" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="G"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="63.5" x2="165.1" y2="63.5" width="0.1524" layer="91"/>
-<label x="162.56" y="63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="F"/>
+<wire x1="160.02" y1="35.56" x2="162.56" y2="35.56" width="0.1524" layer="91"/>
+<label x="160.02" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="38.1" x2="165.1" y2="38.1" width="0.1524" layer="91"/>
-<label x="162.56" y="38.1" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="B"/>
+<wire x1="177.8" y1="25.4" x2="180.34" y2="25.4" width="0.1524" layer="91"/>
+<label x="177.8" y="25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="G"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="55.88" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
+<label x="177.8" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="DP"/>
 </segment>
 </net>
 <net name="D2" class="0">
-<segment>
-<wire x1="60.96" y1="68.58" x2="63.5" y2="68.58" width="0.1524" layer="91"/>
-<label x="60.96" y="68.58" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="C"/>
-</segment>
-<segment>
-<wire x1="60.96" y1="33.02" x2="63.5" y2="33.02" width="0.1524" layer="91"/>
-<label x="60.96" y="33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="C"/>
-</segment>
-<segment>
-<wire x1="106.68" y1="68.58" x2="109.22" y2="68.58" width="0.1524" layer="91"/>
-<label x="106.68" y="68.58" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="C"/>
-</segment>
-<segment>
-<wire x1="106.68" y1="33.02" x2="109.22" y2="33.02" width="0.1524" layer="91"/>
-<label x="106.68" y="33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="C"/>
-</segment>
-<segment>
-<wire x1="162.56" y1="60.96" x2="165.1" y2="60.96" width="0.1524" layer="91"/>
-<label x="162.56" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="G"/>
-</segment>
-<segment>
-<wire x1="162.56" y1="35.56" x2="165.1" y2="35.56" width="0.1524" layer="91"/>
-<label x="162.56" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="C"/>
-</segment>
 <segment>
 <wire x1="86.36" y1="127" x2="83.82" y2="127" width="0.1524" layer="91"/>
 <label x="86.36" y="127" size="1.27" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="PD2(INT0)"/>
 </segment>
+<segment>
+<wire x1="149.86" y1="25.4" x2="147.32" y2="25.4" width="0.1524" layer="91"/>
+<label x="149.86" y="25.4" size="1.27" layer="95" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="K2"/>
+</segment>
+<segment>
+<wire x1="160.02" y1="68.58" x2="162.56" y2="68.58" width="0.1524" layer="91"/>
+<label x="160.02" y="68.58" size="1.27" layer="95" rot="MR0" xref="yes"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="40.64" x2="180.34" y2="40.64" width="0.1524" layer="91"/>
+<label x="177.8" y="40.64" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="A"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="73.66" x2="180.34" y2="73.66" width="0.1524" layer="91"/>
+<label x="177.8" y="73.66" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="B"/>
+</segment>
 </net>
 <net name="A2" class="0">
-<segment>
-<wire x1="60.96" y1="60.96" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
-<label x="60.96" y="60.96" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="F"/>
-</segment>
-<segment>
-<wire x1="60.96" y1="25.4" x2="63.5" y2="25.4" width="0.1524" layer="91"/>
-<label x="60.96" y="25.4" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="F"/>
-</segment>
-<segment>
-<wire x1="106.68" y1="22.86" x2="109.22" y2="22.86" width="0.1524" layer="91"/>
-<label x="106.68" y="22.86" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="G"/>
-</segment>
-<segment>
-<wire x1="142.24" y1="60.96" x2="139.7" y2="60.96" width="0.1524" layer="91"/>
-<label x="142.24" y="60.96" size="1.27" layer="95" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="K2"/>
-</segment>
-<segment>
-<wire x1="162.56" y1="25.4" x2="165.1" y2="25.4" width="0.1524" layer="91"/>
-<label x="162.56" y="25.4" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="G"/>
-</segment>
 <segment>
 <wire x1="86.36" y1="149.86" x2="83.82" y2="149.86" width="0.1524" layer="91"/>
 <label x="86.36" y="149.86" size="1.27" layer="95" rot="MR180" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="PC2(ADC2)"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="53.34" x2="63.5" y2="53.34" width="0.1524" layer="91"/>
+<label x="60.96" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="DP"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="17.78" x2="63.5" y2="17.78" width="0.1524" layer="91"/>
+<label x="60.96" y="17.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="DP"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="53.34" x2="116.84" y2="53.34" width="0.1524" layer="91"/>
+<label x="114.3" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="DP"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="17.78" x2="116.84" y2="17.78" width="0.1524" layer="91"/>
+<label x="114.3" y="17.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="DP"/>
+</segment>
+<segment>
+<wire x1="160.02" y1="33.02" x2="162.56" y2="33.02" width="0.1524" layer="91"/>
+<label x="160.02" y="33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="20.32" x2="180.34" y2="20.32" width="0.1524" layer="91"/>
+<label x="177.8" y="20.32" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="DP"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="76.2" x2="180.34" y2="76.2" width="0.1524" layer="91"/>
+<label x="177.8" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="A0" class="0">
@@ -17199,71 +17420,64 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PC0(ADC0)"/>
 </segment>
 <segment>
-<wire x1="60.96" y1="73.66" x2="63.5" y2="73.66" width="0.1524" layer="91"/>
-<label x="60.96" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="A"/>
+<wire x1="60.96" y1="60.96" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
+<label x="60.96" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="F"/>
 </segment>
 <segment>
-<wire x1="60.96" y1="38.1" x2="63.5" y2="38.1" width="0.1524" layer="91"/>
-<label x="60.96" y="38.1" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="A"/>
+<wire x1="60.96" y1="25.4" x2="63.5" y2="25.4" width="0.1524" layer="91"/>
+<label x="60.96" y="25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="F"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="73.66" x2="109.22" y2="73.66" width="0.1524" layer="91"/>
-<label x="106.68" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="A"/>
+<wire x1="114.3" y1="60.96" x2="116.84" y2="60.96" width="0.1524" layer="91"/>
+<label x="114.3" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="F"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="38.1" x2="109.22" y2="38.1" width="0.1524" layer="91"/>
-<label x="106.68" y="38.1" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="A"/>
+<wire x1="114.3" y1="25.4" x2="116.84" y2="25.4" width="0.1524" layer="91"/>
+<label x="114.3" y="25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="F"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="66.04" x2="165.1" y2="66.04" width="0.1524" layer="91"/>
-<label x="162.56" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="E"/>
+<wire x1="160.02" y1="38.1" x2="162.56" y2="38.1" width="0.1524" layer="91"/>
+<label x="160.02" y="38.1" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="40.64" x2="165.1" y2="40.64" width="0.1524" layer="91"/>
-<label x="162.56" y="40.64" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="A"/>
+<wire x1="177.8" y1="27.94" x2="180.34" y2="27.94" width="0.1524" layer="91"/>
+<label x="177.8" y="27.94" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="F"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="60.96" x2="180.34" y2="60.96" width="0.1524" layer="91"/>
+<label x="177.8" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="G"/>
 </segment>
 </net>
 <net name="D3" class="0">
 <segment>
-<wire x1="63.5" y1="66.04" x2="60.96" y2="66.04" width="0.1524" layer="91"/>
-<label x="60.96" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="D"/>
-</segment>
-<segment>
-<wire x1="63.5" y1="30.48" x2="60.96" y2="30.48" width="0.1524" layer="91"/>
-<label x="60.96" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="D"/>
-</segment>
-<segment>
-<wire x1="109.22" y1="66.04" x2="106.68" y2="66.04" width="0.1524" layer="91"/>
-<label x="106.68" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="D"/>
-</segment>
-<segment>
-<wire x1="109.22" y1="30.48" x2="106.68" y2="30.48" width="0.1524" layer="91"/>
-<label x="106.68" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="D"/>
-</segment>
-<segment>
-<wire x1="165.1" y1="55.88" x2="162.56" y2="55.88" width="0.1524" layer="91"/>
-<label x="162.56" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="DP"/>
-</segment>
-<segment>
-<wire x1="165.1" y1="33.02" x2="162.56" y2="33.02" width="0.1524" layer="91"/>
-<label x="162.56" y="33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="D"/>
-</segment>
-<segment>
 <wire x1="86.36" y1="124.46" x2="83.82" y2="124.46" width="0.1524" layer="91"/>
 <label x="86.36" y="124.46" size="1.27" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="PD3(INT1)"/>
+</segment>
+<segment>
+<wire x1="149.86" y1="60.96" x2="147.32" y2="60.96" width="0.1524" layer="91"/>
+<label x="149.86" y="60.96" size="1.27" layer="95" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="K2"/>
+</segment>
+<segment>
+<wire x1="160.02" y1="66.04" x2="162.56" y2="66.04" width="0.1524" layer="91"/>
+<label x="160.02" y="66.04" size="1.27" layer="95" rot="MR0" xref="yes"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="38.1" x2="180.34" y2="38.1" width="0.1524" layer="91"/>
+<label x="177.8" y="38.1" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="B"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="71.12" x2="180.34" y2="71.12" width="0.1524" layer="91"/>
+<label x="177.8" y="71.12" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -17279,8 +17493,8 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="269.24" y1="27.94" x2="269.24" y2="30.48" width="0.1524" layer="91"/>
-<label x="269.24" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
+<wire x1="284.48" y1="27.94" x2="284.48" y2="30.48" width="0.1524" layer="91"/>
+<label x="284.48" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -17296,45 +17510,19 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="276.86" y1="27.94" x2="276.86" y2="30.48" width="0.1524" layer="91"/>
-<label x="276.86" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
+<wire x1="292.1" y1="27.94" x2="292.1" y2="30.48" width="0.1524" layer="91"/>
+<label x="292.1" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="A3" class="0">
 <segment>
-<wire x1="60.96" y1="58.42" x2="63.5" y2="58.42" width="0.1524" layer="91"/>
-<label x="60.96" y="58.42" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="G"/>
-</segment>
-<segment>
-<wire x1="60.96" y1="22.86" x2="63.5" y2="22.86" width="0.1524" layer="91"/>
-<label x="60.96" y="22.86" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="G"/>
-</segment>
-<segment>
-<wire x1="106.68" y1="58.42" x2="109.22" y2="58.42" width="0.1524" layer="91"/>
-<label x="106.68" y="58.42" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="G"/>
-</segment>
-<segment>
-<wire x1="142.24" y1="25.4" x2="139.7" y2="25.4" width="0.1524" layer="91"/>
-<label x="142.24" y="25.4" size="1.27" layer="95" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="K2"/>
-</segment>
-<segment>
-<wire x1="162.56" y1="20.32" x2="165.1" y2="20.32" width="0.1524" layer="91"/>
-<label x="162.56" y="20.32" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="DP"/>
-</segment>
-<segment>
-<wire x1="213.36" y1="76.2" x2="210.82" y2="76.2" width="0.1524" layer="91"/>
-<label x="213.36" y="76.2" size="1.27" layer="95" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="DIG1"/>
-</segment>
-<segment>
 <wire x1="83.82" y1="147.32" x2="86.36" y2="147.32" width="0.1524" layer="91"/>
 <label x="86.36" y="147.32" size="1.27" layer="95" rot="MR180" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="PC3(ADC3)"/>
+</segment>
+<segment>
+<wire x1="147.32" y1="129.54" x2="149.86" y2="129.54" width="0.1524" layer="91"/>
+<label x="149.86" y="129.54" size="1.27" layer="95" rot="MR180" xref="yes"/>
 </segment>
 </net>
 <net name="D4" class="0">
@@ -17344,29 +17532,23 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PD4(XCK/T0)"/>
 </segment>
 <segment>
-<wire x1="60.96" y1="53.34" x2="63.5" y2="53.34" width="0.1524" layer="91"/>
-<label x="60.96" y="53.34" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="DP"/>
+<wire x1="96.52" y1="30.48" x2="93.98" y2="30.48" width="0.1524" layer="91"/>
+<label x="96.52" y="30.48" size="1.27" layer="95" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="K1"/>
 </segment>
 <segment>
-<wire x1="60.96" y1="17.78" x2="63.5" y2="17.78" width="0.1524" layer="91"/>
-<label x="60.96" y="17.78" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="DP"/>
+<wire x1="160.02" y1="63.5" x2="162.56" y2="63.5" width="0.1524" layer="91"/>
+<label x="160.02" y="63.5" size="1.27" layer="95" rot="MR0" xref="yes"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="53.34" x2="109.22" y2="53.34" width="0.1524" layer="91"/>
-<label x="106.68" y="53.34" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="DP"/>
+<wire x1="177.8" y1="35.56" x2="180.34" y2="35.56" width="0.1524" layer="91"/>
+<label x="177.8" y="35.56" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="17.78" x2="109.22" y2="17.78" width="0.1524" layer="91"/>
-<label x="106.68" y="17.78" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="DP"/>
-</segment>
-<segment>
-<wire x1="213.36" y1="73.66" x2="210.82" y2="73.66" width="0.1524" layer="91"/>
-<label x="213.36" y="73.66" size="1.27" layer="95" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="DIG2"/>
+<wire x1="177.8" y1="68.58" x2="180.34" y2="68.58" width="0.1524" layer="91"/>
+<label x="177.8" y="68.58" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="D"/>
 </segment>
 </net>
 <net name="D5" class="0">
@@ -17376,9 +17558,23 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PD5(T1)"/>
 </segment>
 <segment>
-<wire x1="213.36" y1="71.12" x2="210.82" y2="71.12" width="0.1524" layer="91"/>
-<label x="213.36" y="71.12" size="1.27" layer="95" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="DIG3"/>
+<wire x1="96.52" y1="66.04" x2="93.98" y2="66.04" width="0.1524" layer="91"/>
+<label x="96.52" y="66.04" size="1.27" layer="95" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="K1"/>
+</segment>
+<segment>
+<wire x1="160.02" y1="60.96" x2="162.56" y2="60.96" width="0.1524" layer="91"/>
+<label x="160.02" y="60.96" size="1.27" layer="95" rot="MR0" xref="yes"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="33.02" x2="180.34" y2="33.02" width="0.1524" layer="91"/>
+<label x="177.8" y="33.02" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="D"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="66.04" x2="180.34" y2="66.04" width="0.1524" layer="91"/>
+<label x="177.8" y="66.04" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="E"/>
 </segment>
 </net>
 <net name="D6" class="0">
@@ -17388,9 +17584,14 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PD6(AIN0)"/>
 </segment>
 <segment>
-<wire x1="213.36" y1="68.58" x2="210.82" y2="68.58" width="0.1524" layer="91"/>
-<label x="213.36" y="68.58" size="1.27" layer="95" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="DIG4"/>
+<wire x1="228.6" y1="76.2" x2="226.06" y2="76.2" width="0.1524" layer="91"/>
+<label x="228.6" y="76.2" size="1.27" layer="95" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="DIG1"/>
+</segment>
+<segment>
+<wire x1="177.8" y1="30.48" x2="180.34" y2="30.48" width="0.1524" layer="91"/>
+<label x="177.8" y="30.48" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="E"/>
 </segment>
 </net>
 <net name="D7" class="0">
@@ -17400,14 +17601,9 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PD7(AIN1)"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="76.2" x2="165.1" y2="76.2" width="0.1524" layer="91"/>
-<label x="162.56" y="76.2" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="A"/>
-</segment>
-<segment>
-<wire x1="213.36" y1="40.64" x2="210.82" y2="40.64" width="0.1524" layer="91"/>
-<label x="213.36" y="40.64" size="1.27" layer="95" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="DIG1"/>
+<wire x1="228.6" y1="73.66" x2="226.06" y2="73.66" width="0.1524" layer="91"/>
+<label x="228.6" y="73.66" size="1.27" layer="95" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="DIG2"/>
 </segment>
 </net>
 <net name="D8" class="0">
@@ -17417,14 +17613,9 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PB0(ICP)"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="73.66" x2="165.1" y2="73.66" width="0.1524" layer="91"/>
-<label x="162.56" y="73.66" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="B"/>
-</segment>
-<segment>
-<wire x1="213.36" y1="38.1" x2="210.82" y2="38.1" width="0.1524" layer="91"/>
-<label x="213.36" y="38.1" size="1.27" layer="95" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="DIG2"/>
+<wire x1="228.6" y1="71.12" x2="226.06" y2="71.12" width="0.1524" layer="91"/>
+<label x="228.6" y="71.12" size="1.27" layer="95" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="DIG3"/>
 </segment>
 </net>
 <net name="D9" class="0">
@@ -17434,32 +17625,47 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PB1(OC1A)"/>
 </segment>
 <segment>
-<wire x1="162.56" y1="71.12" x2="165.1" y2="71.12" width="0.1524" layer="91"/>
-<label x="162.56" y="71.12" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="C"/>
+<wire x1="60.96" y1="73.66" x2="63.5" y2="73.66" width="0.1524" layer="91"/>
+<label x="60.96" y="73.66" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="A"/>
 </segment>
 <segment>
-<wire x1="213.36" y1="35.56" x2="210.82" y2="35.56" width="0.1524" layer="91"/>
-<label x="213.36" y="35.56" size="1.27" layer="95" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="DIG3"/>
+<wire x1="60.96" y1="38.1" x2="63.5" y2="38.1" width="0.1524" layer="91"/>
+<label x="60.96" y="38.1" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="A"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="73.66" x2="116.84" y2="73.66" width="0.1524" layer="91"/>
+<label x="114.3" y="73.66" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="A"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="38.1" x2="116.84" y2="38.1" width="0.1524" layer="91"/>
+<label x="114.3" y="38.1" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="A"/>
+</segment>
+<segment>
+<wire x1="228.6" y1="68.58" x2="226.06" y2="68.58" width="0.1524" layer="91"/>
+<label x="228.6" y="68.58" size="1.27" layer="95" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="DIG4"/>
 </segment>
 </net>
 <net name="VCC" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
-<wire x1="261.62" y1="43.18" x2="261.62" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="43.18" x2="276.86" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
-<wire x1="231.14" y1="43.18" x2="231.14" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="43.18" x2="246.38" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
-<wire x1="269.24" y1="68.58" x2="269.24" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="68.58" x2="284.48" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="AVR_ISP" gate="G$1" pin="VCC"/>
-<wire x1="269.24" y1="66.04" x2="266.7" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="66.04" x2="281.94" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
@@ -17469,22 +17675,22 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <segment>
 <pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="SUPPLY7" gate="G$1" pin="VCC"/>
-<wire x1="241.3" y1="43.18" x2="241.3" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="43.18" x2="256.54" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="1"/>
 <pinref part="SUPPLY8" gate="G$1" pin="VCC"/>
-<wire x1="251.46" y1="43.18" x2="251.46" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="43.18" x2="266.7" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <pinref part="SUPPLY9" gate="G$1" pin="VCC"/>
-<wire x1="269.24" y1="43.18" x2="269.24" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="43.18" x2="284.48" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
-<wire x1="276.86" y1="43.18" x2="276.86" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="43.18" x2="292.1" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="254" y1="119.38" x2="259.08" y2="119.38" width="0.1524" layer="91"/>
@@ -17506,6 +17712,12 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <wire x1="25.4" y1="149.86" x2="33.02" y2="149.86" width="0.1524" layer="91"/>
 <junction x="33.02" y="149.86"/>
 </segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="VCC"/>
+<pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
+<wire x1="180.34" y1="139.7" x2="190.5" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="139.7" x2="190.5" y2="142.24" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -17521,13 +17733,13 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <segment>
 <pinref part="C1" gate="G$1" pin="2"/>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="231.14" y1="27.94" x2="231.14" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="27.94" x2="246.38" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
-<wire x1="269.24" y1="58.42" x2="269.24" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="58.42" x2="284.48" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="AVR_ISP" gate="G$1" pin="GND"/>
-<wire x1="269.24" y1="60.96" x2="266.7" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="60.96" x2="281.94" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND9" gate="1" pin="GND"/>
@@ -17537,12 +17749,12 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <segment>
 <pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="GND10" gate="1" pin="GND"/>
-<wire x1="241.3" y1="27.94" x2="241.3" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="27.94" x2="256.54" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="GND11" gate="1" pin="GND"/>
-<wire x1="251.46" y1="27.94" x2="251.46" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="27.94" x2="266.7" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="231.14" y1="106.68" x2="231.14" y2="104.14" width="0.1524" layer="91"/>
@@ -17568,7 +17780,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 </segment>
 <segment>
 <pinref part="BAT1" gate="G$1" pin="-"/>
-<wire x1="152.4" y1="116.84" x2="160.02" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="116.84" x2="160.02" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="160.02" y1="116.84" x2="160.02" y2="109.22" width="0.1524" layer="91"/>
 </segment>
@@ -17583,6 +17795,15 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <wire x1="12.7" y1="109.22" x2="22.86" y2="109.22" width="0.1524" layer="91"/>
 <junction x="22.86" y="109.22"/>
 </segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="GND"/>
+<wire x1="180.34" y1="134.62" x2="190.5" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="190.5" y1="134.62" x2="190.5" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="G$1" pin="CTS"/>
+<wire x1="180.34" y1="137.16" x2="180.34" y2="134.62" width="0.1524" layer="91"/>
+<junction x="180.34" y="134.62"/>
+</segment>
 </net>
 <net name="RST" class="0">
 <segment>
@@ -17592,20 +17813,123 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 </segment>
 <segment>
 <pinref part="AVR_ISP" gate="G$1" pin="RST"/>
-<wire x1="243.84" y1="60.96" x2="246.38" y2="60.96" width="0.1524" layer="91"/>
-<label x="243.84" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="259.08" y1="60.96" x2="261.62" y2="60.96" width="0.1524" layer="91"/>
+<label x="259.08" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="261.62" y1="30.48" x2="261.62" y2="27.94" width="0.1524" layer="91"/>
-<label x="261.62" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
+<wire x1="276.86" y1="30.48" x2="276.86" y2="27.94" width="0.1524" layer="91"/>
+<label x="276.86" y="27.94" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<wire x1="203.2" y1="132.08" x2="203.2" y2="134.62" width="0.1524" layer="91"/>
+<label x="203.2" y="132.08" size="1.27" layer="95" rot="MR270" xref="yes"/>
+<pinref part="C8" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="D1" class="0">
+<net name="TX" class="0">
 <segment>
 <wire x1="86.36" y1="129.54" x2="83.82" y2="129.54" width="0.1524" layer="91"/>
 <label x="86.36" y="129.54" size="1.27" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="PD1(TXD)"/>
+</segment>
+<segment>
+<wire x1="182.88" y1="144.78" x2="180.34" y2="144.78" width="0.1524" layer="91"/>
+<label x="182.88" y="144.78" size="1.27" layer="95" xref="yes"/>
+<pinref part="JP1" gate="G$1" pin="TXO"/>
+</segment>
+</net>
+<net name="RX" class="0">
+<segment>
+<wire x1="86.36" y1="132.08" x2="83.82" y2="132.08" width="0.1524" layer="91"/>
+<label x="86.36" y="132.08" size="1.27" layer="95" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="PD0(RXD)"/>
+</segment>
+<segment>
+<wire x1="182.88" y1="142.24" x2="180.34" y2="142.24" width="0.1524" layer="91"/>
+<label x="182.88" y="142.24" size="1.27" layer="95" xref="yes"/>
+<pinref part="JP1" gate="G$1" pin="RXI"/>
+</segment>
+</net>
+<net name="D10" class="0">
+<segment>
+<wire x1="83.82" y1="104.14" x2="86.36" y2="104.14" width="0.1524" layer="91"/>
+<label x="86.36" y="104.14" size="1.27" layer="95" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="PB2(SS/OC1B)"/>
+</segment>
+<segment>
+<wire x1="63.5" y1="71.12" x2="60.96" y2="71.12" width="0.1524" layer="91"/>
+<label x="60.96" y="71.12" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="B"/>
+</segment>
+<segment>
+<wire x1="63.5" y1="35.56" x2="60.96" y2="35.56" width="0.1524" layer="91"/>
+<label x="60.96" y="35.56" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="B"/>
+</segment>
+<segment>
+<wire x1="116.84" y1="71.12" x2="114.3" y2="71.12" width="0.1524" layer="91"/>
+<label x="114.3" y="71.12" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="B"/>
+</segment>
+<segment>
+<wire x1="116.84" y1="35.56" x2="114.3" y2="35.56" width="0.1524" layer="91"/>
+<label x="114.3" y="35.56" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="B"/>
+</segment>
+<segment>
+<wire x1="226.06" y1="40.64" x2="228.6" y2="40.64" width="0.1524" layer="91"/>
+<label x="228.6" y="40.64" size="1.27" layer="95" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="DIG1"/>
+</segment>
+</net>
+<net name="D12/MISO" class="0">
+<segment>
+<pinref part="AVR_ISP" gate="G$1" pin="MISO"/>
+<wire x1="259.08" y1="66.04" x2="261.62" y2="66.04" width="0.1524" layer="91"/>
+<label x="259.08" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="86.36" y1="99.06" x2="83.82" y2="99.06" width="0.1524" layer="91"/>
+<label x="86.36" y="99.06" size="1.27" layer="95" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="PB4(MISO)"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="66.04" x2="63.5" y2="66.04" width="0.1524" layer="91"/>
+<label x="60.96" y="66.04" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="D"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="30.48" x2="63.5" y2="30.48" width="0.1524" layer="91"/>
+<label x="60.96" y="30.48" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="D"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="66.04" x2="116.84" y2="66.04" width="0.1524" layer="91"/>
+<label x="114.3" y="66.04" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="D"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="30.48" x2="116.84" y2="30.48" width="0.1524" layer="91"/>
+<label x="114.3" y="30.48" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="D"/>
+</segment>
+<segment>
+<wire x1="228.6" y1="35.56" x2="226.06" y2="35.56" width="0.1524" layer="91"/>
+<label x="228.6" y="35.56" size="1.27" layer="95" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="DIG3"/>
+</segment>
+</net>
+<net name="D13/SCK" class="0">
+<segment>
+<pinref part="AVR_ISP" gate="G$1" pin="SCK"/>
+<wire x1="259.08" y1="63.5" x2="261.62" y2="63.5" width="0.1524" layer="91"/>
+<label x="259.08" y="63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="86.36" y1="96.52" x2="83.82" y2="96.52" width="0.1524" layer="91"/>
+<label x="86.36" y="96.52" size="1.27" layer="95" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="PB5(SCK)"/>
 </segment>
 <segment>
 <wire x1="60.96" y1="63.5" x2="63.5" y2="63.5" width="0.1524" layer="91"/>
@@ -17613,109 +17937,66 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="DIGIT1" gate="G$1" pin="E"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="60.96" x2="109.22" y2="60.96" width="0.1524" layer="91"/>
-<label x="106.68" y="60.96" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT3" gate="G$1" pin="F"/>
-</segment>
-<segment>
-<wire x1="106.68" y1="25.4" x2="109.22" y2="25.4" width="0.1524" layer="91"/>
-<label x="106.68" y="25.4" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DIGIT4" gate="G$1" pin="F"/>
-</segment>
-<segment>
-<wire x1="96.52" y1="30.48" x2="93.98" y2="30.48" width="0.1524" layer="91"/>
-<label x="96.52" y="30.48" size="1.27" layer="95" xref="yes"/>
-<pinref part="DIGIT2" gate="G$1" pin="K1"/>
-</segment>
-<segment>
-<wire x1="162.56" y1="27.94" x2="165.1" y2="27.94" width="0.1524" layer="91"/>
-<label x="162.56" y="27.94" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="F"/>
-</segment>
-</net>
-<net name="D0" class="0">
-<segment>
-<wire x1="86.36" y1="132.08" x2="83.82" y2="132.08" width="0.1524" layer="91"/>
-<label x="86.36" y="132.08" size="1.27" layer="95" xref="yes"/>
-<pinref part="IC1" gate="G$1" pin="PD0(RXD)"/>
-</segment>
-<segment>
 <wire x1="60.96" y1="27.94" x2="63.5" y2="27.94" width="0.1524" layer="91"/>
 <label x="60.96" y="27.94" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="DIGIT2" gate="G$1" pin="E"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="63.5" x2="109.22" y2="63.5" width="0.1524" layer="91"/>
-<label x="106.68" y="63.5" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="114.3" y1="63.5" x2="116.84" y2="63.5" width="0.1524" layer="91"/>
+<label x="114.3" y="63.5" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="DIGIT3" gate="G$1" pin="E"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="27.94" x2="109.22" y2="27.94" width="0.1524" layer="91"/>
-<label x="106.68" y="27.94" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="114.3" y1="27.94" x2="116.84" y2="27.94" width="0.1524" layer="91"/>
+<label x="114.3" y="27.94" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="DIGIT4" gate="G$1" pin="E"/>
 </segment>
 <segment>
-<wire x1="96.52" y1="60.96" x2="93.98" y2="60.96" width="0.1524" layer="91"/>
-<label x="96.52" y="60.96" size="1.27" layer="95" rot="MR180" xref="yes"/>
-<pinref part="DIGIT1" gate="G$1" pin="K2"/>
-</segment>
-<segment>
-<wire x1="162.56" y1="30.48" x2="165.1" y2="30.48" width="0.1524" layer="91"/>
-<label x="162.56" y="30.48" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY2" gate="G$1" pin="E"/>
-</segment>
-</net>
-<net name="D10" class="0">
-<segment>
-<wire x1="162.56" y1="68.58" x2="165.1" y2="68.58" width="0.1524" layer="91"/>
-<label x="162.56" y="68.58" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="DISPLAY1" gate="G$1" pin="D"/>
-</segment>
-<segment>
-<wire x1="213.36" y1="33.02" x2="210.82" y2="33.02" width="0.1524" layer="91"/>
-<label x="213.36" y="33.02" size="1.27" layer="95" xref="yes"/>
+<wire x1="228.6" y1="33.02" x2="226.06" y2="33.02" width="0.1524" layer="91"/>
+<label x="228.6" y="33.02" size="1.27" layer="95" xref="yes"/>
 <pinref part="DISPLAY2" gate="G$1" pin="DIG4"/>
 </segment>
 <segment>
-<wire x1="83.82" y1="104.14" x2="86.36" y2="104.14" width="0.1524" layer="91"/>
-<label x="86.36" y="104.14" size="1.27" layer="95" xref="yes"/>
-<pinref part="IC1" gate="G$1" pin="PB2(SS/OC1B)"/>
-</segment>
-</net>
-<net name="D12/MISO" class="0">
-<segment>
-<pinref part="AVR_ISP" gate="G$1" pin="MISO"/>
-<wire x1="243.84" y1="66.04" x2="246.38" y2="66.04" width="0.1524" layer="91"/>
-<label x="243.84" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="86.36" y1="99.06" x2="83.82" y2="99.06" width="0.1524" layer="91"/>
-<label x="86.36" y="99.06" size="1.27" layer="95" xref="yes"/>
-<pinref part="IC1" gate="G$1" pin="PB4(MISO)"/>
-</segment>
-</net>
-<net name="D13/SCK" class="0">
-<segment>
-<pinref part="AVR_ISP" gate="G$1" pin="SCK"/>
-<wire x1="243.84" y1="63.5" x2="246.38" y2="63.5" width="0.1524" layer="91"/>
-<label x="243.84" y="63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="86.36" y1="96.52" x2="83.82" y2="96.52" width="0.1524" layer="91"/>
-<label x="86.36" y="96.52" size="1.27" layer="95" xref="yes"/>
-<pinref part="IC1" gate="G$1" pin="PB5(SCK)"/>
+<wire x1="177.8" y1="63.5" x2="180.34" y2="63.5" width="0.1524" layer="91"/>
+<label x="177.8" y="63.5" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DISPLAY1" gate="G$1" pin="F"/>
 </segment>
 </net>
 <net name="D11/MOSI" class="0">
 <segment>
 <pinref part="AVR_ISP" gate="G$1" pin="MOSI"/>
-<wire x1="269.24" y1="63.5" x2="266.7" y2="63.5" width="0.1524" layer="91"/>
-<label x="269.24" y="63.5" size="1.27" layer="95" xref="yes"/>
+<wire x1="284.48" y1="63.5" x2="281.94" y2="63.5" width="0.1524" layer="91"/>
+<label x="284.48" y="63.5" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <wire x1="86.36" y1="101.6" x2="83.82" y2="101.6" width="0.1524" layer="91"/>
 <label x="86.36" y="101.6" size="1.27" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="PB3(MOSI/OC2)"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="68.58" x2="63.5" y2="68.58" width="0.1524" layer="91"/>
+<label x="60.96" y="68.58" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT1" gate="G$1" pin="C"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="33.02" x2="63.5" y2="33.02" width="0.1524" layer="91"/>
+<label x="60.96" y="33.02" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT2" gate="G$1" pin="C"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="68.58" x2="116.84" y2="68.58" width="0.1524" layer="91"/>
+<label x="114.3" y="68.58" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT3" gate="G$1" pin="C"/>
+</segment>
+<segment>
+<wire x1="114.3" y1="33.02" x2="116.84" y2="33.02" width="0.1524" layer="91"/>
+<label x="114.3" y="33.02" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="DIGIT4" gate="G$1" pin="C"/>
+</segment>
+<segment>
+<wire x1="228.6" y1="38.1" x2="226.06" y2="38.1" width="0.1524" layer="91"/>
+<label x="228.6" y="38.1" size="1.27" layer="95" xref="yes"/>
+<pinref part="DISPLAY2" gate="G$1" pin="DIG2"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -17743,7 +18024,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <net name="N$1" class="0">
 <segment>
 <pinref part="BAT1" gate="G$1" pin="+"/>
-<wire x1="142.24" y1="116.84" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="116.84" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="VBAT"/>
 </segment>
 </net>
@@ -17791,13 +18072,25 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="F1" gate="G$1" pin="1"/>
 </segment>
 </net>
+<net name="DTR" class="0">
+<segment>
+<pinref part="C8" gate="G$1" pin="1"/>
+<wire x1="203.2" y1="147.32" x2="203.2" y2="144.78" width="0.1524" layer="91"/>
+<label x="203.2" y="147.32" size="1.27" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP1" gate="G$1" pin="DTR"/>
+<wire x1="182.88" y1="147.32" x2="180.34" y2="147.32" width="0.1524" layer="91"/>
+<label x="182.88" y="147.32" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,269.24,144.78,BAT1,-,GND,,,"/>
-<approved hash="104,1,259.08,144.78,BAT1,+,N$1,,,"/>
-<approved hash="104,1,256.54,144.78,IC2,VBAT,N$1,,,"/>
+<approved hash="104,1,157.48,116.84,BAT1,-,GND,,,"/>
+<approved hash="104,1,147.32,116.84,BAT1,+,N$1,,,"/>
+<approved hash="104,1,139.7,116.84,IC2,VBAT,N$1,,,"/>
 </errors>
 </schematic>
 </drawing>
