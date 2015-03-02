@@ -50,6 +50,7 @@
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
 <layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -17144,6 +17145,9 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
 <part name="GND3" library="A_butts" deviceset="GND" device=""/>
 <part name="C8" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
+<part name="R4" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="10k"/>
+<part name="R5" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="10k"/>
+<part name="GND6" library="A_butts" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17284,8 +17288,8 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <instance part="F1" gate="G$1" x="200.66" y="119.38"/>
 <instance part="IC3" gate="G$1" x="246.38" y="119.38"/>
 <instance part="D1" gate="G$1" x="220.98" y="119.38"/>
-<instance part="BAT1" gate="G$1" x="152.4" y="116.84"/>
-<instance part="GND1" gate="1" x="160.02" y="106.68"/>
+<instance part="BAT1" gate="G$1" x="157.48" y="127" rot="R270"/>
+<instance part="GND1" gate="1" x="157.48" y="114.3"/>
 <instance part="Y1" gate="G$1" x="22.86" y="124.46" rot="MR0"/>
 <instance part="C6" gate="G$1" x="12.7" y="116.84"/>
 <instance part="C7" gate="G$1" x="33.02" y="116.84"/>
@@ -17301,6 +17305,9 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <instance part="SUPPLY2" gate="G$1" x="190.5" y="142.24"/>
 <instance part="GND3" gate="1" x="190.5" y="129.54"/>
 <instance part="C8" gate="G$1" x="203.2" y="139.7"/>
+<instance part="R4" gate="G$1" x="279.4" y="124.46" rot="MR270"/>
+<instance part="R5" gate="G$1" x="279.4" y="109.22" rot="MR270"/>
+<instance part="GND6" gate="1" x="279.4" y="99.06"/>
 </instances>
 <busses>
 </busses>
@@ -17521,8 +17528,13 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="IC1" gate="G$1" pin="PC3(ADC3)"/>
 </segment>
 <segment>
-<wire x1="147.32" y1="129.54" x2="149.86" y2="129.54" width="0.1524" layer="91"/>
-<label x="149.86" y="129.54" size="1.27" layer="95" rot="MR180" xref="yes"/>
+<label x="284.48" y="116.84" size="1.27" layer="95" rot="MR180" xref="yes"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="279.4" y1="114.3" x2="279.4" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="279.4" y1="116.84" x2="279.4" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="116.84" x2="279.4" y2="116.84" width="0.1524" layer="91"/>
+<junction x="279.4" y="116.84"/>
 </segment>
 </net>
 <net name="D4" class="0">
@@ -17780,9 +17792,8 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 </segment>
 <segment>
 <pinref part="BAT1" gate="G$1" pin="-"/>
-<wire x1="157.48" y1="116.84" x2="160.02" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="160.02" y1="116.84" x2="160.02" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="121.92" x2="157.48" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
@@ -17803,6 +17814,11 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="JP1" gate="G$1" pin="CTS"/>
 <wire x1="180.34" y1="137.16" x2="180.34" y2="134.62" width="0.1524" layer="91"/>
 <junction x="180.34" y="134.62"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="279.4" y1="101.6" x2="279.4" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="GND6" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="RST" class="0">
@@ -18021,13 +18037,6 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="F1" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="BAT1" gate="G$1" pin="+"/>
-<wire x1="147.32" y1="116.84" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="VBAT"/>
-</segment>
-</net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
@@ -18082,6 +18091,23 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <pinref part="JP1" gate="G$1" pin="DTR"/>
 <wire x1="182.88" y1="147.32" x2="180.34" y2="147.32" width="0.1524" layer="91"/>
 <label x="182.88" y="147.32" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="VBAT" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="VBAT"/>
+<wire x1="142.24" y1="116.84" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
+<label x="142.24" y="116.84" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="BAT1" gate="G$1" pin="+"/>
+<wire x1="157.48" y1="132.08" x2="157.48" y2="134.62" width="0.1524" layer="91"/>
+<label x="157.48" y="134.62" size="1.27" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="279.4" y1="132.08" x2="279.4" y2="129.54" width="0.1524" layer="91"/>
+<label x="279.4" y="132.08" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 </nets>
