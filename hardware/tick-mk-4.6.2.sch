@@ -17145,8 +17145,8 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
 <part name="GND3" library="A_butts" deviceset="GND" device=""/>
 <part name="C8" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
-<part name="R4" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="10k"/>
-<part name="R5" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-7.62MM" value="10k"/>
+<part name="R4" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-6.35MM" value="10k"/>
+<part name="R5" library="A_butts" deviceset="RESISTOR" device="PTH-AXIAL-6.35MM" value="10k"/>
 <part name="GND6" library="A_butts" deviceset="GND" device=""/>
 </parts>
 <sheets>
@@ -17306,7 +17306,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <instance part="GND3" gate="1" x="190.5" y="129.54"/>
 <instance part="C8" gate="G$1" x="203.2" y="139.7"/>
 <instance part="R4" gate="G$1" x="279.4" y="124.46" rot="MR270"/>
-<instance part="R5" gate="G$1" x="279.4" y="109.22" rot="MR270"/>
+<instance part="R5" gate="G$1" x="279.4" y="109.22" rot="R90"/>
 <instance part="GND6" gate="1" x="279.4" y="99.06"/>
 </instances>
 <busses>
@@ -17529,7 +17529,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 </segment>
 <segment>
 <label x="284.48" y="116.84" size="1.27" layer="95" rot="MR180" xref="yes"/>
-<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="279.4" y1="114.3" x2="279.4" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="279.4" y1="116.84" x2="279.4" y2="119.38" width="0.1524" layer="91"/>
@@ -17816,7 +17816,7 @@ Real time clock (RTC) with battery backup ability. Talk to it via i2c</descripti
 <junction x="180.34" y="134.62"/>
 </segment>
 <segment>
-<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="279.4" y1="101.6" x2="279.4" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
