@@ -1726,12 +1726,13 @@ Please make sure your boards conform to these design rules.</description>
 <vertex x="0" y="2.5"/>
 <vertex x="0" y="50.5" curve="-90"/>
 </polygon>
-<wire x1="1" y1="31" x2="10" y2="31" width="0.8" layer="1"/>
-<wire x1="0.9" y1="25" x2="0.9" y2="37" width="0.8" layer="1"/>
+<wire x1="0.9" y1="31" x2="10" y2="31" width="0.8" layer="1"/>
+<wire x1="0.9" y1="25" x2="0.9" y2="31" width="0.8" layer="1"/>
 <contactref element="JP1" pad="GND"/>
 <contactref element="JP1" pad="CTS"/>
 <contactref element="R5" pad="P$1"/>
-<wire x1="0.9" y1="25" x2="1" y2="31" width="0" layer="19" extent="1-1"/>
+<wire x1="0.9" y1="31" x2="0.9" y2="37" width="0.8" layer="1"/>
+<wire x1="10" y1="31" x2="20.1" y2="31" width="0.8" layer="1"/>
 </signal>
 <signal name="RST">
 <contactref element="IC1" pad="1"/>
