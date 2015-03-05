@@ -11998,14 +11998,14 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <wire x1="7.62" y1="1.27" x2="7.62" y2="-1.27" width="0.1524" layer="21"/>
 <wire x1="7.62" y1="-1.27" x2="-7.62" y2="-1.27" width="0.1524" layer="21"/>
 <wire x1="-7.62" y1="-1.27" x2="-7.62" y2="1.27" width="0.1524" layer="21"/>
-<text x="-7.77" y="-1.27" size="1" layer="21" font="vector" ratio="12" rot="R90">GRN</text>
-<text x="7.77" y="-1.27" size="1" layer="21" font="vector" ratio="12" rot="R90" align="top-left">BLK</text>
-<text x="-4.826" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">TXO</text>
-<text x="-2.286" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">RXI</text>
-<text x="0.254" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">VCC</text>
-<text x="-7.366" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">DTR</text>
-<text x="5.334" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">GND</text>
-<text x="2.794" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">CTS</text>
+<text x="-7.8" y="0" size="0.8" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">GRN</text>
+<text x="7.8" y="0" size="0.8" layer="21" font="vector" ratio="12" rot="R270" align="bottom-center">BLK</text>
+<text x="-4.826" y="-1.476" size="0.8" layer="21" font="vector" ratio="12" align="top-left">TXO</text>
+<text x="-2.286" y="-1.476" size="0.8" layer="21" font="vector" ratio="12" align="top-left">RXI</text>
+<text x="0.254" y="-1.476" size="0.8" layer="21" font="vector" ratio="12" align="top-left">VCC</text>
+<text x="-7.366" y="-1.476" size="0.8" layer="21" font="vector" ratio="12" align="top-left">DTR</text>
+<text x="5.334" y="-1.476" size="0.8" layer="21" font="vector" ratio="12" align="top-left">GND</text>
+<text x="2.794" y="-1.476" size="0.8" layer="21" font="vector" ratio="12" align="top-left">CTS</text>
 </package>
 <package name="FTDI_CONN_JST_PH_RA_PTH_LESSSILK">
 <pad name="DTR" x="-5" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
@@ -17523,13 +17523,15 @@ This is the through-hole version of this chip.</description>
 <part name="C4" library="A_butts" deviceset="CAPACITOR-POLARIZED" device="E2-5" value="10uF"/>
 <part name="C5" library="A_butts" deviceset="CAPACITOR-POLARIZED" device="E2-5" value="10uF"/>
 <part name="SUPPLY1" library="A_butts" deviceset="VCC" device=""/>
-<part name="JP1" library="A_butts" deviceset="FTDI_CONN" device="JST_PH_VERT_PTH_LESSSILK" value="FTDI_CONNJST_PH_VERT_PTH_LESSSILK"/>
+<part name="JP1" library="A_butts" deviceset="FTDI_CONN" device="FLIPPER" value="FTDI_CONNFLIPPER"/>
 <part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
 <part name="GND3" library="A_butts" deviceset="GND" device=""/>
 <part name="C8" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
 <part name="IC2" library="A_butts" deviceset="DS3231" device=""/>
-<part name="S1" library="A_butts" deviceset="SPST-NO-TACT" device="6MM-PTH-SMALL-PADS" value="SPST-NO-TACT6MM-PTH-SMALL-PADS"/>
+<part name="RESET" library="A_butts" deviceset="SPST-NO-TACT" device="6MM-PTH-SMALL-PADS" value="SPST-NO-TACT6MM-PTH-SMALL-PADS"/>
 <part name="GND6" library="A_butts" deviceset="GND" device=""/>
+<part name="C9" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
+<part name="GND7" library="A_butts" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17686,8 +17688,10 @@ This is the through-hole version of this chip.</description>
 <instance part="GND3" gate="1" x="190.5" y="129.54"/>
 <instance part="C8" gate="G$1" x="203.2" y="139.7"/>
 <instance part="IC2" gate="G$1" x="124.46" y="121.92"/>
-<instance part="S1" gate="G$1" x="228.6" y="137.16"/>
+<instance part="RESET" gate="G$1" x="228.6" y="137.16"/>
 <instance part="GND6" gate="1" x="236.22" y="132.08"/>
+<instance part="C9" gate="G$1" x="2.54" y="132.08" rot="MR180"/>
+<instance part="GND7" gate="1" x="2.54" y="121.92"/>
 </instances>
 <busses>
 </busses>
@@ -18182,10 +18186,15 @@ This is the through-hole version of this chip.</description>
 <junction x="180.34" y="134.62"/>
 </segment>
 <segment>
-<pinref part="S1" gate="G$1" pin="2"/>
+<pinref part="RESET" gate="G$1" pin="2"/>
 <wire x1="233.68" y1="137.16" x2="236.22" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 <wire x1="236.22" y1="137.16" x2="236.22" y2="134.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C9" gate="G$1" pin="1"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="2.54" y1="124.46" x2="2.54" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RST" class="0">
@@ -18217,7 +18226,7 @@ This is the through-hole version of this chip.</description>
 <segment>
 <wire x1="220.98" y1="137.16" x2="223.52" y2="137.16" width="0.1524" layer="91"/>
 <label x="220.98" y="137.16" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="S1" gate="G$1" pin="1"/>
+<pinref part="RESET" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="TX" class="0">
@@ -18465,6 +18474,14 @@ This is the through-hole version of this chip.</description>
 <wire x1="144.78" y1="114.3" x2="144.78" y2="116.84" width="0.1524" layer="91"/>
 <junction x="144.78" y="116.84"/>
 <pinref part="IC2" gate="G$1" pin="VBAT"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="AREF"/>
+<wire x1="35.56" y1="139.7" x2="2.54" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="139.7" x2="2.54" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="C9" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>
