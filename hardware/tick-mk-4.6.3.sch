@@ -11637,27 +11637,6 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <vertex x="18.16" y="-3.1"/>
 </polygon>
 </package>
-<package name="FTDI_CONN">
-<description>Package for devices meant to mate to an FTDI connector.</description>
-<pad name="DTR" x="-6.35" y="0" drill="1.016" diameter="1.8796" shape="square"/>
-<pad name="TXO" x="-3.81" y="0" drill="1.016" diameter="1.8796"/>
-<pad name="RXI" x="-1.27" y="0" drill="1.016" diameter="1.8796"/>
-<pad name="VCC" x="1.27" y="0" drill="1.016" diameter="1.8796"/>
-<pad name="CTS" x="3.81" y="0" drill="1.016" diameter="1.8796"/>
-<pad name="GND" x="6.35" y="0" drill="1.016" diameter="1.8796"/>
-<wire x1="-7.62" y1="1.27" x2="7.62" y2="1.27" width="0.127" layer="21"/>
-<wire x1="7.62" y1="1.27" x2="7.62" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="7.62" y1="-1.27" x2="-7.62" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="-7.62" y1="-1.27" x2="-7.62" y2="1.27" width="0.127" layer="21"/>
-<text x="-7.874" y="-0.889" size="1.27" layer="21" font="vector" ratio="15" rot="R90">GRN</text>
-<text x="9.144" y="-0.889" size="1.27" layer="21" font="vector" ratio="15" rot="R90">BLK</text>
-<text x="-4.826" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">TXO</text>
-<text x="-2.286" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">RXI</text>
-<text x="0.254" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">VCC</text>
-<text x="-7.366" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">DTR</text>
-<text x="5.334" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">GND</text>
-<text x="2.794" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">CTS</text>
-</package>
 <package name="FTDI_CONN_JST_PH_RA_PTH">
 <pad name="DTR" x="-5" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
 <pad name="TXO" x="-3" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
@@ -11986,6 +11965,83 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pad name="3" x="-3.25" y="-2.25" drill="1" diameter="1.778"/>
 <pad name="4" x="3.25" y="-2.25" drill="1" diameter="1.778"/>
 <text x="0" y="3.302" size="0.8128" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="FTDI_CONN">
+<description>Package for devices meant to mate to an FTDI connector.</description>
+<pad name="DTR" x="-6.35" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="TXO" x="-3.81" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="RXI" x="-1.27" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="VCC" x="1.27" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="CTS" x="3.81" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="GND" x="6.35" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<wire x1="-7.62" y1="1.27" x2="7.62" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="1.27" x2="7.62" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="-1.27" x2="-7.62" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="-1.27" x2="-7.62" y2="1.27" width="0.1524" layer="21"/>
+<text x="-7.77" y="-1.27" size="1" layer="21" font="vector" ratio="12" rot="R90">GRN</text>
+<text x="7.77" y="-1.27" size="1" layer="21" font="vector" ratio="12" rot="R90" align="top-left">BLK</text>
+<text x="-4.826" y="1.524" size="0.8128" layer="21" font="vector" ratio="12">TXO</text>
+<text x="-2.286" y="1.524" size="0.8128" layer="21" font="vector" ratio="12">RXI</text>
+<text x="0.254" y="1.524" size="0.8128" layer="21" font="vector" ratio="12">VCC</text>
+<text x="-7.366" y="1.524" size="0.8128" layer="21" font="vector" ratio="12">DTR</text>
+<text x="5.334" y="1.524" size="0.8128" layer="21" font="vector" ratio="12">GND</text>
+<text x="2.794" y="1.524" size="0.8128" layer="21" font="vector" ratio="12">CTS</text>
+</package>
+<package name="FTDI_CONN_FLIP">
+<pad name="DTR" x="-6.35" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="TXO" x="-3.81" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="RXI" x="-1.27" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="VCC" x="1.27" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="CTS" x="3.81" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="GND" x="6.35" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<wire x1="-7.62" y1="1.27" x2="7.62" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="1.27" x2="7.62" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="-1.27" x2="-7.62" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="-1.27" x2="-7.62" y2="1.27" width="0.1524" layer="21"/>
+<text x="-7.77" y="-1.27" size="1" layer="21" font="vector" ratio="12" rot="R90">GRN</text>
+<text x="7.77" y="-1.27" size="1" layer="21" font="vector" ratio="12" rot="R90" align="top-left">BLK</text>
+<text x="-4.826" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">TXO</text>
+<text x="-2.286" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">RXI</text>
+<text x="0.254" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">VCC</text>
+<text x="-7.366" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">DTR</text>
+<text x="5.334" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">GND</text>
+<text x="2.794" y="-1.476" size="0.8128" layer="21" font="vector" ratio="12" align="top-left">CTS</text>
+</package>
+<package name="FTDI_CONN_JST_PH_RA_PTH_LESSSILK">
+<pad name="DTR" x="-5" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="TXO" x="-3" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="RXI" x="-1" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="VCC" x="1" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="CTS" x="3" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<pad name="GND" x="5" y="0" drill="0.9" diameter="1.4224" shape="octagon"/>
+<wire x1="-8" y1="6.25" x2="-8" y2="-1.35" width="0.1524" layer="51"/>
+<wire x1="8" y1="6.25" x2="8" y2="-1.35" width="0.1524" layer="51"/>
+<wire x1="-8" y1="-1.35" x2="-7" y2="-1.35" width="0.1524" layer="51"/>
+<wire x1="7" y1="-1.35" x2="8" y2="-1.35" width="0.1524" layer="51"/>
+<wire x1="-7" y1="0.25" x2="-7" y2="-1.35" width="0.1524" layer="51"/>
+<wire x1="7" y1="0.25" x2="7" y2="-1.35" width="0.1524" layer="51"/>
+<wire x1="-7" y1="0.25" x2="-5.9" y2="0.25" width="0.1524" layer="51"/>
+<wire x1="-4.1" y1="0.25" x2="-3.9" y2="0.25" width="0.1524" layer="51"/>
+<wire x1="-2.1" y1="0.25" x2="-1.9" y2="0.25" width="0.1524" layer="51"/>
+<wire x1="-0.1" y1="0.25" x2="0.1" y2="0.25" width="0.1524" layer="51"/>
+<wire x1="1.9" y1="0.25" x2="2.1" y2="0.25" width="0.1524" layer="51"/>
+<wire x1="3.9" y1="0.25" x2="4.1" y2="0.25" width="0.1524" layer="51"/>
+<wire x1="5.9" y1="0.25" x2="7" y2="0.25" width="0.1524" layer="51"/>
+<wire x1="-8" y1="6.25" x2="8" y2="6.25" width="0.1524" layer="51"/>
+<text x="5" y="-1.7" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">GND</text>
+<text x="3" y="-1.7" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">CTS</text>
+<text x="1" y="-1.7" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">VCC</text>
+<text x="-1" y="-1.7" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">RXI</text>
+<text x="-3" y="-1.7" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">TXO</text>
+<text x="-5" y="-1.7" size="0.5" layer="21" font="vector" ratio="12" align="bottom-center">DTR</text>
+<text x="3" y="-2.2" size="0.4" layer="21" font="vector" ratio="12" align="bottom-center">(GND)</text>
+<text x="-5" y="-2.2" size="0.4" layer="21" font="vector" ratio="12" align="bottom-center">(RST)</text>
+<text x="-6.15" y="0" size="0.4" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">GREEN</text>
+<text x="6.15" y="0" size="0.4" layer="21" font="vector" ratio="12" rot="R270" align="bottom-center">BLACK</text>
+<wire x1="-6" y1="-1" x2="-6" y2="1" width="0.1524" layer="21"/>
+<wire x1="-6" y1="1" x2="6" y2="1" width="0.1524" layer="21"/>
+<wire x1="6" y1="1" x2="6" y2="-1" width="0.1524" layer="21"/>
+<wire x1="6" y1="-1" x2="-6" y2="-1" width="0.1524" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -17269,6 +17325,32 @@ This is the through-hole version of this chip.</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="FLIPPER" package="FTDI_CONN_FLIP">
+<connects>
+<connect gate="G$1" pin="CTS" pad="CTS"/>
+<connect gate="G$1" pin="DTR" pad="DTR"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RXI" pad="RXI"/>
+<connect gate="G$1" pin="TXO" pad="TXO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="JST_PH_VERT_PTH_LESSSILK" package="FTDI_CONN_JST_PH_RA_PTH_LESSSILK">
+<connects>
+<connect gate="G$1" pin="CTS" pad="CTS"/>
+<connect gate="G$1" pin="DTR" pad="DTR"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="RXI" pad="RXI"/>
+<connect gate="G$1" pin="TXO" pad="TXO"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="DS3231">
@@ -17441,12 +17523,12 @@ This is the through-hole version of this chip.</description>
 <part name="C4" library="A_butts" deviceset="CAPACITOR-POLARIZED" device="E2-5" value="10uF"/>
 <part name="C5" library="A_butts" deviceset="CAPACITOR-POLARIZED" device="E2-5" value="10uF"/>
 <part name="SUPPLY1" library="A_butts" deviceset="VCC" device=""/>
-<part name="JP1" library="A_butts" deviceset="FTDI_CONN" device="JST_PH_VERT_PTH" value="FTDI_CONNJST_PH_VERT_PTH"/>
+<part name="JP1" library="A_butts" deviceset="FTDI_CONN" device="JST_PH_VERT_PTH_LESSSILK" value="FTDI_CONNJST_PH_VERT_PTH_LESSSILK"/>
 <part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
 <part name="GND3" library="A_butts" deviceset="GND" device=""/>
 <part name="C8" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
 <part name="IC2" library="A_butts" deviceset="DS3231" device=""/>
-<part name="S1" library="A_butts" deviceset="SPST-NO-TACT" device="6MM-SMD"/>
+<part name="S1" library="A_butts" deviceset="SPST-NO-TACT" device="6MM-PTH-SMALL-PADS" value="SPST-NO-TACT6MM-PTH-SMALL-PADS"/>
 <part name="GND6" library="A_butts" deviceset="GND" device=""/>
 </parts>
 <sheets>
