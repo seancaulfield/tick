@@ -1,2 +1,16 @@
 <h1>Terribly Illuminated Chronology Keeper</h1>
 <p>RTC, microcontroller, and whatever else my crazy brain thinks would be a good idea to throw in there.</p>
+
+<h3>
+T.I.C.K. Mk 4.6.4
+</h3>
+
+<p>Terribly Illuminated Chronology Keeper, revision 4.6.4.</p>
+<ul>
+<li>Includes integrated RTC (DS3231) with CR2032 battery backup.
+<li>ATMega328P uC
+<li>7-segment, 4 digit LED clock display, 0.8" digit height
+<li>7-segment, 8 digit LED date display, 0.4" digit height
+<li>96mm x 53mm PCB, should fit in a Hammond 1591C series enclosure
+</ul>
+<p>Don't ask what happened to the other revisions.</p>
