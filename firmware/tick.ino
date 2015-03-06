@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <TinyWireM.h>
 #define Wire TinyWireM
-#include <RTC_DS3231.h>
+#include <RTCLib/DS3231.h>
 #include <Time.h>
 #include <Timezone.h>
 #include <Adafruit_GFX.h>
