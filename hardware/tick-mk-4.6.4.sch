@@ -471,13 +471,6 @@
 <vertex x="-11.84" y="-0.5"/>
 <vertex x="-12.44" y="-3.1"/>
 </polygon>
-<circle x="-11" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="-0.7" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="9.5" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="19.2" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="-0.25" y="-1.5" radius="0.5" width="0" layer="21"/>
-<circle x="0.5" y="1.5" radius="0.5" width="0" layer="21"/>
-<circle x="11" y="3.5" radius="0.5" width="0" layer="21"/>
 <text x="0" y="7.2" size="0.5" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 <polygon width="0.1524" layer="21">
 <vertex x="-7.34" y="3.6"/>
@@ -646,6 +639,48 @@
 <vertex x="18.36" y="-0.2"/>
 <vertex x="18.66" y="-0.5"/>
 <vertex x="18.06" y="-3.1"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="-11.4" y="-3.5" curve="-90"/>
+<vertex x="-11" y="-3.1" curve="-90"/>
+<vertex x="-10.6" y="-3.5" curve="-90"/>
+<vertex x="-11" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="0.1" y="1.5" curve="-90"/>
+<vertex x="0.5" y="1.9" curve="-90"/>
+<vertex x="0.9" y="1.5" curve="-90"/>
+<vertex x="0.5" y="1.1" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="-1.1" y="-3.5" curve="-90"/>
+<vertex x="-0.7" y="-3.1" curve="-90"/>
+<vertex x="-0.3" y="-3.5" curve="-90"/>
+<vertex x="-0.7" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="9.1" y="-3.5" curve="-90"/>
+<vertex x="9.5" y="-3.1" curve="-90"/>
+<vertex x="9.9" y="-3.5" curve="-90"/>
+<vertex x="9.5" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="10.6" y="3.5" curve="-90"/>
+<vertex x="11" y="3.9" curve="-90"/>
+<vertex x="11.4" y="3.5" curve="-90"/>
+<vertex x="11" y="3.1" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="18.8" y="-3.5" curve="-90"/>
+<vertex x="19.2" y="-3.1" curve="-90"/>
+<vertex x="19.6" y="-3.5" curve="-90"/>
+<vertex x="19.2" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="-0.6" y="-1.5" curve="-90"/>
+<vertex x="-0.2" y="-1.1" curve="-90"/>
+<vertex x="0.2" y="-1.5" curve="-90"/>
+<vertex x="-0.2" y="-1.9" curve="-90"/>
 </polygon>
 </package>
 <package name="7SEG_1DIG_10MM">

@@ -13,4 +13,5 @@ T.I.C.K. Mk 4.6.4
 <li>7-segment, 8 digit LED date display, 0.4" digit height
 <li>96mm x 53mm PCB, should fit in a Hammond 1591C series enclosure
 </ul>
+<p>Licensed under the Creative Commons, Attribution-ShareAlike, version 4.0 (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-4.0-BY-SA</a>). Design files in EAGLE format available at <a href="https://github.com/schizobovine/tick">https://github.com/schizobovine/tick</a></p>
 <p>Don't ask what happened to the other revisions.</p>

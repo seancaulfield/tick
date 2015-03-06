@@ -281,13 +281,6 @@
 <vertex x="-11.84" y="-0.5"/>
 <vertex x="-12.44" y="-3.1"/>
 </polygon>
-<circle x="-11" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="-0.7" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="9.5" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="19.2" y="-3.5" radius="0.5" width="0" layer="21"/>
-<circle x="-0.25" y="-1.5" radius="0.5" width="0" layer="21"/>
-<circle x="0.5" y="1.5" radius="0.5" width="0" layer="21"/>
-<circle x="11" y="3.5" radius="0.5" width="0" layer="21"/>
 <text x="0" y="7.2" size="0.5" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 <polygon width="0.1524" layer="21">
 <vertex x="-7.34" y="3.6"/>
@@ -456,6 +449,48 @@
 <vertex x="18.36" y="-0.2"/>
 <vertex x="18.66" y="-0.5"/>
 <vertex x="18.06" y="-3.1"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="-11.4" y="-3.5" curve="-90"/>
+<vertex x="-11" y="-3.1" curve="-90"/>
+<vertex x="-10.6" y="-3.5" curve="-90"/>
+<vertex x="-11" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="0.1" y="1.5" curve="-90"/>
+<vertex x="0.5" y="1.9" curve="-90"/>
+<vertex x="0.9" y="1.5" curve="-90"/>
+<vertex x="0.5" y="1.1" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="-1.1" y="-3.5" curve="-90"/>
+<vertex x="-0.7" y="-3.1" curve="-90"/>
+<vertex x="-0.3" y="-3.5" curve="-90"/>
+<vertex x="-0.7" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="9.1" y="-3.5" curve="-90"/>
+<vertex x="9.5" y="-3.1" curve="-90"/>
+<vertex x="9.9" y="-3.5" curve="-90"/>
+<vertex x="9.5" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="10.6" y="3.5" curve="-90"/>
+<vertex x="11" y="3.9" curve="-90"/>
+<vertex x="11.4" y="3.5" curve="-90"/>
+<vertex x="11" y="3.1" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="18.8" y="-3.5" curve="-90"/>
+<vertex x="19.2" y="-3.1" curve="-90"/>
+<vertex x="19.6" y="-3.5" curve="-90"/>
+<vertex x="19.2" y="-3.9" curve="-90"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="-0.6" y="-1.5" curve="-90"/>
+<vertex x="-0.2" y="-1.1" curve="-90"/>
+<vertex x="0.2" y="-1.5" curve="-90"/>
+<vertex x="-0.2" y="-1.9" curve="-90"/>
 </polygon>
 </package>
 <package name="7SEG_1DIG_25.4MM_NOSILK">
@@ -1360,20 +1395,20 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="28.191" y="46" size="0.4" layer="21" font="vector" ratio="12" rot="R90" align="top-center"/>
 </element>
 <element name="TVS1" library="A_butts" package="DO-41-TVS-BI-10.16MM" value="5.6V" x="93" y="33" smashed="yes" rot="R270">
-<attribute name="NAME" x="94.4" y="33" size="0.4" layer="25" font="vector" ratio="11" rot="R270" align="bottom-center"/>
-<attribute name="VALUE" x="91.6" y="33" size="0.4" layer="21" font="vector" ratio="11" rot="R90" align="bottom-center"/>
+<attribute name="NAME" x="91.5" y="33" size="0.4" layer="25" font="vector" ratio="11" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="94.5" y="33" size="0.4" layer="21" font="vector" ratio="11" rot="R270" align="bottom-center"/>
 </element>
-<element name="F1" library="A_butts" package="PTC-PTH-5.08MM" value="250mA" x="91" y="25" smashed="yes" rot="R180">
-<attribute name="VALUE" x="90.3" y="25.7" size="0.4" layer="21" font="vector" ratio="12" rot="R180" align="top-center"/>
-<attribute name="NAME" x="91.6" y="24.3" size="0.4" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
+<element name="F1" library="A_butts" package="PTC-PTH-5.08MM" value="250mA" x="91" y="25" smashed="yes">
+<attribute name="VALUE" x="91.7" y="24.3" size="0.4" layer="21" font="vector" ratio="12" align="top-center"/>
+<attribute name="NAME" x="90.4" y="25.7" size="0.4" layer="25" font="vector" ratio="12" align="bottom-center"/>
 </element>
 <element name="IC3" library="A_butts" package="TO220-IGO-THERMPAD" value="L7805" x="81.7" y="39.39" smashed="yes" rot="R180">
 <attribute name="NAME" x="81.7" y="24.59" size="0.5" layer="25" font="vector" ratio="10" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="81.7" y="37.39" size="1" layer="21" font="vector" ratio="12" rot="R180" align="bottom-center"/>
 </element>
 <element name="D1" library="A_butts" package="DIODE-10.16MM" value="1N5819" x="89" y="33" smashed="yes" rot="R90">
-<attribute name="NAME" x="87.6" y="33" size="0.4" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="90.4" y="33" size="0.4" layer="21" font="vector" ratio="12" rot="R90" align="top-center"/>
+<attribute name="NAME" x="87.5" y="33" size="0.4" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="90.5" y="33" size="0.4" layer="21" font="vector" ratio="12" rot="R90" align="top-center"/>
 </element>
 <element name="RTC_BATTERY" library="A_butts" package="BATTCON_20MM_MINE" value="CR2030" x="10" y="31" smashed="yes">
 <attribute name="NAME" x="10" y="43.7" size="0.5" layer="25" font="vector" ratio="12" rot="R180" align="top-center"/>
@@ -2009,8 +2044,8 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="D1" pad="A"/>
 <contactref element="F1" pad="P$2"/>
 <wire x1="89" y1="27.92" x2="93" y2="27.92" width="0.4" layer="16"/>
-<wire x1="88.46" y1="25" x2="89" y2="25.54" width="0.4" layer="16"/>
-<wire x1="89" y1="25.54" x2="89" y2="27.92" width="0.4" layer="16"/>
+<wire x1="93.54" y1="25" x2="90.62" y2="27.92" width="0.4" layer="16"/>
+<wire x1="90.62" y1="27.92" x2="89" y2="27.92" width="0.4" layer="16"/>
 </signal>
 <signal name="N$6">
 <contactref element="C6" pad="1"/>
@@ -2033,8 +2068,8 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$7">
 <contactref element="PWR" pad="1"/>
 <contactref element="F1" pad="P$1"/>
-<wire x1="92.5" y1="21.5" x2="92.5" y2="23.96" width="0.4" layer="16"/>
-<wire x1="92.5" y1="23.96" x2="93.54" y2="25" width="0.4" layer="16"/>
+<wire x1="88.46" y1="25" x2="89" y2="25" width="0.4" layer="16"/>
+<wire x1="89" y1="25" x2="92.5" y2="21.5" width="0.4" layer="16"/>
 </signal>
 <signal name="N$5">
 <polygon width="0.1524" layer="1" pour="cutout">
@@ -2139,8 +2174,8 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="18,30,b347068539022aa3"/>
 <approved hash="18,30,6bd95029890a30f2"/>
 <approved hash="18,30,3fce9a269ff588fb"/>
-<approved hash="18,30,40c148350483e501"/>
 <approved hash="18,30,660a4bb3063dc04a"/>
+<approved hash="18,30,40c148350483e501"/>
 <approved hash="18,30,94cdaf5ca4c99d02"/>
 <approved hash="18,30,0d7554aeb8de76be"/>
 <approved hash="18,30,ad80e4488e0c9adb"/>
@@ -2151,6 +2186,7 @@ Please make sure your boards conform to these design rules.</description>
 <approved hash="18,30,5a4e65c5da1fbdac"/>
 <approved hash="18,30,a66000c90a530262"/>
 <approved hash="18,30,a337d22263a10ee8"/>
+<approved hash="18,30,955118a4cb4ed325"/>
 <approved hash="18,30,5b037603716d540f"/>
 <approved hash="18,30,588375837a8f547d"/>
 <approved hash="18,30,a3e088aeafd48c16"/>
