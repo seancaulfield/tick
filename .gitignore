@@ -41,3 +41,6 @@
 # It contains a serial number and references to the file structure
 # on your computer.
 eagle.epf
+
+# VIM swap files
+.*.sw[po]

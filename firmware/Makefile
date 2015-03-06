@@ -1,7 +1,7 @@
 ARDUINO_LIBS  := RTCLib RTCLib/DS3231 Time Timezone Wire
 BOARD_TAG     := uno
 ARDUINO_PORT  := /dev/ttyUSB0
-USER_LIB_PATH := $(realpath $(HOME)/sketchbook/libraries/)
+USER_LIB_PATH := $(realpath $(HOME)/sketchbook/libraries/) $(realpath ./lib/)
 CXXFLAGS      += -std=gnu++11
 CFLAGS        += -std=gnu++11
 
