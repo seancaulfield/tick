@@ -1,3 +1,0 @@
-[submodule "firmware/lib/RTCLib"]
-	path = firmware/lib/RTCLib
-	url = git@github.com:schizobovine/RTClib.git
