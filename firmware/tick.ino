@@ -1,4 +1,20 @@
-#include "tick.h"
+#if ARDUINO < 100
+#include <WProgram.h>
+#else
+#include <Arduino.h>
+#endif
+
+#ifdef __AVR_ATtiny85__
+#include <TinyWireM.h>
+#define Wire TinyWireM
+#else
+#include <Wire.h>
+#endif
+
+#include <RTCLib.h>
+#include <RTCLib/DS3231.h>
+#include <Time.h>
+#include <Timezone.h>
 
 #define DO_1_TIME_SETUP 0
 #define SERIAL_TIME_SET 0
