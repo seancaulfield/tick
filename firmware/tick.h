@@ -15,7 +15,7 @@
 #endif
 
 #include <RTClib.h>
-#include <RTClib/DS3231/DS3231.h>
+#include <DS3231.h>
 #include <Time.h>
 #include <Timezone.h>
 
