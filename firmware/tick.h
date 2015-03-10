@@ -14,8 +14,8 @@
 #include <Wire.h>
 #endif
 
-#include <RTCLib.h>
-#include <RTCLib/DS3231.h>
+#include <RTClib.h>
+#include <RTClib/DS3231/DS3231.h>
 #include <Time.h>
 #include <Timezone.h>
 
