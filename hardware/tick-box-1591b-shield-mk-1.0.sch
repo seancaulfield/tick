@@ -8764,7 +8764,7 @@ Yageo CFR series &lt;a href="http://www.yageo.com/pdf/yageo/Leaded-R_CFR_2008.pd
 <part name="GND7" library="A_butts" deviceset="GND" device=""/>
 <part name="H3" library="A_butts" deviceset="HOLE" device="#2" value="HOLE#2"/>
 <part name="H4" library="A_butts" deviceset="HOLE" device="#2" value="HOLE#2"/>
-<part name="U1" library="A_butts" deviceset="ARDUINO_SHIELD" device="INSIDER"/>
+<part name="U1" library="A_butts" deviceset="ARDUINO_SHIELD" device="NOOUTLINE_NOHOLES" value="ARDUINO_SHIELDNOOUTLINE_NOHOLES"/>
 <part name="GND1" library="A_butts" deviceset="GND" device=""/>
 </parts>
 <sheets>
