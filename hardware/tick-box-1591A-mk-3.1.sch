@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="2" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
@@ -4099,119 +4099,78 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <rectangle x1="-0.25" y1="-1.25" x2="0.25" y2="1.25" layer="51"/>
 <rectangle x1="5.75" y1="-1.5" x2="6.25" y2="1.5" layer="51"/>
 </package>
-<package name="ARDUINO_PRO_MINI">
+<package name="ARDUINO_PRO_MINI_TICK">
 <wire x1="-8.89" y1="16.51" x2="-8.89" y2="-16.51" width="0.127" layer="51"/>
 <wire x1="-8.89" y1="-16.51" x2="8.89" y2="-16.51" width="0.127" layer="51"/>
 <wire x1="8.89" y1="-16.51" x2="8.89" y2="16.51" width="0.127" layer="51"/>
 <wire x1="8.89" y1="16.51" x2="-8.89" y2="16.51" width="0.127" layer="51"/>
-<pad name="1" x="-7.62" y="12.7" drill="1.016" diameter="1.8796"/>
-<pad name="2" x="-7.62" y="10.16" drill="1.016" diameter="1.8796"/>
-<pad name="3" x="-7.62" y="7.62" drill="1.016" diameter="1.8796"/>
-<pad name="4" x="-7.62" y="5.08" drill="1.016" diameter="1.8796"/>
-<pad name="5" x="-7.62" y="2.54" drill="1.016" diameter="1.8796"/>
-<pad name="6" x="-7.62" y="0" drill="1.016" diameter="1.8796"/>
-<pad name="7" x="-7.62" y="-2.54" drill="1.016" diameter="1.8796"/>
-<pad name="8" x="-7.62" y="-5.08" drill="1.016" diameter="1.8796"/>
-<pad name="9" x="-7.62" y="-7.62" drill="1.016" diameter="1.8796"/>
-<pad name="10" x="-7.62" y="-10.16" drill="1.016" diameter="1.8796"/>
-<pad name="11" x="-7.62" y="-12.7" drill="1.016" diameter="1.8796"/>
-<pad name="12" x="-7.62" y="-15.24" drill="1.016" diameter="1.8796"/>
-<pad name="13" x="7.62" y="-15.24" drill="1.016" diameter="1.8796"/>
-<pad name="14" x="7.62" y="-12.7" drill="1.016" diameter="1.8796"/>
-<pad name="15" x="7.62" y="-10.16" drill="1.016" diameter="1.8796"/>
-<pad name="16" x="7.62" y="-7.62" drill="1.016" diameter="1.8796"/>
-<pad name="17" x="7.62" y="-5.08" drill="1.016" diameter="1.8796"/>
-<pad name="18" x="7.62" y="-2.54" drill="1.016" diameter="1.8796"/>
-<pad name="19" x="7.62" y="0" drill="1.016" diameter="1.8796"/>
-<pad name="20" x="7.62" y="2.54" drill="1.016" diameter="1.8796"/>
-<pad name="21" x="7.62" y="5.08" drill="1.016" diameter="1.8796"/>
-<pad name="22" x="7.62" y="7.62" drill="1.016" diameter="1.8796"/>
-<pad name="23" x="7.62" y="10.16" drill="1.016" diameter="1.8796"/>
-<pad name="24" x="7.62" y="12.7" drill="1.016" diameter="1.8796"/>
-<text x="-3.81" y="-13.97" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.81" y="-15.875" size="1.27" layer="27">&gt;VALUE</text>
-<pad name="A6" x="4.7625" y="-9.04875" drill="1.016" diameter="1.8796"/>
-<pad name="A7" x="4.7625" y="-6.50875" drill="1.016" diameter="1.8796"/>
-<pad name="A5" x="4.7625" y="3.96875" drill="1.016" diameter="1.8796"/>
-<pad name="A4" x="4.7625" y="1.42875" drill="1.016" diameter="1.8796"/>
-<pad name="BLK" x="-6.35" y="15.24" drill="1.016" diameter="1.8796"/>
-<pad name="GND" x="-3.81" y="15.24" drill="1.016" diameter="1.8796"/>
-<pad name="VCC" x="-1.27" y="15.24" drill="1.016" diameter="1.8796"/>
-<pad name="RXI" x="1.27" y="15.24" drill="1.016" diameter="1.8796"/>
-<pad name="TXO" x="3.81" y="15.24" drill="1.016" diameter="1.8796"/>
-<pad name="GRN" x="6.35" y="15.24" drill="1.016" diameter="1.8796"/>
+<pad name="RST@1" x="-7.62" y="7.62" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="GND@1" x="-7.62" y="5.08" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="2" x="-7.62" y="2.54" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="3" x="-7.62" y="0" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="4" x="-7.62" y="-2.54" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="5" x="-7.62" y="-5.08" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="6" x="-7.62" y="-7.62" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="7" x="-7.62" y="-10.16" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="8" x="-7.62" y="-12.7" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="9" x="-7.62" y="-15.24" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="10" x="7.62" y="-15.24" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="11" x="7.62" y="-12.7" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="12" x="7.62" y="-10.16" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="13" x="7.62" y="-7.62" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="A0" x="7.62" y="-5.08" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="A1" x="7.62" y="-2.54" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="A2" x="7.62" y="0" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="A3" x="7.62" y="2.54" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="VCC" x="7.62" y="5.08" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="RST@2" x="7.62" y="7.62" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="GND@2" x="7.62" y="10.16" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="RAW" x="7.62" y="12.7" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="A4" x="4.7625" y="-9.04875" drill="1.2" diameter="1.8796" shape="octagon"/>
+<pad name="A5" x="4.7625" y="-6.50875" drill="1.2" diameter="1.8796" shape="octagon"/>
+<text x="-6.477" y="7.62" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">RST</text>
+<text x="-6.477" y="5.08" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">GND</text>
+<text x="-6.477" y="2.54" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">2</text>
+<text x="-6.477" y="0" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">3</text>
+<text x="-6.477" y="-2.54" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">4</text>
+<text x="-6.477" y="-5.08" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">5</text>
+<text x="-6.477" y="-7.62" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">6</text>
+<text x="-6.477" y="-10.16" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">7</text>
+<text x="-6.477" y="-12.7" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">8</text>
+<text x="-6.477" y="-15.24" size="0.7" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">9</text>
+<text x="6.477" y="-15.24" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">10</text>
+<text x="6.477" y="-12.7" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">11</text>
+<text x="6.477" y="-10.16" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">12</text>
+<text x="6.477" y="-7.62" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">13</text>
+<text x="6.477" y="-5.08" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A0</text>
+<text x="6.477" y="-2.54" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A1</text>
+<text x="6.477" y="0" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A2</text>
+<text x="6.477" y="2.54" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A3</text>
+<text x="3.683" y="-9.017" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A4</text>
+<text x="3.683" y="-6.477" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A5</text>
+<text x="6.477" y="5.08" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">VCC</text>
+<text x="6.477" y="7.62" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">RST</text>
+<text x="6.477" y="12.7" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">RAW</text>
+<text x="6.477" y="10.16" size="0.7" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">GND</text>
 </package>
-<package name="ARDUINO_PRO_MINI_MINE">
-<wire x1="-8.89" y1="16.51" x2="-8.89" y2="-16.51" width="0.127" layer="51"/>
-<wire x1="-8.89" y1="-16.51" x2="8.89" y2="-16.51" width="0.127" layer="51"/>
-<wire x1="8.89" y1="-16.51" x2="8.89" y2="16.51" width="0.127" layer="51"/>
-<wire x1="8.89" y1="16.51" x2="-8.89" y2="16.51" width="0.127" layer="51"/>
-<pad name="1" x="-7.62" y="12.7" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="2" x="-7.62" y="10.16" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="3" x="-7.62" y="7.62" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="4" x="-7.62" y="5.08" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="5" x="-7.62" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="6" x="-7.62" y="0" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="7" x="-7.62" y="-2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="8" x="-7.62" y="-5.08" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="9" x="-7.62" y="-7.62" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="10" x="-7.62" y="-10.16" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="11" x="-7.62" y="-12.7" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="12" x="-7.62" y="-15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="13" x="7.62" y="-15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="14" x="7.62" y="-12.7" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="15" x="7.62" y="-10.16" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="16" x="7.62" y="-7.62" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="17" x="7.62" y="-5.08" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="18" x="7.62" y="-2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="19" x="7.62" y="0" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="20" x="7.62" y="2.54" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="21" x="7.62" y="5.08" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="22" x="7.62" y="7.62" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="23" x="7.62" y="10.16" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="24" x="7.62" y="12.7" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="A6" x="4.7625" y="-9.04875" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="A7" x="4.7625" y="-6.50875" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="A5" x="4.7625" y="3.96875" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="A4" x="4.7625" y="1.42875" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="BLK" x="-6.35" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="GND" x="-3.81" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="VCC" x="-1.27" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="RXI" x="1.27" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="TXO" x="3.81" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<pad name="GRN" x="6.35" y="15.24" drill="1.016" diameter="1.8796" shape="octagon"/>
-<text x="0" y="16.637" size="1.27" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-15.24" size="1.27" layer="27" font="vector" ratio="12" align="bottom-center">&gt;VALUE</text>
-<text x="-6.477" y="12.7" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">TX</text>
-<text x="-6.477" y="10.16" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">RX</text>
-<text x="-6.477" y="7.62" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">RST</text>
-<text x="-6.477" y="5.08" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">GND</text>
-<text x="-6.477" y="2.54" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">2</text>
-<text x="-6.477" y="0" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">3</text>
-<text x="-6.477" y="-2.54" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">4</text>
-<text x="-6.477" y="-5.08" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">5</text>
-<text x="-6.477" y="-7.62" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">6</text>
-<text x="-6.477" y="-10.16" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">7</text>
-<text x="-6.477" y="-12.7" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">8</text>
-<text x="-6.477" y="-15.24" size="0.8636" layer="21" font="vector" ratio="12" rot="SR270" align="bottom-center">9</text>
-<text x="6.477" y="-15.24" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">10</text>
-<text x="6.477" y="-12.7" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">11</text>
-<text x="6.477" y="-10.16" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">12</text>
-<text x="6.477" y="-7.62" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">13</text>
-<text x="6.477" y="-5.08" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A0</text>
-<text x="6.477" y="-2.54" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A1</text>
-<text x="6.477" y="0" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A2</text>
-<text x="6.477" y="2.54" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A3</text>
-<text x="3.683" y="-9.017" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A4</text>
-<text x="3.683" y="-6.477" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A5</text>
-<text x="6.477" y="5.08" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">VCC</text>
-<text x="3.683" y="1.397" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A6</text>
-<text x="3.683" y="3.937" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">A7</text>
-<text x="6.477" y="7.62" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">RST</text>
-<text x="6.477" y="12.7" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">RAW</text>
-<text x="6.477" y="10.16" size="0.8636" layer="21" font="vector" ratio="12" rot="SR90" align="bottom-center">GND</text>
-<text x="0" y="0" size="1.4224" layer="21" font="vector" ratio="12" rot="R90" align="center">Mini
-Arduino Pro</text>
+<package name="1X02-CENTER">
+<wire x1="-1.778" y1="1.27" x2="-0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="1.27" x2="0" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.508" x2="-0.762" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.508" x2="0.762" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="1.27" x2="1.778" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.778" y1="1.27" x2="2.54" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-0.508" x2="1.778" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.778" y1="-1.27" x2="0.762" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="-1.27" x2="0" y2="-0.508" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.508" x2="-2.54" y2="-0.508" width="0.1524" layer="21"/>
+<wire x1="-1.778" y1="1.27" x2="-2.54" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-0.508" x2="-1.778" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-1.27" x2="-1.778" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.508" x2="2.54" y2="-0.508" width="0.1524" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<pad name="2" x="1.27" y="0" drill="1" diameter="1.8" shape="octagon"/>
+<text x="0" y="1.4478" size="0.5" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -4733,7 +4692,7 @@ Arduino Pro</text>
 <pin name="1" x="10.16" y="2.54" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="10.16" y="5.08" visible="pin" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
-<symbol name="ARDUINO_PRO_MINI">
+<symbol name="ARDUINO_PRO_MINI_TICK">
 <wire x1="-10.16" y1="20.32" x2="-10.16" y2="-20.32" width="0.254" layer="94"/>
 <wire x1="-10.16" y1="-20.32" x2="10.16" y2="-20.32" width="0.254" layer="94"/>
 <wire x1="10.16" y1="-20.32" x2="10.16" y2="20.32" width="0.254" layer="94"/>
@@ -4760,11 +4719,7 @@ Arduino Pro</text>
 <pin name="RAW" x="12.7" y="17.78" length="short" rot="R180"/>
 <pin name="RST" x="-12.7" y="12.7" length="short"/>
 <pin name="RST@2" x="12.7" y="12.7" length="short" rot="R180"/>
-<pin name="RXI" x="-12.7" y="15.24" length="short"/>
-<pin name="TXO" x="-12.7" y="17.78" length="short"/>
 <pin name="VCC" x="12.7" y="10.16" length="short" rot="R180"/>
-<pin name="A7" x="12.7" y="-15.24" length="short" rot="R180"/>
-<pin name="A6" x="12.7" y="-17.78" length="short" rot="R180"/>
 <pin name="A4" x="-12.7" y="-15.24" length="short"/>
 <pin name="A5" x="-12.7" y="-17.78" length="short"/>
 </symbol>
@@ -6093,78 +6048,48 @@ Arduino Pro</text>
 <technology name=""/>
 </technologies>
 </device>
-</devices>
-</deviceset>
-<deviceset name="ARDUINO_PRO_MINI" prefix="U">
-<gates>
-<gate name="G$1" symbol="ARDUINO_PRO_MINI" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="ARDUINO_PRO_MINI">
+<device name="PTH-CENTERED" package="1X02-CENTER">
 <connects>
-<connect gate="G$1" pin="*10" pad="13"/>
-<connect gate="G$1" pin="*11" pad="14"/>
-<connect gate="G$1" pin="*3" pad="6"/>
-<connect gate="G$1" pin="*5" pad="8"/>
-<connect gate="G$1" pin="*6" pad="9"/>
-<connect gate="G$1" pin="*9" pad="12"/>
-<connect gate="G$1" pin="12" pad="15"/>
-<connect gate="G$1" pin="13" pad="16"/>
-<connect gate="G$1" pin="2" pad="5"/>
-<connect gate="G$1" pin="4" pad="7"/>
-<connect gate="G$1" pin="7" pad="10"/>
-<connect gate="G$1" pin="8" pad="11"/>
-<connect gate="G$1" pin="A0" pad="17"/>
-<connect gate="G$1" pin="A1" pad="18"/>
-<connect gate="G$1" pin="A2" pad="19"/>
-<connect gate="G$1" pin="A3" pad="20"/>
-<connect gate="G$1" pin="A4" pad="A4"/>
-<connect gate="G$1" pin="A5" pad="A5"/>
-<connect gate="G$1" pin="A6" pad="A6"/>
-<connect gate="G$1" pin="A7" pad="A7"/>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="GND@2" pad="23"/>
-<connect gate="G$1" pin="RAW" pad="24"/>
-<connect gate="G$1" pin="RST" pad="3"/>
-<connect gate="G$1" pin="RST@2" pad="22"/>
-<connect gate="G$1" pin="RXI" pad="2"/>
-<connect gate="G$1" pin="TXO" pad="1"/>
-<connect gate="G$1" pin="VCC" pad="21"/>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
 </technologies>
 </device>
-<device name="MINE" package="ARDUINO_PRO_MINI_MINE">
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_PRO_MINI_TICK" prefix="U">
+<gates>
+<gate name="G$1" symbol="ARDUINO_PRO_MINI_TICK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="ARDUINO_PRO_MINI_TICK">
 <connects>
-<connect gate="G$1" pin="*10" pad="13"/>
-<connect gate="G$1" pin="*11" pad="14"/>
-<connect gate="G$1" pin="*3" pad="6"/>
-<connect gate="G$1" pin="*5" pad="8"/>
-<connect gate="G$1" pin="*6" pad="9"/>
-<connect gate="G$1" pin="*9" pad="12"/>
-<connect gate="G$1" pin="12" pad="15"/>
-<connect gate="G$1" pin="13" pad="16"/>
-<connect gate="G$1" pin="2" pad="5"/>
-<connect gate="G$1" pin="4" pad="7"/>
-<connect gate="G$1" pin="7" pad="10"/>
-<connect gate="G$1" pin="8" pad="11"/>
-<connect gate="G$1" pin="A0" pad="17"/>
-<connect gate="G$1" pin="A1" pad="18"/>
-<connect gate="G$1" pin="A2" pad="19"/>
-<connect gate="G$1" pin="A3" pad="20"/>
+<connect gate="G$1" pin="*10" pad="10"/>
+<connect gate="G$1" pin="*11" pad="11"/>
+<connect gate="G$1" pin="*3" pad="3"/>
+<connect gate="G$1" pin="*5" pad="5"/>
+<connect gate="G$1" pin="*6" pad="6"/>
+<connect gate="G$1" pin="*9" pad="9"/>
+<connect gate="G$1" pin="12" pad="12"/>
+<connect gate="G$1" pin="13" pad="13"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="A0" pad="A0"/>
+<connect gate="G$1" pin="A1" pad="A1"/>
+<connect gate="G$1" pin="A2" pad="A2"/>
+<connect gate="G$1" pin="A3" pad="A3"/>
 <connect gate="G$1" pin="A4" pad="A4"/>
 <connect gate="G$1" pin="A5" pad="A5"/>
-<connect gate="G$1" pin="A6" pad="A6"/>
-<connect gate="G$1" pin="A7" pad="A7"/>
-<connect gate="G$1" pin="GND" pad="4 BLK GND"/>
-<connect gate="G$1" pin="GND@2" pad="23"/>
-<connect gate="G$1" pin="RAW" pad="24"/>
-<connect gate="G$1" pin="RST" pad="3 GRN"/>
-<connect gate="G$1" pin="RST@2" pad="22"/>
-<connect gate="G$1" pin="RXI" pad="2 RXI"/>
-<connect gate="G$1" pin="TXO" pad="1 TXO"/>
-<connect gate="G$1" pin="VCC" pad="21 VCC"/>
+<connect gate="G$1" pin="GND" pad="GND@1"/>
+<connect gate="G$1" pin="GND@2" pad="GND@2"/>
+<connect gate="G$1" pin="RAW" pad="RAW"/>
+<connect gate="G$1" pin="RST" pad="RST@1"/>
+<connect gate="G$1" pin="RST@2" pad="RST@2"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6189,7 +6114,7 @@ Arduino Pro</text>
 <part name="DISPLAY2" library="A_butts" deviceset="7SEG_4DIGIT_COLON_APOS" device=""/>
 <part name="DISPLAY3" library="A_butts" deviceset="7SEG_4DIGIT_COLON_APOS" device=""/>
 <part name="GND5" library="A_butts" deviceset="GND" device=""/>
-<part name="C1" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="C0603" value="0.1uF"/>
+<part name="C1" library="A_butts" deviceset="CAPACITOR-CERAMIC" device="025-024X044" value="0.1uF"/>
 <part name="SUPPLY3" library="A_butts" deviceset="VCC" device=""/>
 <part name="SUPPLY6" library="A_butts" deviceset="VCC" device=""/>
 <part name="GND9" library="A_butts" deviceset="GND" device=""/>
@@ -6199,11 +6124,12 @@ Arduino Pro</text>
 <part name="GND2" library="A_butts" deviceset="GND" device=""/>
 <part name="H3" library="A_butts" deviceset="HOLE" device="#2" value="HOLE#2"/>
 <part name="H4" library="A_butts" deviceset="HOLE" device="#2" value="HOLE#2"/>
-<part name="DC_IN" library="A_butts" deviceset="M02" device="PTH"/>
+<part name="PWR1" library="A_butts" deviceset="M02" device="PTH-CENTERED" value="M02PTH-CENTERED"/>
 <part name="SUPPLY2" library="A_butts" deviceset="VCC" device=""/>
 <part name="GND1" library="A_butts" deviceset="GND" device=""/>
-<part name="U1" library="A_butts" deviceset="ARDUINO_PRO_MINI" device="MINE"/>
 <part name="GND3" library="A_butts" deviceset="GND" device=""/>
+<part name="U1" library="A_butts" deviceset="ARDUINO_PRO_MINI_TICK" device=""/>
+<part name="PWR2" library="A_butts" deviceset="M02" device="PTH-CENTERED" value="M02PTH-CENTERED"/>
 </parts>
 <sheets>
 <sheet>
@@ -6289,19 +6215,20 @@ Arduino Pro</text>
 <instance part="GND2" gate="1" x="142.24" y="99.06"/>
 <instance part="H3" gate="G$1" x="21.59" y="24.13"/>
 <instance part="H4" gate="G$1" x="26.67" y="24.13"/>
-<instance part="DC_IN" gate="G$1" x="-17.78" y="144.78"/>
-<instance part="SUPPLY2" gate="G$1" x="58.42" y="142.24" rot="R270"/>
-<instance part="GND1" gate="1" x="7.62" y="142.24" rot="R270"/>
-<instance part="U1" gate="G$1" x="30.48" y="132.08"/>
-<instance part="GND3" gate="1" x="58.42" y="147.32" rot="R90"/>
+<instance part="PWR1" gate="G$1" x="0" y="129.54" rot="MR180"/>
+<instance part="SUPPLY2" gate="G$1" x="91.44" y="124.46" rot="R270"/>
+<instance part="GND1" gate="1" x="38.1" y="124.46" rot="R270"/>
+<instance part="GND3" gate="1" x="93.98" y="129.54" rot="R90"/>
+<instance part="U1" gate="G$1" x="66.04" y="114.3"/>
+<instance part="PWR2" gate="G$1" x="0" y="116.84" rot="MR180"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="A1" class="0">
 <segment>
-<wire x1="45.72" y1="134.62" x2="43.18" y2="134.62" width="0.1524" layer="91"/>
-<label x="45.72" y="134.62" size="1.27" layer="95" xref="yes"/>
+<wire x1="81.28" y1="116.84" x2="78.74" y2="116.84" width="0.1524" layer="91"/>
+<label x="81.28" y="116.84" size="1.27" layer="95" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="A1"/>
 </segment>
 <segment>
@@ -6324,7 +6251,7 @@ Arduino Pro</text>
 <pinref part="DISPLAY2" gate="G$1" pin="C"/>
 </segment>
 </net>
-<net name="D4" class="0">
+<net name="D2" class="0">
 <segment>
 <wire x1="-10.16" y1="60.96" x2="-7.62" y2="60.96" width="0.1524" layer="91"/>
 <label x="-10.16" y="60.96" size="1.27" layer="95" rot="MR0" xref="yes"/>
@@ -6345,15 +6272,15 @@ Arduino Pro</text>
 <pinref part="DISPLAY3" gate="G$1" pin="A"/>
 </segment>
 <segment>
-<wire x1="15.24" y1="134.62" x2="17.78" y2="134.62" width="0.1524" layer="91"/>
-<label x="15.24" y="134.62" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="4"/>
+<pinref part="U1" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="121.92" x2="53.34" y2="121.92" width="0.1524" layer="91"/>
+<label x="50.8" y="121.92" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="A2" class="0">
 <segment>
-<wire x1="45.72" y1="137.16" x2="43.18" y2="137.16" width="0.1524" layer="91"/>
-<label x="45.72" y="137.16" size="1.27" layer="95" xref="yes"/>
+<wire x1="81.28" y1="119.38" x2="78.74" y2="119.38" width="0.1524" layer="91"/>
+<label x="81.28" y="119.38" size="1.27" layer="95" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="A2"/>
 </segment>
 <segment>
@@ -6378,8 +6305,8 @@ Arduino Pro</text>
 </net>
 <net name="A0" class="0">
 <segment>
-<wire x1="45.72" y1="132.08" x2="43.18" y2="132.08" width="0.1524" layer="91"/>
-<label x="45.72" y="132.08" size="1.27" layer="95" xref="yes"/>
+<wire x1="81.28" y1="114.3" x2="78.74" y2="114.3" width="0.1524" layer="91"/>
+<label x="81.28" y="114.3" size="1.27" layer="95" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="A0"/>
 </segment>
 <segment>
@@ -6423,12 +6350,12 @@ Arduino Pro</text>
 <pinref part="DISPLAY3" gate="G$1" pin="B"/>
 </segment>
 <segment>
-<wire x1="15.24" y1="137.16" x2="17.78" y2="137.16" width="0.1524" layer="91"/>
-<label x="15.24" y="137.16" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="50.8" y1="119.38" x2="53.34" y2="119.38" width="0.1524" layer="91"/>
+<label x="50.8" y="119.38" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="*3"/>
 </segment>
 </net>
-<net name="D2" class="0">
+<net name="D4" class="0">
 <segment>
 <wire x1="-10.16" y1="55.88" x2="-7.62" y2="55.88" width="0.1524" layer="91"/>
 <label x="-10.16" y="55.88" size="1.27" layer="95" rot="MR0" xref="yes"/>
@@ -6449,15 +6376,15 @@ Arduino Pro</text>
 <pinref part="DISPLAY3" gate="G$1" pin="C"/>
 </segment>
 <segment>
-<wire x1="15.24" y1="139.7" x2="17.78" y2="139.7" width="0.1524" layer="91"/>
-<label x="15.24" y="139.7" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="U1" gate="G$1" pin="2"/>
+<pinref part="U1" gate="G$1" pin="4"/>
+<wire x1="50.8" y1="116.84" x2="53.34" y2="116.84" width="0.1524" layer="91"/>
+<label x="50.8" y="116.84" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="D5" class="0">
 <segment>
-<wire x1="15.24" y1="132.08" x2="17.78" y2="132.08" width="0.1524" layer="91"/>
-<label x="15.24" y="132.08" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="50.8" y1="114.3" x2="53.34" y2="114.3" width="0.1524" layer="91"/>
+<label x="50.8" y="114.3" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="*5"/>
 </segment>
 <segment>
@@ -6482,8 +6409,8 @@ Arduino Pro</text>
 </net>
 <net name="D6" class="0">
 <segment>
-<wire x1="15.24" y1="129.54" x2="17.78" y2="129.54" width="0.1524" layer="91"/>
-<label x="15.24" y="129.54" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="50.8" y1="111.76" x2="53.34" y2="111.76" width="0.1524" layer="91"/>
+<label x="50.8" y="111.76" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="*6"/>
 </segment>
 <segment>
@@ -6508,8 +6435,8 @@ Arduino Pro</text>
 </net>
 <net name="D7" class="0">
 <segment>
-<wire x1="15.24" y1="127" x2="17.78" y2="127" width="0.1524" layer="91"/>
-<label x="15.24" y="127" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="50.8" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
+<label x="50.8" y="109.22" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="7"/>
 </segment>
 <segment>
@@ -6534,8 +6461,8 @@ Arduino Pro</text>
 </net>
 <net name="D8" class="0">
 <segment>
-<wire x1="15.24" y1="124.46" x2="17.78" y2="124.46" width="0.1524" layer="91"/>
-<label x="15.24" y="124.46" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="50.8" y1="106.68" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
+<label x="50.8" y="106.68" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="8"/>
 </segment>
 <segment>
@@ -6560,8 +6487,8 @@ Arduino Pro</text>
 </net>
 <net name="D9" class="0">
 <segment>
-<wire x1="15.24" y1="121.92" x2="17.78" y2="121.92" width="0.1524" layer="91"/>
-<label x="15.24" y="121.92" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<wire x1="50.8" y1="104.14" x2="53.34" y2="104.14" width="0.1524" layer="91"/>
+<label x="50.8" y="104.14" size="1.27" layer="95" rot="MR0" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="*9"/>
 </segment>
 <segment>
@@ -6597,9 +6524,9 @@ Arduino Pro</text>
 <pinref part="IC2" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="VCC"/>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
-<wire x1="58.42" y1="142.24" x2="43.18" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="124.46" x2="78.74" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="VCC"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -6620,19 +6547,24 @@ Arduino Pro</text>
 <pinref part="RTC_BATT" gate="G$1" pin="-"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="GND"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="10.16" y1="142.24" x2="17.78" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="124.46" x2="53.34" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="GND@2"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="55.88" y1="147.32" x2="43.18" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="129.54" x2="78.74" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="GND@2"/>
 </segment>
 <segment>
-<pinref part="DC_IN" gate="G$1" pin="1"/>
-<wire x1="-5.08" y1="147.32" x2="-7.62" y2="147.32" width="0.1524" layer="91"/>
-<label x="-5.08" y="147.32" size="1.27" layer="95" xref="yes"/>
+<pinref part="PWR1" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="124.46" x2="10.16" y2="124.46" width="0.1524" layer="91"/>
+<label x="12.7" y="124.46" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PWR2" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="111.76" x2="10.16" y2="111.76" width="0.1524" layer="91"/>
+<label x="12.7" y="111.76" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RST" class="0">
@@ -6642,20 +6574,20 @@ Arduino Pro</text>
 <pinref part="IC2" gate="G$1" pin="!RST"/>
 </segment>
 <segment>
-<wire x1="45.72" y1="144.78" x2="43.18" y2="144.78" width="0.1524" layer="91"/>
-<label x="45.72" y="144.78" size="1.27" layer="95" xref="yes"/>
+<wire x1="86.36" y1="127" x2="78.74" y2="127" width="0.1524" layer="91"/>
+<label x="86.36" y="127" size="1.27" layer="95" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="RST@2"/>
 </segment>
 <segment>
-<wire x1="15.24" y1="144.78" x2="17.78" y2="144.78" width="0.1524" layer="91"/>
-<label x="15.24" y="144.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="45.72" y1="127" x2="53.34" y2="127" width="0.1524" layer="91"/>
+<label x="45.72" y="127" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="RST"/>
 </segment>
 </net>
 <net name="D10" class="0">
 <segment>
-<wire x1="43.18" y1="121.92" x2="45.72" y2="121.92" width="0.1524" layer="91"/>
-<label x="45.72" y="121.92" size="1.27" layer="95" rot="MR180" xref="yes"/>
+<wire x1="78.74" y1="104.14" x2="81.28" y2="104.14" width="0.1524" layer="91"/>
+<label x="81.28" y="104.14" size="1.27" layer="95" rot="MR180" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="*10"/>
 </segment>
 <segment>
@@ -6696,8 +6628,8 @@ Arduino Pro</text>
 <pinref part="IC2" gate="G$1" pin="SDA"/>
 </segment>
 <segment>
-<label x="15.24" y="116.84" size="1.27" layer="95" rot="R180" xref="yes"/>
-<wire x1="15.24" y1="116.84" x2="17.78" y2="116.84" width="0.1524" layer="91"/>
+<label x="50.8" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="50.8" y1="99.06" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="A4"/>
 </segment>
 </net>
@@ -6708,21 +6640,26 @@ Arduino Pro</text>
 <pinref part="IC2" gate="G$1" pin="SCL"/>
 </segment>
 <segment>
-<label x="15.24" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
-<wire x1="15.24" y1="114.3" x2="17.78" y2="114.3" width="0.1524" layer="91"/>
+<label x="50.8" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="50.8" y1="96.52" x2="53.34" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="A5"/>
 </segment>
 </net>
 <net name="RAW" class="0">
 <segment>
-<pinref part="DC_IN" gate="G$1" pin="2"/>
-<wire x1="-5.08" y1="149.86" x2="-7.62" y2="149.86" width="0.1524" layer="91"/>
-<label x="-5.08" y="149.86" size="1.27" layer="95" xref="yes"/>
+<pinref part="PWR1" gate="G$1" pin="1"/>
+<wire x1="12.7" y1="127" x2="10.16" y2="127" width="0.1524" layer="91"/>
+<label x="12.7" y="127" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
+<wire x1="78.74" y1="132.08" x2="86.36" y2="132.08" width="0.1524" layer="91"/>
+<label x="86.36" y="132.08" size="1.27" layer="95" xref="yes"/>
 <pinref part="U1" gate="G$1" pin="RAW"/>
-<wire x1="43.18" y1="149.86" x2="45.72" y2="149.86" width="0.1524" layer="91"/>
-<label x="45.72" y="149.86" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PWR2" gate="G$1" pin="1"/>
+<wire x1="12.7" y1="114.3" x2="10.16" y2="114.3" width="0.1524" layer="91"/>
+<label x="12.7" y="114.3" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
@@ -6730,10 +6667,4 @@ Arduino Pro</text>
 </sheets>
 </schematic>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>
