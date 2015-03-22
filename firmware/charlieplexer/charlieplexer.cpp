@@ -14,6 +14,7 @@
 #include <DS3231.h>
 #include <Time.h>
 #include <Timezone.h>
+#include "charlie.h"
 
 void all_off() {
   pinMode(2, INPUT_PULLUP);  digitalWrite(2,  HIGH);
