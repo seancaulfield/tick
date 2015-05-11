@@ -9,34 +9,71 @@
  */
 
 #include <Arduino.h>
-#include <Wire.h>
-#include <RTClib.h>
-#include <DS3231.h>
-#include <Time.h>
-#include <Timezone.h>
+#include "usec.h"
+//#include <Wire.h>
+//#include <RTClib.h>
+//#include <DS3231.h>
+//#include <Time.h>
+//#include <Timezone.h>
 #include "charlie.h"
 
-void all_off() {
-  pinMode(2, INPUT_PULLUP);  digitalWrite(2,  HIGH);
-  pinMode(3, INPUT_PULLUP);  digitalWrite(3,  HIGH);
-  pinMode(4, INPUT_PULLUP);  digitalWrite(4,  HIGH);
-  pinMode(5, INPUT_PULLUP);  digitalWrite(5,  HIGH);
-  pinMode(6, INPUT_PULLUP);  digitalWrite(6,  HIGH);
-  pinMode(7, INPUT_PULLUP);  digitalWrite(7,  HIGH);
-  pinMode(8, INPUT_PULLUP);  digitalWrite(8,  HIGH);
-  pinMode(9, INPUT_PULLUP);  digitalWrite(9,  HIGH);
-  pinMode(10, INPUT_PULLUP); digitalWrite(10, HIGH);
-  pinMode(11, INPUT_PULLUP); digitalWrite(11, HIGH);
-  pinMode(12, INPUT_PULLUP); digitalWrite(12, HIGH);
-  pinMode(13, INPUT_PULLUP); digitalWrite(13, HIGH);
-  pinMode(A0, INPUT_PULLUP);  digitalWrite(A0,  HIGH);
-  pinMode(A1, INPUT_PULLUP);  digitalWrite(A1,  HIGH);
-  pinMode(A2, INPUT_PULLUP);  digitalWrite(A2,  HIGH);
+const int PINS = 15;
+const int SEGMENTS = 8;
+const int DIGITS = 12;
+
+const int all_pins[PINS]     = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, A0, A1, A2 };
+
+const int display0[SEGMENTS] = {  9, 10, 11, 12, 13, A0, A1, A2 };
+const int display1[SEGMENTS] = { A2,  2,  3,  4,  5, 13, A0, A1 };
+const int display2[SEGMENTS] = {  2,  3,  4,  5,  6, A0, A1, A2 };
+const int cathodes[DIGITS] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
+
+const int SERIAL_BAUD = 9600;
+
+const int DELAY = 50;
+const usec LINGER = 150000;
+
+void set_h(int pin) {
+  digitalWrite(pin, HIGH);
+  pinMode(pin, OUTPUT);
 }
 
-void light(int anode, int cathode) {
-  pinMode(cathode, INPUT);  digitalWrite(cathode, LOW);
-  pinMode(anode,   OUTPUT); digitalWrite(anode,   HIGH);
+void set_l(int pin) {
+  digitalWrite(pin, LOW);
+  pinMode(pin, OUTPUT);
+}
+
+void set_z(int pin) {
+  digitalWrite(pin, HIGH);
+  pinMode(pin, INPUT);
+}
+
+// Get array of segment anodes
+const int *getAnodes(int digit) {
+  if (digit >= 0 && digit < 4) {
+    return display0;
+  } else if (digit >= 4 && digit < 8) {
+    return display1;
+  } else {
+    return display2;
+  }
+}
+
+// Perform a single linger cycle on a single segment
+void light_cycle(int pin) {
+  usec start_time = micros();
+  while (USEC_DIFF(micros(), start_time) < LINGER) {
+    set_l(pin);
+    delay(DELAY);
+    set_z(pin);
+    delay(DELAY);
+  }
+}
+
+void all_off() {
+  for (int i=0; i<PINS; i++) {
+    set_z(all_pins[i]);
+  }
 }
 
 void setup() {
@@ -44,4 +81,23 @@ void setup() {
 }
 
 void loop() {
+
+  for (int digit=0; digit<DIGITS; digit++) {
+    const int *segment_anodes = getAnodes(digit);
+
+    for (int s=0; s<SEGMENTS; s++) {
+
+      // Set anode to high to source current
+      set_h(segment_anodes[s]);
+
+      // Pull digit cathode low for a linger cycle
+      light_cycle(cathodes[digit]);
+
+      // Put anode back into high-Z state
+      set_z(segment_anodes[s]);
+
+    }
+
+  }
+
 }

@@ -2,6 +2,7 @@
 #define __UNICORN_KIDNEYS_H
 
 #include <Arduino.h>
+#if 0
 #include <stdint.h>
 
 class CharlieDigit {
@@ -20,5 +21,7 @@ class CharlieDigit {
     uint8_t p;
     uint8_t k;
 };
+
+#endif
 
 #endif
