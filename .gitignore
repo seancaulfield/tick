@@ -44,3 +44,7 @@ eagle.epf
 
 # VIM swap files
 .*.sw[po]
+.sw[po]
+
+# Arduino build directories
+build-*/
