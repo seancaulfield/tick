@@ -21,11 +21,9 @@ char* get_file_data(const char *filepath, size_t max_size) {
     return NULL;
   }
 
-  char *buff = new char[filesize];
+  char *buff = new char[filesize+1];
   file.readBytes(buff, filesize);
-  if (filesize - 1 > 0) {
-    buff[filesize-1] = '\0'; // ensure null termination
-  }
+  buff[filesize] = '\0'; // ensure null termination
 
   DPRINT("Successfully loaded file: "); DPRINTLN(filepath);
   DPRINTLN(buff);

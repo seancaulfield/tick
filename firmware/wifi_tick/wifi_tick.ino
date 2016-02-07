@@ -44,13 +44,21 @@ void setup() {
 #endif
 
   //
+  // Mount config filesystem
+  //
+  if (!SPIFFS.begin()) {
+    DPRINTLN("Failed to mount config fs!");
+    return;
+  }
+
+  //
   // Config probably doesn't exist, so try to save it to SPIFFS
   //
 
   if (!setup_wifi()) {
 
-    size_t len_name = strlen(MY_WIFI_AP_NAME) + 1;
-    wifi_ap_name = new char[len_name];
+    size_t len_name = strlen(MY_WIFI_AP_NAME);
+    wifi_ap_name = new char[len_name+1];
     strncpy(wifi_ap_name, MY_WIFI_AP_NAME, len_name);
     if (save_ap_name()) {
       DPRINTLN("Saved wifi_ap_name");
@@ -58,8 +66,8 @@ void setup() {
       DPRINTLN("Failed to save wifi_ap_name!");
     }
 
-    size_t len_key  = strlen(MY_WIFI_AP_KEY) + 1;
-    wifi_ap_key = new char[len_key];
+    size_t len_key  = strlen(MY_WIFI_AP_KEY);
+    wifi_ap_key = new char[len_key+1];
     strncpy(wifi_ap_key, MY_WIFI_AP_KEY, len_key);
     if (save_ap_key()) {
       DPRINTLN("Saved wifi_ap_key");
