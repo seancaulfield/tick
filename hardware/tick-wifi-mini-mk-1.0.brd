@@ -893,17 +893,35 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U1" library="a_parts" package="ADAFRUIT_FEATHER_HUZZAH_NOSILK" value="Adafruit Feather HUZZAH ESP8266" x="25.4" y="11.43" rot="MR0"/>
 <element name="IC1" library="a_parts" package="SOIC28W" value="HT16K33" x="25.4" y="11.43" smashed="yes" rot="R180">
 <attribute name="NAME" x="34.544" y="11.43" size="0.8128" layer="25" font="vector" ratio="10" rot="R270" align="bottom-center"/>
-<attribute name="VALUE" x="25.4" y="11.43" size="1.27" layer="27" font="vector" ratio="10" rot="R180" align="center"/>
+<attribute name="VALUE" x="25.4" y="11.43" size="1.27" layer="25" font="vector" ratio="10" rot="R180" align="center"/>
 </element>
-<element name="C1" library="a_parts" package="C0603" value="100n" x="36.83" y="6.985" rot="R90"/>
-<element name="R1" library="a_parts" package="R0603" value="39K" x="36.83" y="12.7" rot="R270"/>
-<element name="R2" library="a_parts" package="R0603" value="39K" x="39.37" y="12.7" rot="R270"/>
-<element name="R3" library="a_parts" package="R0603" value="39K" x="41.91" y="12.7" rot="R270"/>
+<element name="C1" library="a_parts" package="C0603" value="100n" x="36.83" y="6.985" smashed="yes" rot="R90">
+<attribute name="NAME" x="36.83" y="5.235" size="0.7" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="36.83" y="8.735" size="0.5" layer="27" font="vector" ratio="12" rot="R180" align="top-center"/>
+</element>
+<element name="R1" library="a_parts" package="R0603" value="39K" x="36.83" y="12.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="36.83" y="14.45" size="0.7" layer="25" font="vector" ratio="12" align="bottom-center"/>
+<attribute name="VALUE" x="36.83" y="10.95" size="0.5" layer="27" font="vector" ratio="12" align="top-center"/>
+</element>
+<element name="R2" library="a_parts" package="R0603" value="39K" x="39.37" y="12.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="39.37" y="14.45" size="0.7" layer="25" font="vector" ratio="12" align="bottom-center"/>
+<attribute name="VALUE" x="39.37" y="10.95" size="0.5" layer="27" font="vector" ratio="12" align="top-center"/>
+</element>
+<element name="R3" library="a_parts" package="R0603" value="39K" x="41.91" y="12.7" smashed="yes" rot="R270">
+<attribute name="NAME" x="41.91" y="14.45" size="0.7" layer="25" font="vector" ratio="12" align="bottom-center"/>
+<attribute name="VALUE" x="41.91" y="10.95" size="0.5" layer="27" font="vector" ratio="12" align="top-center"/>
+</element>
 <element name="D1" library="a_parts" package="SOD123" value="" x="39.37" y="16.51" smashed="yes" rot="R180">
 <attribute name="NAME" x="43.16" y="16.51" size="0.7" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 </element>
-<element name="R4" library="a_parts" package="R0603" value="4K7" x="41.91" y="6.985" rot="R90"/>
-<element name="R5" library="a_parts" package="R0603" value="4K7" x="39.37" y="6.985" rot="R90"/>
+<element name="R4" library="a_parts" package="R0603" value="4K7" x="41.91" y="6.985" smashed="yes" rot="R90">
+<attribute name="NAME" x="41.91" y="5.235" size="0.7" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="41.91" y="8.735" size="0.5" layer="27" font="vector" ratio="12" rot="R180" align="top-center"/>
+</element>
+<element name="R5" library="a_parts" package="R0603" value="4K7" x="39.37" y="6.985" smashed="yes" rot="R90">
+<attribute name="NAME" x="39.37" y="5.235" size="0.7" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
+<attribute name="VALUE" x="39.37" y="8.735" size="0.5" layer="27" font="vector" ratio="12" rot="R180" align="top-center"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">

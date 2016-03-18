@@ -24,7 +24,8 @@
 
 // Pin assignments
 
-#define DISP_ADDR       0x70
+#define DISP_ADDR_START 0x70
+#define DISP_ADDR_END   0x77
 #define DISP_BRIGHTNESS 15   //0-15
 
 //
@@ -37,9 +38,22 @@ const char *MY_WIFI_AP_KEY  = "<KEY>";
 // Global controls/vars
 //
 
-Adafruit_7segment display = Adafruit_7segment();
+const size_t NUM_DISPLAYS = 1;
+Adafruit_7segment displays[NUM_DISPLAYS] = {
+  Adafruit_7segment(),
+  //Adafruit_7segment(),
+  //Adafruit_7segment(),
+  //Adafruit_7segment(),
+  //Adafruit_7segment(),
+  //Adafruit_7segment(),
+  //Adafruit_7segment(),
+  //Adafruit_7segment()
+};
+
 RTC_DS3231 rtc = RTC_DS3231();
 NTPClient ntpclient;
+
+boolean led_state = false;
 
 void setup_serial() {
   delay(200);
@@ -48,17 +62,22 @@ void setup_serial() {
 }
 
 void displayTime(DateTime *dt) {
-  display.clear();
-  if (dt->hour() >= 20) {
-    display.writeDigitNum(0, 2, false);
-  } else if (dt->hour() >= 10) {
-    display.writeDigitNum(0, 1, false);
+
+  for (byte i; i<NUM_DISPLAYS; i++) {
+    byte hour = (dt->hour() + i) % 24;
+    displays[i].clear();
+    if (hour >= 20) {
+      displays[i].writeDigitNum(0, 2, false);
+    } else if (hour >= 10) {
+      displays[i].writeDigitNum(0, 1, false);
+    }
+    displays[i].writeDigitNum(1, hour % 10, false);
+    displays[i].writeDigitRaw(2, 0x02); //colon
+    displays[i].writeDigitNum(3, dt->minute() / 10, false);
+    displays[i].writeDigitNum(4, dt->minute() % 10, false);
+    displays[i].writeDisplay();
   }
-  display.writeDigitNum(1, dt->hour() % 10, false);
-  display.writeDigitRaw(2, 0x02); //colon
-  display.writeDigitNum(3, dt->minute() / 10, false);
-  display.writeDigitNum(4, dt->minute() % 10, false);
-  display.writeDisplay();
+
 }
 
 void setup() {
@@ -77,9 +96,19 @@ void setup() {
   //
   // Setup display(s)
   //
-  display.begin(DISP_ADDR);
-  display.setBrightness(DISP_BRIGHTNESS);
-  display.clear();
+  for (byte i=0; i<NUM_DISPLAYS; i++) {
+    displays[i].begin(DISP_ADDR_START + i);
+  }
+  for (byte i=0; i<NUM_DISPLAYS; i++) {
+    displays[i].setBrightness(DISP_BRIGHTNESS);
+    displays[i].clear();
+    displays[i].writeDigitRaw(0, 8);
+    displays[i].writeDigitRaw(1, 8);
+    displays[i].writeDigitRaw(2, 2);
+    displays[i].writeDigitRaw(3, 8);
+    displays[i].writeDigitRaw(4, 8);
+    displays[i].writeDisplay();
+  }
 
   //
   // Mount config filesystem
@@ -122,6 +151,7 @@ void setup() {
   connect_wifi();
 
   delay(500);
+  pinMode(LED_BUILTIN, OUTPUT);
 
 }
 
@@ -152,6 +182,9 @@ void loop() {
   // Update display
   displayTime(&ntp_dt);
 
-  delay(100);
+  digitalWrite(LED_BUILTIN, led_state);
+  led_state = !led_state;
+
+  delay(1000);
 
 }
