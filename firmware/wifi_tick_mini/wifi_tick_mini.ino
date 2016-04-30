@@ -12,7 +12,7 @@
 #include <Adafruit_LEDBackpack.h>
 
 #include <RTClib.h>
-#include <DS3231.h>
+//#include <DS3231.h>
 #include <Time.h>
 #include <Timezone.h>
 #include <NTPClient.h>
@@ -21,8 +21,6 @@
 
 #include "debug.h"
 #include "wifi_setup.h"
-
-// Pin assignments
 
 #define DISP_ADDR_START 0x70
 #define DISP_ADDR_END   0x77
@@ -38,6 +36,9 @@ const char *MY_WIFI_AP_KEY  = "<KEY>";
 // Global controls/vars
 //
 
+boolean led_state = false;
+NTPClient ntpclient;
+
 const size_t NUM_DISPLAYS = 1;
 Adafruit_7segment displays[NUM_DISPLAYS] = {
   Adafruit_7segment(),
@@ -50,17 +51,21 @@ Adafruit_7segment displays[NUM_DISPLAYS] = {
   //Adafruit_7segment()
 };
 
-RTC_DS3231 rtc = RTC_DS3231();
-NTPClient ntpclient;
-
-boolean led_state = false;
-
+/*
+ * setup_serial - Initialize serial connection for debugging (if enabled).
+ */
 void setup_serial() {
   delay(200);
   Serial.begin(SERIAL_BAUD);
   delay(10);
 }
 
+/*
+ * displayTime - Output time to segmented display controller.
+ *
+ * @param dt DateTime to display
+ *
+ */
 void displayTime(DateTime *dt) {
 
   for (byte i; i<NUM_DISPLAYS; i++) {
@@ -80,6 +85,25 @@ void displayTime(DateTime *dt) {
 
 }
 
+/* 
+ * test_display - Cycle through segments to make sure display is working.
+ */
+void test_display() {
+  for (byte i=0; i<NUM_DISPLAYS; i++) {
+    for (byte j=0; j < 5; j++) {
+      for (byte k=0; k < 8; k++) {
+        byte m = 1 << k;
+        displays[i].clear();
+        displays[i].writeDigitRaw(j, m);
+        displays[i].writeDisplay();
+      }
+    }
+  }
+}
+
+/*
+ * setup - Code entry point, runs once.
+ */
 void setup() {
 
 #ifdef DEBUG
@@ -90,8 +114,8 @@ void setup() {
   // Start I2C & RTC
   //
   Wire.begin();
-  rtc.begin();
-  rtc.clearControlRegisters();
+  //rtc.begin();
+  //rtc.clearControlRegisters();
 
   //
   // Setup display(s)
@@ -99,15 +123,21 @@ void setup() {
   for (byte i=0; i<NUM_DISPLAYS; i++) {
     displays[i].begin(DISP_ADDR_START + i);
   }
-  for (byte i=0; i<NUM_DISPLAYS; i++) {
-    displays[i].setBrightness(DISP_BRIGHTNESS);
-    displays[i].clear();
-    displays[i].writeDigitRaw(0, 8);
-    displays[i].writeDigitRaw(1, 8);
-    displays[i].writeDigitRaw(2, 2);
-    displays[i].writeDigitRaw(3, 8);
-    displays[i].writeDigitRaw(4, 8);
-    displays[i].writeDisplay();
+
+  //
+  // Test display(s)
+  //
+  //for (byte i=0; i<NUM_DISPLAYS; i++) {
+  //  displays[i].setBrightness(DISP_BRIGHTNESS);
+  //  displays[i].clear();
+  //  displays[i].writeDigitRaw(0, 8);
+  //  displays[i].writeDigitRaw(1, 8);
+  //  displays[i].writeDigitRaw(2, 2);
+  //  displays[i].writeDigitRaw(3, 8);
+  //  displays[i].writeDigitRaw(4, 8);
+  //  displays[i].writeDisplay();
+  //}
+  while (1) {
   }
 
   //
@@ -157,26 +187,29 @@ void setup() {
 
 void loop() {
 
+  test_display();
+
+#if 0
   // Has its own internal check to only poll every 60s
   ntpclient.update();
 
   uint32_t ntp_time = ntpclient.getRawTime();
-  uint32_t rtc_time = rtc.now().unixtime();
+  //uint32_t rtc_time = rtc.now().unixtime();
 
   DateTime ntp_dt = DateTime(ntp_time);
-  DateTime rtc_dt = DateTime(rtc_time);
+  //DateTime rtc_dt = DateTime(rtc_time);
 
   // Check if RTC is far enough off to require adjustment
-  if (rtc_time > ntp_time || ntp_time - rtc_time > 60) {
-    rtc.adjust(ntp_dt);
-  }
+  //if (rtc_time > ntp_time || ntp_time - rtc_time > 60) {
+  //  rtc.adjust(ntp_dt);
+  //}
 
   // Fart out timestamp
   char buff[64];
   ntp_dt.toString(buff, sizeof(buff));
-  DPRINT(buff);
-  DPRINT(" ");
-  rtc_dt.toString(buff, sizeof(buff));
+  //DPRINT(buff);
+  //DPRINT(" ");
+  //rtc_dt.toString(buff, sizeof(buff));
   DPRINTLN(buff);
 
   // Update display
@@ -186,5 +219,6 @@ void loop() {
   led_state = !led_state;
 
   delay(1000);
+#endif
 
 }
