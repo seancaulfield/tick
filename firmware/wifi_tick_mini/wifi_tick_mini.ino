@@ -12,7 +12,6 @@
 #include <Adafruit_LEDBackpack.h>
 
 #include <RTClib.h>
-//#include <DS3231.h>
 #include <Time.h>
 #include <Timezone.h>
 #include <NTPClient.h>
@@ -22,9 +21,8 @@
 #include "debug.h"
 #include "wifi_setup.h"
 
-#define DISP_ADDR_START 0x70
-#define DISP_ADDR_END   0x77
-#define DISP_BRIGHTNESS 15   //0-15
+#define DISP_ADDR   0x70
+#define DISP_BRIGHT 15   //0-15
 
 //
 // TODO Define these for yourself!
@@ -38,18 +36,7 @@ const char *MY_WIFI_AP_KEY  = "<KEY>";
 
 boolean led_state = false;
 NTPClient ntpclient;
-
-const size_t NUM_DISPLAYS = 1;
-Adafruit_7segment displays[NUM_DISPLAYS] = {
-  Adafruit_7segment(),
-  //Adafruit_7segment(),
-  //Adafruit_7segment(),
-  //Adafruit_7segment(),
-  //Adafruit_7segment(),
-  //Adafruit_7segment(),
-  //Adafruit_7segment(),
-  //Adafruit_7segment()
-};
+Adafruit_7segment display = Adafruit_7segment();
 
 /*
  * setup_serial - Initialize serial connection for debugging (if enabled).
@@ -67,36 +54,31 @@ void setup_serial() {
  *
  */
 void displayTime(DateTime *dt) {
-
-  for (byte i; i<NUM_DISPLAYS; i++) {
-    byte hour = (dt->hour() + i) % 24;
-    displays[i].clear();
-    if (hour >= 20) {
-      displays[i].writeDigitNum(0, 2, false);
-    } else if (hour >= 10) {
-      displays[i].writeDigitNum(0, 1, false);
-    }
-    displays[i].writeDigitNum(1, hour % 10, false);
-    displays[i].writeDigitRaw(2, 0x02); //colon
-    displays[i].writeDigitNum(3, dt->minute() / 10, false);
-    displays[i].writeDigitNum(4, dt->minute() % 10, false);
-    displays[i].writeDisplay();
+  byte hour = (dt->hour()) % 24;
+  display.clear();
+  if (hour >= 20) {
+    display.writeDigitNum(0, 2, false);
+  } else if (hour >= 10) {
+    display.writeDigitNum(0, 1, false);
   }
-
+  display.writeDigitNum(1, hour % 10, false);
+  display.writeDigitRaw(2, 0x02); //colon
+  display.writeDigitNum(3, dt->minute() / 10, false);
+  display.writeDigitNum(4, dt->minute() % 10, false);
+  display.writeDisplay();
 }
 
 /* 
  * test_display - Cycle through segments to make sure display is working.
  */
 void test_display() {
-  for (byte i=0; i<NUM_DISPLAYS; i++) {
-    for (byte j=0; j < 5; j++) {
-      for (byte k=0; k < 8; k++) {
-        byte m = 1 << k;
-        displays[i].clear();
-        displays[i].writeDigitRaw(j, m);
-        displays[i].writeDisplay();
-      }
+  for (byte j=0; j < 5; j++) {
+    for (byte k=0; k < 8; k++) {
+      byte m = 1 << k;
+      display.clear();
+      display.writeDigitRaw(j, m);
+      display.writeDisplay();
+      delay(100);
     }
   }
 }
@@ -111,34 +93,11 @@ void setup() {
 #endif
 
   //
-  // Start I2C & RTC
+  // Start I2C & setup display
   //
   Wire.begin();
-  //rtc.begin();
-  //rtc.clearControlRegisters();
-
-  //
-  // Setup display(s)
-  //
-  for (byte i=0; i<NUM_DISPLAYS; i++) {
-    displays[i].begin(DISP_ADDR_START + i);
-  }
-
-  //
-  // Test display(s)
-  //
-  //for (byte i=0; i<NUM_DISPLAYS; i++) {
-  //  displays[i].setBrightness(DISP_BRIGHTNESS);
-  //  displays[i].clear();
-  //  displays[i].writeDigitRaw(0, 8);
-  //  displays[i].writeDigitRaw(1, 8);
-  //  displays[i].writeDigitRaw(2, 2);
-  //  displays[i].writeDigitRaw(3, 8);
-  //  displays[i].writeDigitRaw(4, 8);
-  //  displays[i].writeDisplay();
-  //}
-  while (1) {
-  }
+  display.begin(DISP_ADDR);
+  display.clear();
 
   //
   // Mount config filesystem
@@ -151,7 +110,6 @@ void setup() {
   //
   // Config probably doesn't exist, so try to save it to SPIFFS
   //
-
   if (!setup_wifi()) {
 
     size_t len_name = strlen(MY_WIFI_AP_NAME);
@@ -177,19 +135,19 @@ void setup() {
   //
   // Connect to Wifi
   //
-
   connect_wifi();
 
+#if DEBUG
   delay(500);
   pinMode(LED_BUILTIN, OUTPUT);
+#endif
 
 }
 
 void loop() {
 
-  test_display();
+  //test_display();
 
-#if 0
   // Has its own internal check to only poll every 60s
   ntpclient.update();
 
@@ -219,6 +177,5 @@ void loop() {
   led_state = !led_state;
 
   delay(1000);
-#endif
 
 }
