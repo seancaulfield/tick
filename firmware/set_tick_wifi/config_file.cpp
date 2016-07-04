@@ -26,7 +26,7 @@ char* get_file_data(const char *filepath, size_t max_size) {
   buff[filesize] = '\0'; // ensure null termination
 
   DPRINT("Successfully loaded file: "); DPRINTLN(filepath);
-  DPRINTLN(buff);
+  //DPRINTLN(buff);
 
   return buff;
 }

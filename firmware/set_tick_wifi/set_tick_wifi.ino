@@ -15,10 +15,8 @@
 #include <Adafruit_LEDBackpack.h>
 
 #include <RTClib.h>
-#include <DS1307.h>
+#include <DateTime.h>
 #include <DS3231.h>
-#include <Time.h>
-#include <Timezone.h>
 #include <NTPClient.h>
 
 #include <string.h>
@@ -28,6 +26,7 @@
 
 #define DISP_ADDR              0x70
 #define DISP_BRIGHT            15   //0-15
+#define LED_PIN                0
 #define BUTT_PIN               12
 #define BUTT_DEBOUNCE_MS       200
 #define PROBE_DELAY_SUCCESS_MS 5
@@ -43,12 +42,12 @@ const char *MY_WIFI_AP_KEY  = "<KEY>";
 // Global controls/vars
 //
 
-boolean led_state = false;
 boolean i2c_polling = false;
 NTPClient ntpclient;
 Adafruit_7segment display = Adafruit_7segment();
 Bounce butt = Bounce();
 uint32_t last_ts = 0;
+RTC_DS3231 *rtc = NULL;
 
 /*
  * setup_serial - Initialize serial connection for debugging (if enabled).
@@ -111,7 +110,7 @@ uint8_t i2cProbe() {
  * So. Mark it as a TODO to figure that out. Assuming DS3231 for now.
  *
  */
-RTC *getRTC(uint8_t addr) {
+RTC_DS3231 *getRTC() {
   RTC_DS3231 *rtc = new RTC_DS3231();
   DPRINTLN(F("Enabling RTC oscillator"));
   rtc->begin();
@@ -122,7 +121,7 @@ RTC *getRTC(uint8_t addr) {
 /*
  * setRTC - Sync the newly probed RTC with a hot, fresh timestamp from NTP.
  */
-void setRTC(RTC *rtc) {
+void setRTC(RTC_DS3231 *rtc) {
   char buff[64];
 
   DPRINTLN(F("Forcing NTP update to set RTC"));
@@ -133,6 +132,7 @@ void setRTC(RTC *rtc) {
   DPRINT(F("Setting RTC to "));
   DPRINTLN(ntp_dt.toString(&buff[0], sizeof(buff)));
   rtc->adjust(ntp_dt);
+  delay(100);
 
   DPRINTLN(F("Reading RTC value"));
   DateTime rtc_dt = rtc->now();
@@ -155,7 +155,8 @@ void setup() {
   butt.attach(BUTT_PIN, INPUT_PULLUP, BUTT_DEBOUNCE_MS);
 
   // Set to output for status indication
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, HIGH);
 
   // Start I2C & setup display
   Wire.begin();
@@ -197,39 +198,53 @@ void setup() {
 }
 
 void loop() {
+  uint32_t ntp_raw;
+  DateTime ntp_dt, rtc_dt;
+
+  // Check for button press to start i2c polling
+  butt.update();
+  if (butt.fell()) {
+    i2c_polling = !i2c_polling;
+    DPRINTLN(F("Entering i2c polling mode"));
+  }
+
+  // If polling, see if anything responds
+  if (i2c_polling) {
+    uint8_t addr = i2cProbe();
+    if (addr) { // Found a device!
+      digitalWrite(LED_PIN, LOW); // Turn LED on
+      if (rtc) delete rtc; // If RTC object already exists, delete first
+      rtc = getRTC();
+      setRTC(rtc);
+      digitalWrite(LED_PIN, HIGH);
+      i2c_polling = false;
+    }
+  }
 
   // Has its own internal check to only poll every 60s
   ntpclient.update();
-  uint32_t ntp_raw = ntpclient.getRawTime();
+  ntp_raw = ntpclient.getRawTime();
+  ntp_dt = DateTime(ntp_raw);
+
+  // Get RTC time if RTC found
+  if (rtc) {
+    rtc_dt = rtc->now();
+  }
 
   // Update display if timestamps have changed
   if (ntp_raw != last_ts) {
     last_ts = ntp_raw;
-    DateTime ntp_dt = DateTime(ntp_raw);
     displayTime(&ntp_dt);
   }
 
-  if (butt.update() && butt.fell()) {
-    i2c_polling = !i2c_polling;
-  }
-
-  if (i2c_polling) {
-    uint8_t addr = i2cProbe();
-    if (addr) { // Found a device!
-
-      digitalWrite(LED_BUILTIN, HIGH);
-
-      RTC *rtc = getRTC(addr);
-      setRTC(rtc);
-      delete rtc;
-
-      digitalWrite(LED_BUILTIN, LOW);
-      i2c_polling = false;
-
-    }
-  }
-
   // Set LED on if we're currently polling to give some feedback
-  digitalWrite(LED_BUILTIN, (i2c_polling ? HIGH : LOW));
+  //digitalWrite(LED_PIN, (i2c_polling ? HIGH : LOW));
+  if (rtc) {
+    DPRINT(F("NTP: ")); DPRINT(ntp_dt.iso8601());
+    DPRINT(F(" RTC: ")); DPRINTLN(rtc_dt.iso8601());
+  } else {
+    DPRINT(F("NTP: ")); DPRINTLN(ntp_dt.iso8601());
+  }
+  delay(1000);
 
 }
