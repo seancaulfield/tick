@@ -29,7 +29,7 @@
 #define DISP_ADDR              0x70
 #define DISP_BRIGHT            15   //0-15
 #define BUTT_PIN               12
-#define BUTT_DEBOUNCE_MS       50
+#define BUTT_DEBOUNCE_MS       200
 #define PROBE_DELAY_SUCCESS_MS 5
 #define PROBE_DELAY_FAIL_MS    0
 
@@ -90,9 +90,13 @@ uint8_t i2cProbe() {
   uint8_t addr = DS3231_ADDRESS;
   Wire.beginTransmission(addr);
   if (Wire.endTransmission() == 0) {
+    DPRINT(F("RTC found at "));
+    DPRINTLN(addr, HEX);
     delay(PROBE_DELAY_SUCCESS_MS);
     return addr; // Match on FIRST responding address
   } else {
+    DPRINT(F("RTC not found at "));
+    DPRINTLN(addr, HEX);
     delay(PROBE_DELAY_FAIL_MS);
   }
   return 0;
@@ -109,6 +113,7 @@ uint8_t i2cProbe() {
  */
 RTC *getRTC(uint8_t addr) {
   RTC_DS3231 *rtc = new RTC_DS3231();
+  DPRINTLN(F("Enabling RTC oscillator"));
   rtc->begin();
   rtc->enable();
   return rtc;
@@ -118,10 +123,23 @@ RTC *getRTC(uint8_t addr) {
  * setRTC - Sync the newly probed RTC with a hot, fresh timestamp from NTP.
  */
 void setRTC(RTC *rtc) {
+  char buff[64];
+
+  DPRINTLN(F("Forcing NTP update to set RTC"));
   ntpclient.forceUpdate();
   uint32_t ntp_raw = ntpclient.getRawTime();
   DateTime ntp_dt = DateTime(ntp_raw);
+
+  DPRINT(F("Setting RTC to "));
+  DPRINTLN(ntp_dt.toString(&buff[0], sizeof(buff)));
   rtc->adjust(ntp_dt);
+
+  DPRINTLN(F("Reading RTC value"));
+  DateTime rtc_dt = rtc->now();
+  DPRINT(F("RTC is "));
+  DPRINTLN(rtc_dt.toString(&buff[0], sizeof(buff)));
+
+  DPRINTLN(F("Done"));
 }
 
 /*
@@ -146,7 +164,7 @@ void setup() {
 
   // Mount config filesystem
   if (!SPIFFS.begin()) {
-    DPRINTLN("Failed to mount config fs!");
+    DPRINTLN(F("Failed to mount config fs!"));
     return;
   }
 
@@ -157,18 +175,18 @@ void setup() {
     wifi_ap_name = new char[len_name+1];
     strncpy(wifi_ap_name, MY_WIFI_AP_NAME, len_name);
     if (save_ap_name()) {
-      DPRINTLN("Saved wifi_ap_name");
+      DPRINTLN(F("Saved wifi_ap_name"));
     } else {
-      DPRINTLN("Failed to save wifi_ap_name!");
+      DPRINTLN(F("Failed to save wifi_ap_name!"));
     }
 
     size_t len_key  = strlen(MY_WIFI_AP_KEY);
     wifi_ap_key = new char[len_key+1];
     strncpy(wifi_ap_key, MY_WIFI_AP_KEY, len_key);
     if (save_ap_key()) {
-      DPRINTLN("Saved wifi_ap_key");
+      DPRINTLN(F("Saved wifi_ap_key"));
     } else {
-      DPRINTLN("Failed to save wifi_ap_key!");
+      DPRINTLN(F("Failed to save wifi_ap_key!"));
     }
 
   }
