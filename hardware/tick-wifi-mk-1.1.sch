@@ -4152,22 +4152,22 @@ grid 5 mm, outline 2.5 x 7.5 mm</description>
 <wire x1="1.6" y1="0.8" x2="-1.6" y2="0.8" width="0.1524" layer="21"/>
 </package>
 <package name="7SEG_4DIG_10MM">
-<pad name="1" x="-8.89" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="2" x="-6.35" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="3" x="-3.81" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="4" x="-1.27" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="5" x="1.27" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="6" x="3.81" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="7" x="6.35" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="8" x="8.89" y="-5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="16" x="-8.89" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="15" x="-6.35" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="14" x="-3.81" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="13" x="-1.27" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="12" x="1.27" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="11" x="3.81" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="10" x="6.35" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
-<pad name="9" x="8.89" y="5.08" drill="0.8" diameter="1.5" shape="octagon"/>
+<pad name="1" x="-8.89" y="-5.08" drill="1" shape="octagon"/>
+<pad name="2" x="-6.35" y="-5.08" drill="1" shape="octagon"/>
+<pad name="3" x="-3.81" y="-5.08" drill="1" shape="octagon"/>
+<pad name="4" x="-1.27" y="-5.08" drill="1" shape="octagon"/>
+<pad name="5" x="1.27" y="-5.08" drill="1" shape="octagon"/>
+<pad name="6" x="3.81" y="-5.08" drill="1" shape="octagon"/>
+<pad name="7" x="6.35" y="-5.08" drill="1" shape="octagon"/>
+<pad name="8" x="8.89" y="-5.08" drill="1" shape="octagon"/>
+<pad name="16" x="-8.89" y="5.08" drill="1" shape="octagon"/>
+<pad name="15" x="-6.35" y="5.08" drill="1" shape="octagon"/>
+<pad name="14" x="-3.81" y="5.08" drill="1" shape="octagon"/>
+<pad name="13" x="-1.27" y="5.08" drill="1" shape="octagon"/>
+<pad name="12" x="1.27" y="5.08" drill="1" shape="octagon"/>
+<pad name="11" x="3.81" y="5.08" drill="1" shape="octagon"/>
+<pad name="10" x="6.35" y="5.08" drill="1" shape="octagon"/>
+<pad name="9" x="8.89" y="5.08" drill="1" shape="octagon"/>
 <wire x1="-20" y1="6.9" x2="20" y2="6.9" width="0.1524" layer="21"/>
 <wire x1="-20" y1="-6.9" x2="20" y2="-6.9" width="0.1524" layer="21"/>
 <wire x1="-20" y1="-6.9" x2="-20" y2="6.9" width="0.1524" layer="21"/>
@@ -8370,8 +8370,8 @@ Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="SUPPLY7" library="a_parts" deviceset="5V" device=""/>
 <part name="SUPPLY8" library="a_parts" deviceset="5V" device=""/>
 <part name="IC3" library="a_parts" deviceset="74*125" device="SOIC14" value="74HC125"/>
-<part name="R1" library="a_parts" deviceset="RESISTOR" device="R0805" value="330R"/>
-<part name="R2" library="a_parts" deviceset="RESISTOR" device="R0805" value="330R"/>
+<part name="R1" library="a_parts" deviceset="RESISTOR" device="R0603" value="330R"/>
+<part name="R2" library="a_parts" deviceset="RESISTOR" device="R0603" value="330R"/>
 <part name="R3" library="a_parts" deviceset="RESISTOR" device="R0603" value="10K"/>
 <part name="R4" library="a_parts" deviceset="RESISTOR" device="R0603" value="10K"/>
 <part name="GND6" library="a_parts" deviceset="GND" device=""/>
@@ -8795,9 +8795,9 @@ Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <label x="55.88" y="165.1" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="83.82" y1="162.56" x2="86.36" y2="162.56" width="0.1524" layer="91"/>
-<label x="83.82" y="162.56" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="IC1" gate="G$1" pin="DIG1"/>
+<wire x1="83.82" y1="165.1" x2="86.36" y2="165.1" width="0.1524" layer="91"/>
+<label x="83.82" y="165.1" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="DIG0"/>
 </segment>
 </net>
 <net name="SEG_2A" class="0">
@@ -8926,9 +8926,9 @@ Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <label x="55.88" y="132.08" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="83.82" y1="157.48" x2="86.36" y2="157.48" width="0.1524" layer="91"/>
-<label x="83.82" y="157.48" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="IC1" gate="G$1" pin="DIG3"/>
+<wire x1="83.82" y1="162.56" x2="86.36" y2="162.56" width="0.1524" layer="91"/>
+<label x="83.82" y="162.56" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="DIG1"/>
 </segment>
 </net>
 <net name="DIG_4" class="0">
@@ -8938,9 +8938,9 @@ Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <pinref part="DIGIT4" gate="G$1" pin="K2"/>
 </segment>
 <segment>
-<wire x1="83.82" y1="165.1" x2="86.36" y2="165.1" width="0.1524" layer="91"/>
-<label x="83.82" y="165.1" size="1.27" layer="95" rot="MR0" xref="yes"/>
-<pinref part="IC1" gate="G$1" pin="DIG0"/>
+<wire x1="83.82" y1="157.48" x2="86.36" y2="157.48" width="0.1524" layer="91"/>
+<label x="83.82" y="157.48" size="1.27" layer="95" rot="MR0" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="DIG3"/>
 </segment>
 </net>
 <net name="DIG_3" class="0">
