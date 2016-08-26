@@ -1,0 +1,13 @@
+//
+// config.h - WiFi sekretz
+//
+
+#ifndef _WIFI_TICK_CONFIG_H
+#define _WIFI_TICK_CONFIG_H
+
+#define MY_WIFI_SSID "<your_wifi_ssid>"
+#define MY_WIFI_PASS "<your_wifi_password>"
+
+#endif
+
+// vi: syntax=c

@@ -1,14 +1,15 @@
 /*
- * esp8266_ohai.ino - Something of a WiFi Hello World.
+ * wifi_tick.ino - NTP-ified T.I.C.K.
+ *
+ * Author:  Sean Caulfield <sean@yak.net>
+ * License: GPLv2
  *
  */
 
-#include <Wire.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
-#include <FS.h>
-#include <LedControl.h>
 
+#include <LedControl.h>
 #include <RTClib.h>
 #include <DS3231.h>
 #include <Time.h>
@@ -18,132 +19,124 @@
 #include <string.h>
 
 #include "debug.h"
-#include "wifi_setup.h"
-
-// Pin assignments
-
-#define DISP_DATA       13
-#define DISP_CLCK       14
-#define DISP_LOAD       16
-#define DISP_NUM        1
-#define DISP_BRIGHTNESS 8
+#include "config.h"
 
 //
-// TODO Define these for yourself!
+// Display pin assignments & settings
 //
-const char *MY_WIFI_AP_NAME = "<SSID>";
-const char *MY_WIFI_AP_KEY  = "<KEY>";
+
+#define DISP_DATA      13
+#define DISP_CLCK      14
+#define DISP_LOAD      12
+#define DISP_NUM        2
+#define BRIGHT_LARGE   15
+#define BRIGHT_SMALL    5
 
 //
 // Global controls/vars
 //
 
-LedControl display = LedControl(DISP_DATA, DISP_CLCK, DISP_LOAD, DISP_NUM);
-RTC_DS3231 rtc = RTC_DS3231();
+ESP8266WiFiMulti wifi;
 NTPClient ntpclient;
+LedControl display = LedControl(DISP_DATA, DISP_CLCK, DISP_LOAD, DISP_NUM);
 
-void setup_serial() {
-  delay(200);
-  Serial.begin(SERIAL_BAUD);
-  delay(10);
-}
+//
+// Timezones - These are hard coded for now, but plan is to try to support
+// actual TZ files, and hopefully automatically download & update them.
+//
+
+TimeChangeRule est = {"EST", First,  Sun, Nov, 2, -5*60};
+TimeChangeRule edt = {"EDT", Second, Sun, Mar, 2, -4*60};
+Timezone tz = Timezone(edt, est);
+
+//
+// SETUP() - This is done once at startup.
+//
 
 void setup() {
 
 #ifdef DEBUG
-  setup_serial();
+  delay(200);
+  Serial.begin(SERIAL_BAUD);
+  delay(10);
 #endif
 
   //
-  // Mount config filesystem
-  //
-  if (!SPIFFS.begin()) {
-    DPRINTLN("Failed to mount config fs!");
-    return;
-  }
-
-  //
-  // Config probably doesn't exist, so try to save it to SPIFFS
+  // Setup large digit display. Have to set the scan limit as it's only 4
+  // digits (but we'll be pushing the chip a bit because each segment is
+  // actually 2 LEDs).
   //
 
-  if (!setup_wifi()) {
-
-    size_t len_name = strlen(MY_WIFI_AP_NAME);
-    wifi_ap_name = new char[len_name+1];
-    strncpy(wifi_ap_name, MY_WIFI_AP_NAME, len_name);
-    if (save_ap_name()) {
-      DPRINTLN("Saved wifi_ap_name");
-    } else {
-      DPRINTLN("Failed to save wifi_ap_name!");
-    }
-
-    size_t len_key  = strlen(MY_WIFI_AP_KEY);
-    wifi_ap_key = new char[len_key+1];
-    strncpy(wifi_ap_key, MY_WIFI_AP_KEY, len_key);
-    if (save_ap_key()) {
-      DPRINTLN("Saved wifi_ap_key");
-    } else {
-      DPRINTLN("Failed to save wifi_ap_key!");
-    }
-
-  }
+  display.shutdown(0, false);
+  display.setScanLimit(0, 4);
+  display.setIntensity(0, BRIGHT_LARGE);
+  display.clearDisplay(0);
 
   //
-  // Start I2C & RTC
-  //
-  Wire.begin();
-  rtc.begin();
-  rtc.clearControlRegisters();
-
-  //
-  // Setup display(s)
+  // Setup small digit displays.
   //
 
-  for (int i=0; i<DISP_NUM; i++) {
-    display.shutdown(i, false);
-    display.setIntensity(i, DISP_BRIGHTNESS);
-    display.clearDisplay(0);
-  }
+  display.shutdown(1, false);
+  //display.setScanLimit(1, 7);
+  display.setIntensity(1, BRIGHT_SMALL);
+  display.clearDisplay(1);
 
   //
   // Connect to Wifi
   //
 
-  connect_wifi();
+  DPRINT("Connecting to wifi"); DFLUSH();
+  wifi.addAP(MY_WIFI_SSID, MY_WIFI_PASS);
+  while (wifi.run() != WL_CONNECTED) {
+    DPRINT("."); DFLUSH();
+    delay(1000);
+  }
+  DPRINTLN("\nSuccess!"); DFLUSH();
 
   delay(500);
 
 }
 
+//
+// LOOP() - This is done lots, like your mom.
+//
+
 void loop() {
 
-  for (int i=0; i<10; i++) {
-    display.clearDisplay(0);
-    display.setDigit(0, 0, i, true);
-    delay(500);
-  }
-
   // Has its own internal check to only poll every 60s
+
   ntpclient.update();
 
+  // Get current time
+
   uint32_t ntp_time = ntpclient.getRawTime();
-  uint32_t rtc_time = rtc.now().unixtime();
+  DateTime dt_utc = DateTime(ntp_time);
+  DateTime dt_local = DateTime(tz.toLocal(ntp_time));
+  DPRINTLN(dt_utc.iso8601());
+  DPRINTLN(dt_local.iso8601());
 
-  DateTime ntp_dt = DateTime(ntp_time);
-  DateTime rtc_dt = DateTime(rtc_time);
+  // Refresh large display (HH:MM). Try to emulate colon by setting decimal on
+  // middle digits.
 
-  // Check if RTC is far enough off to require adjustment
-  if (rtc_time > ntp_time || ntp_time - rtc_time > 60) {
-    rtc.adjust(ntp_dt);
-  }
+  display.clearDisplay(0);
+  if (dt_local.hour() >= 10)
+    display.setDigit(0, 0, dt_local.hour() / 10, false);
+  display.setDigit(0, 1, dt_local.hour() % 10, true);
+  display.setDigit(0, 2, dt_local.minute() / 10, true, true);
+  display.setDigit(0, 3, dt_local.minute() % 10, false, true);
 
-  // Fart out timestamp
-  char buff[64];
-  ntp_dt.toString(buff, sizeof(buff));
-  DPRINT(buff);
-  DPRINT(" ");
-  rtc_dt.toString(buff, sizeof(buff));
-  DPRINTLN(buff);
+  // Refresh small displays (YYYY MM.DD)
+
+  display.clearDisplay(1);
+  display.setDigit(1, 0, dt_local.month() / 10, false);
+  display.setDigit(1, 1, dt_local.month() % 10, true);
+  display.setDigit(1, 2, dt_local.day() / 10, false);
+  display.setDigit(1, 3, dt_local.day() % 10, false);
+  display.setDigit(1, 4, dt_local.year() / 1000, false);
+  display.setDigit(1, 5, (dt_local.year() / 100) % 10, false);
+  display.setDigit(1, 6, (dt_local.year() / 10) % 10, false);
+  display.setDigit(1, 7, dt_local.year() % 10, true);
+
+  delay(1000);
 
 }
-
