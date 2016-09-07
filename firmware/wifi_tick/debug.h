@@ -6,7 +6,7 @@
 #ifndef __DEBUG_H
 #define __DEBUG_H
 
-#define DEBUG 1
+#define DEBUG 0
 #define SERIAL_BAUD 115200
 
 #ifdef DEBUG
@@ -18,7 +18,5 @@
 #define DPRINTLN(...)
 #define DFLUSH(...)
 #endif
-
-void setup_serial();
 
 #endif

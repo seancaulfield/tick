@@ -32,6 +32,17 @@
 #define BRIGHT_LARGE   15
 #define BRIGHT_SMALL    5
 
+// Maximum diff between NTP and RTC before adjusting the RTC to match
+#define MAX_TIME_DIFF   5
+
+inline uint32_t usec_diff(uint32_t a, uint32_t b) {
+  if (a > b) {
+    return a - b;
+  } else {
+    return b - a;
+  }
+}
+
 //
 // Global controls/vars
 //
@@ -39,6 +50,12 @@
 ESP8266WiFiMulti wifi;
 NTPClient ntpclient;
 LedControl display = LedControl(DISP_DATA, DISP_CLCK, DISP_LOAD, DISP_NUM);
+RTC_DS3231 rtc;
+
+uint32_t ntp_time = 0;
+uint32_t rtc_time = 0;
+DateTime dt_utc;
+DateTime dt_local;
 
 //
 // Timezones - These are hard coded for now, but plan is to try to support
@@ -109,9 +126,21 @@ void loop() {
 
   // Get current time
 
-  uint32_t ntp_time = ntpclient.getRawTime();
-  DateTime dt_utc = DateTime(ntp_time);
-  DateTime dt_local = DateTime(tz.toLocal(ntp_time));
+  ntp_time = ntpclient.getRawTime();
+  rtc_time = rtc.now().unixtime();
+
+  // Set RTC if it looks like it's not been set
+  // TODO Probab should keep track of how many times this has had to be done in
+  // "recent" memory (ugh, logging to EEPROM, probs) and warn user if we've had
+  // to do it a lot, because the RTC battery is probably dead/gone. Hmm. Is
+  // there something in the DS3231 that would just TELL me the battery voltage?
+  // That'd be right handy... :P
+  if (usec_diff(ntp_time, rtc_time) > MAX_TIME_DIFF) {
+  }
+
+  // Pick saner of two time sources
+  dt_utc = DateTime(ntp_time);
+  dt_local = DateTime(tz.toLocal(ntp_time));
   DPRINTLN(dt_utc.iso8601());
   DPRINTLN(dt_local.iso8601());
 
