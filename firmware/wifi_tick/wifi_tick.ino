@@ -8,6 +8,8 @@
 
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
+#include <SPI.h>
+#include <Wire.h>
 
 #include <LedControl.h>
 #include <RTClib.h>
@@ -72,7 +74,7 @@ Timezone tz = Timezone(edt, est);
 
 void setup() {
 
-#ifdef DEBUG
+#if (DEBUG)
   delay(200);
   Serial.begin(SERIAL_BAUD);
   delay(10);
@@ -94,9 +96,16 @@ void setup() {
   //
 
   display.shutdown(1, false);
-  //display.setScanLimit(1, 7);
   display.setIntensity(1, BRIGHT_SMALL);
   display.clearDisplay(1);
+
+  //
+  // Setup RTC
+  //
+  Wire.begin();
+  if (rtc.begin() && !rtc.isrunning()) {
+    rtc.enable();
+  }
 
   //
   // Connect to Wifi
@@ -106,11 +115,9 @@ void setup() {
   wifi.addAP(MY_WIFI_SSID, MY_WIFI_PASS);
   while (wifi.run() != WL_CONNECTED) {
     DPRINT("."); DFLUSH();
-    delay(1000);
+    delay(100);
   }
   DPRINTLN("\nSuccess!"); DFLUSH();
-
-  delay(500);
 
 }
 
@@ -129,20 +136,26 @@ void loop() {
   ntp_time = ntpclient.getRawTime();
   rtc_time = rtc.now().unixtime();
 
+  // Pick saner of two time sources
+  if (ntpclient.isValidYet()) {
+    dt_utc.setTime(ntp_time);
+    dt_local.setTime(tz.toLocal(ntp_time));
+  } else {
+    dt_utc.setTime(rtc_time);
+    dt_local.setTime(tz.toLocal(rtc_time));
+  }
+  DPRINTLN(dt_utc.iso8601());
+  DPRINTLN(dt_local.iso8601());
+
   // Set RTC if it looks like it's not been set
   // TODO Probab should keep track of how many times this has had to be done in
   // "recent" memory (ugh, logging to EEPROM, probs) and warn user if we've had
   // to do it a lot, because the RTC battery is probably dead/gone. Hmm. Is
   // there something in the DS3231 that would just TELL me the battery voltage?
   // That'd be right handy... :P
-  if (usec_diff(ntp_time, rtc_time) > MAX_TIME_DIFF) {
+  if (ntpclient.isValidYet() && usec_diff(ntp_time, rtc_time) > MAX_TIME_DIFF) {
+    rtc.adjust(dt_utc);
   }
-
-  // Pick saner of two time sources
-  dt_utc = DateTime(ntp_time);
-  dt_local = DateTime(tz.toLocal(ntp_time));
-  DPRINTLN(dt_utc.iso8601());
-  DPRINTLN(dt_local.iso8601());
 
   // Refresh large display (HH:MM). Try to emulate colon by setting decimal on
   // middle digits.

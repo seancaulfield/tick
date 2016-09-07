@@ -9,7 +9,7 @@
 #define DEBUG 0
 #define SERIAL_BAUD 115200
 
-#ifdef DEBUG
+#if (DEBUG)
 #define DPRINT(...) Serial.print(__VA_ARGS__)
 #define DPRINTLN(...) Serial.println(__VA_ARGS__)
 #define DFLUSH(...) Serial.flush(__VA_ARGS__)
