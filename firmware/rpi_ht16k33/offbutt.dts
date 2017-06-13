@@ -8,9 +8,9 @@
      __overlay__ {
         offbutt: offbutt {
            compatible = "gpio-keys";
-           button@26 {
+           button@23 {
               linux,code = <116>;
-              gpios = <&gpio 26 1>;
+              gpios = <&gpio 23 1>;
            };
 
         };
@@ -21,7 +21,7 @@
     target = <&gpio>;
     __overlay__ {
       offbutt_pins: offbutt_pins {
-        brcm,pins = <26>;
+        brcm,pins = <23>;
         bcrm,function = <0>; //in
         bcrm,pull = <0>; //pull-up
       };
