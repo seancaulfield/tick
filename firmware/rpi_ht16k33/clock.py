@@ -3,7 +3,6 @@
 import sys
 import time
 import datetime
-import dateutils
 import daemon
 import random
 import logging
@@ -11,11 +10,17 @@ import logging.handlers
 import signal
 import traceback
 
-import max7219.led
-from max7219.led import constants as consts
+from Adafruit_LED_Backpack.SevenSegment import SevenSegment
 
-DP_UPPER = 1
-DP_LOWER = 0
+DP_UPPER   = 0
+DP_LOWER_L = 1
+DP_LOWER_R = 2
+
+DISP_ADDRS = {
+    DP_UPPER   : 0x70,
+    DP_LOWER_L : 0x72,
+    DP_LOWER_R : 0x71,
+}
 
 LOG_FORMAT  = "%(filename)s[%(process)d]: %(message)s"
 LOG_FORMAT += " (%(funcName)s:%(lineno)d)"
@@ -24,70 +29,31 @@ SYSLOG_SOCK = "/dev/log"
 
 terminated = False
 
-class SevenSegment(max7219.led.sevensegment):
-
-    def __init__(self, *args, **kwargs):
-        super(SevenSegment, self).__init__(*args, **kwargs)
-
-    def command1(self, deviceId, register, data):
-        """Same thing as command but allows picking a device."""
-        
-        buff = (consts.MAX7219_REG_NOOP, 0x00)
-        for i in range(0, deviceId):
-            self._write(buff)
-        self._write([register, data])
-
-    def setScanLimit(self, deviceId, limit=7):
-        """Set scan limit for a particular device so display brightness matches
-        if you have less than the maximum number of digits."""
-
-        assert(0 <= limit <= 7)
-        self.command1(deviceId, consts.MAX7219_REG_SCANLIMIT, limit)
-
-    def rotated(self, deviceId, position, char, dot=False, redraw=True):
-        """Same thing as letter but rotated 180 degrees."""
-
-        assert dot in [0, 1, False, True]
-        v = self._DIGITS.get(str(char), self._UNDEFINED)
-
-        ############## BIT MAGIC IS HERE ############## 
-        # 
-        #     3              6   
-        #   +---+          +---+
-        # 2 |   | 4      5 |   | 1
-        #   +-0-+    =>    +-0-+  
-        # 1 |   | 5      4 |   | 2
-        #   +---+          +---+
-        #     6              3    
-        #
-        w = (0b1 & v) | ((0b1110000 & v) >> 3) | ((0b1110 & v) << 3)
-        ############## END BIT MAGIC ############## 
-
-        v = w | (dot << 7)
-        self.set_byte(deviceId, position, v, redraw)
-
-def display(dev, dateSep=True, timeSep=True):
+def refresh(displays, dateSep=True, timeSep=True):
 
     now = datetime.datetime.now()
 
-    dev.letter(DP_LOWER, 3, now.day / 10, redraw=False)
-    dev.letter(DP_LOWER, 4, now.day % 10, redraw=False, dot=dateSep)
+    displays[DP_LOWER_R].clear()
+    displays[DP_LOWER_R].set_digit(0, now.month / 10)
+    displays[DP_LOWER_R].set_digit(1, now.month % 10, decimal=dateSep)
+    displays[DP_LOWER_R].set_digit(2, now.day / 10)
+    displays[DP_LOWER_R].set_digit(3, now.day % 10, decimal=dateSep)
+    displays[DP_LOWER_R].write_display()
 
-    dev.letter(DP_LOWER, 1, now.month / 10, redraw=False)
-    dev.letter(DP_LOWER, 2, now.month % 10, redraw=False, dot=dateSep)
+    displays[DP_LOWER_L].clear()
+    displays[DP_LOWER_L].set_digit(0, (now.year / 1000) % 10)
+    displays[DP_LOWER_L].set_digit(1, (now.year / 100)  % 10)
+    displays[DP_LOWER_L].set_digit(2, (now.year / 10)   % 10)
+    displays[DP_LOWER_L].set_digit(3, (now.year)        % 10, decimal=dateSep)
+    displays[DP_LOWER_L].write_display()
 
-    dev.letter(DP_LOWER, 5, (now.year / 1000) % 10, redraw=False)
-    dev.letter(DP_LOWER, 6, (now.year / 100)  % 10, redraw=False)
-    dev.letter(DP_LOWER, 7, (now.year / 10)   % 10, redraw=False)
-    dev.letter(DP_LOWER, 8, (now.year)        % 10, redraw=False, dot=dateSep)
-
-    dev.letter(DP_UPPER, 1, now.hour / 10, redraw=False)
-    dev.letter(DP_UPPER, 2, now.hour % 10, redraw=False, dot=timeSep)
-
-    dev.rotated(DP_UPPER, 3, now.minute / 10, redraw=False, dot=timeSep)
-    dev.rotated(DP_UPPER, 4, now.minute % 10, redraw=False)
-
-    dev.flush()
+    displays[DP_UPPER].clear()
+    displays[DP_UPPER].set_digit(0, now.hour / 10)
+    displays[DP_UPPER].set_digit(1, now.hour % 10)
+    displays[DP_UPPER].set_digit(2, now.minute / 10)
+    displays[DP_UPPER].set_digit(3, now.minute % 10)
+    displays[DP_UPPER].set_colon(timeSep)
+    displays[DP_UPPER].write_display()
 
 def wake_handler(signum, frame):
     global woke
@@ -101,32 +67,23 @@ def between(x, y, z):
     """Is X >= Y AND X < Z?"""
     return (x >= y and x < z)
 
-def marquee(dev, text, left=True):
+def marquee(displays, text, left=True):
     end = len(text)
     char_if_in_bounds = lambda x: text[x] if (x >= 0 and x < end) else ' '
+    displays[DP_UPPER].clear()
     for i in range(0, end+4):
         if left:
-            dev.rotated(DP_UPPER, 4, char_if_in_bounds(i),     redraw=False)
-            dev.rotated(DP_UPPER, 3, char_if_in_bounds(i - 1), redraw=False)
-            dev.letter(DP_UPPER,  2, char_if_in_bounds(i - 2), redraw=False)
-            dev.letter(DP_UPPER,  1, char_if_in_bounds(i - 3), redraw=False)
+            displays[DP_UPPER].set_digit(3, char_if_in_bounds(i))
+            displays[DP_UPPER].set_digit(2, char_if_in_bounds(i - 1))
+            displays[DP_UPPER].set_digit(1, char_if_in_bounds(i - 2))
+            displays[DP_UPPER].set_digit(0, char_if_in_bounds(i - 3))
         else:
-            dev.letter(DP_UPPER,  1, char_if_in_bounds(end - i),     redraw=False)
-            dev.letter(DP_UPPER,  2, char_if_in_bounds(end - i + 1), redraw=False)
-            dev.rotated(DP_UPPER, 3, char_if_in_bounds(end - i + 2), redraw=False)
-            dev.rotated(DP_UPPER, 4, char_if_in_bounds(end - i + 3), redraw=False)
-        dev.flush()
+            displays[DP_UPPER].set_digit(0, char_if_in_bounds(end - i))
+            displays[DP_UPPER].set_digit(1, char_if_in_bounds(end - i + 1))
+            displays[DP_UPPER].set_digit(2, char_if_in_bounds(end - i + 2))
+            displays[DP_UPPER].set_digit(3, char_if_in_bounds(end - i + 3))
+        displays[DP_UPPER].write_display()
         time.sleep(0.3)
-
-def hello(dev):
-    dev.clear()
-    marquee(dev, 'hELLO', False)
-    dev.clear()
-
-def goodbye(dev):
-    dev.clear()
-    marquee(dev, 'gOOdbyE')
-    dev.clear()
 
 def main(logger):
     global terminated
@@ -137,16 +94,19 @@ def main(logger):
     signal.signal(signal.SIGHUP, wake_handler)
     signal.signal(signal.SIGALRM, wake_handler)
 
-    dev = SevenSegment(cascaded=2)
-    dev.setScanLimit(DP_UPPER, 4)
+    displays = [SevenSegment(address=a) for n, a in DISP_ADDRS.items()]
+    for d in displays:
+        d.begin()
+        d.clear()
+        d.write_display()
 
     logger.info("Hello, clock.py starting")
-    hello(dev)
+    marquee(displays, "HELLO")
 
     terminated = False
     woke = False
     while not terminated:
-        display(dev)
+        refresh(displays)
         seconds = 60 - datetime.datetime.now().second
         woke = False
         signal.alarm(seconds)
@@ -155,7 +115,7 @@ def main(logger):
             logger.debug("Woken up")
 
     logger.info("clock.py stopping, Goodbye")
-    goodbye(dev)
+    marquee(displays, "gOOdbYe")
 
 if __name__ == '__main__':
 
