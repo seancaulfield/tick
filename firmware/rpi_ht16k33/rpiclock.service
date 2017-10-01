@@ -1,0 +1,15 @@
+[Unit]
+Description=Raspberry Pi Clock
+Requires=ntp.service
+
+[Service]
+Type=forking
+PIDFile=/var/lock/rpiclock.pid
+ExecStart=/usr/local/bin/clock.py
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+Alias=clock.py.service

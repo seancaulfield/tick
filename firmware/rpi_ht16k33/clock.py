@@ -9,6 +9,8 @@ import logging
 import logging.handlers
 import signal
 import traceback
+import lockfile
+from lockfile.pidlockfile import PIDLockFile
 
 from Adafruit_LED_Backpack.SevenSegment import SevenSegment
 
@@ -26,6 +28,7 @@ LOG_FORMAT  = "%(filename)s[%(process)d]: %(message)s"
 LOG_FORMAT += " (%(funcName)s:%(lineno)d)"
 
 SYSLOG_SOCK = "/dev/log"
+PIDFILE = "/var/lock/rpiclock.pid"
 
 terminated = False
 woke = False
@@ -114,7 +117,18 @@ def main(logger):
 
 if __name__ == '__main__':
 
-    with daemon.DaemonContext() as demon:
+    daemon_ctxt_args = {
+        'umask'         : 022,
+        'pidfile'       : PIDLockFile(PIDFILE),
+        'signal_map'    : {
+            signal.SIGTERM  : exit_handler,
+            signal.SIGINT   : exit_handler,
+            signal.SIGHUP   : wake_handler,
+            signal.SIGALRM  : wake_handler,
+            #signal.SIGCHLD  : None,
+        },
+    }
+    with daemon.DaemonContext(**daemon_ctxt_args) as lucy:
 
         # Setup logging to syslog
         logger = logging.getLogger()
@@ -135,13 +149,18 @@ if __name__ == '__main__':
         # Adafruit library seems to throw when one of the displays doesn't
         # respond over i2c) and exit on others.
         logger.info("Hello, clock.py starting")
+        retval = 0
         while True:
             try:
                 main(logger)
             except IOError, ioe:
                 log_tb(logger, e)
+                logger.fatal("IOError, continue?")
                 continue
             except Exception, e:
                 log_tb(logger, e)
+                retval = 1
+                logger.fatal("Exception, break?")
                 break
         logger.info("clock.py stopping, Goodbye")
+        sys.exit(retval)
