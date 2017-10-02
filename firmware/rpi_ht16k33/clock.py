@@ -9,8 +9,8 @@ import logging
 import logging.handlers
 import signal
 import traceback
-import lockfile
-from lockfile.pidlockfile import PIDLockFile
+import pid
+import os.path
 
 from Adafruit_LED_Backpack.SevenSegment import SevenSegment
 
@@ -117,33 +117,47 @@ def main(logger):
 
 if __name__ == '__main__':
 
+    # Setup syslog handler
+    logfmt = logging.Formatter(LOG_FORMAT)
+    syslog = logging.handlers.SysLogHandler(SYSLOG_SOCK)
+    syslog.setFormatter(logfmt)
+    syslog.setLevel(logging.INFO)
+
+    # Setup root logger to syslog
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    logger.addHandler(syslog)
+
+    # Arugments to  pidfile handler
+    pf_args = {
+        "pidname"   : os.path.basename(PIDFILE),
+        "piddir"    : os.path.dirname(PIDFILE),
+    }
+
+    # Arguments to DaemonContext formatted for easier reading.
     daemon_ctxt_args = {
-        'umask'         : 022,
-        'pidfile'       : PIDLockFile(PIDFILE),
-        'signal_map'    : {
-            signal.SIGTERM  : exit_handler,
-            signal.SIGINT   : exit_handler,
-            signal.SIGHUP   : wake_handler,
-            signal.SIGALRM  : wake_handler,
+        'umask'             : 0022,
+        'pidfile'           : pid.PidFile(**pf_args),
+        'files_preserve'    : [ syslog.socket.fileno() ],
+        'signal_map'        : {
+            signal.SIGTERM  : "terminate",
+            signal.SIGQUIT  : "terminate",
+            signal.SIGINT   : "terminate",
+            signal.SIGHUP   : "awaken",
+            signal.SIGALRM  : "awaken",
+            signal.SIGTSTP  : None,
+            signal.SIGTTIN  : None,
+            signal.SIGTTOU  : None,
             #signal.SIGCHLD  : None,
         },
     }
+
+    # Enter forked context
     with daemon.DaemonContext(**daemon_ctxt_args) as lucy:
 
-        # Setup logging to syslog
-        logger = logging.getLogger()
-        logfmt = logging.Formatter(LOG_FORMAT)
-        syslog = logging.handlers.SysLogHandler(SYSLOG_SOCK)
-        syslog.setFormatter(logfmt)
-        syslog.setLevel(logging.INFO)
-        logger.setLevel(logging.INFO)
-        logger.addHandler(syslog)
-
-        # Setup signal handlers for termination
-        signal.signal(signal.SIGTERM, exit_handler)
-        signal.signal(signal.SIGINT, exit_handler)
-        signal.signal(signal.SIGHUP, wake_handler)
-        signal.signal(signal.SIGALRM, wake_handler)
+        # Register signal handlers
+        lucy.terminate = exit_handler
+        lucy.awaken = wake_handler
 
         # Main retry loop, which will retry on IOErrors (since that's what the
         # Adafruit library seems to throw when one of the displays doesn't
@@ -154,13 +168,13 @@ if __name__ == '__main__':
             try:
                 main(logger)
             except IOError, ioe:
-                log_tb(logger, e)
                 logger.fatal("IOError, continue?")
+                log_tb(logger, e)
                 continue
             except Exception, e:
+                logger.fatal("Exception, break?")
                 log_tb(logger, e)
                 retval = 1
-                logger.fatal("Exception, break?")
                 break
         logger.info("clock.py stopping, Goodbye")
         sys.exit(retval)
