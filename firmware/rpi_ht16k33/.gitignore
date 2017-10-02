@@ -1,3 +1,3 @@
 # device tree binary blob things
 *.dtbo
-trace/*
+traces/*
