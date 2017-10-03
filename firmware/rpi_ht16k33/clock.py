@@ -140,11 +140,11 @@ if __name__ == '__main__':
         'pidfile'           : pid.PidFile(**pf_args),
         'files_preserve'    : [ syslog.socket.fileno() ],
         'signal_map'        : {
-            signal.SIGTERM  : "terminate",
-            signal.SIGQUIT  : "terminate",
-            signal.SIGINT   : "terminate",
-            signal.SIGHUP   : "awaken",
-            signal.SIGALRM  : "awaken",
+            signal.SIGTERM  : exit_handler,
+            signal.SIGQUIT  : exit_handler,
+            signal.SIGINT   : exit_handler,
+            signal.SIGHUP   : wake_handler,
+            signal.SIGALRM  : wake_handler,
             signal.SIGTSTP  : None,
             signal.SIGTTIN  : None,
             signal.SIGTTOU  : None,
@@ -154,10 +154,6 @@ if __name__ == '__main__':
 
     # Enter forked context
     with daemon.DaemonContext(**daemon_ctxt_args) as lucy:
-
-        # Register signal handlers
-        lucy.terminate = exit_handler
-        lucy.awaken = wake_handler
 
         # Main retry loop, which will retry on IOErrors (since that's what the
         # Adafruit library seems to throw when one of the displays doesn't
@@ -169,7 +165,7 @@ if __name__ == '__main__':
                 main(logger)
             except IOError, ioe:
                 logger.fatal("IOError, continue?")
-                log_tb(logger, e)
+                log_tb(logger, ioe)
                 continue
             except Exception, e:
                 logger.fatal("Exception, break?")
