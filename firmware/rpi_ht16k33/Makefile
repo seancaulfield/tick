@@ -1,5 +1,6 @@
 OVERLAY_DIR := /boot/overlays/
-TARGET := offbutt
+#TARGET := offbutt
+TARGET := gpio-shutdown-overlay
 DTC := dtc
 
 $(TARGET): $(TARGET).dtbo
