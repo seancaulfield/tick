@@ -28,6 +28,7 @@ LOG_FORMAT += " (%(funcName)s:%(lineno)d)"
 SYSLOG_SOCK = "/dev/log"
 
 terminated = False
+woke = False
 
 def refresh(displays, dateSep=True, timeSep=True):
 
@@ -67,6 +68,11 @@ def between(x, y, z):
     """Is X >= Y AND X < Z?"""
     return (x >= y and x < z)
 
+def log_tb(logger, e):
+    logger.fatal(e)
+    for line in traceback.format_exc().split("\n"):
+        logger.fatal(line)
+
 def marquee(displays, text, left=True):
     end = len(text)
     char_if_in_bounds = lambda x: text[x] if (x >= 0 and x < end) else ' '
@@ -89,19 +95,11 @@ def main(logger):
     global terminated
     global woke
 
-    signal.signal(signal.SIGTERM, exit_handler)
-    signal.signal(signal.SIGINT, exit_handler)
-    signal.signal(signal.SIGHUP, wake_handler)
-    signal.signal(signal.SIGALRM, wake_handler)
-
     displays = [SevenSegment(address=a) for n, a in DISP_ADDRS.items()]
     for d in displays:
         d.begin()
         d.clear()
         d.write_display()
-
-    logger.info("Hello, clock.py starting")
-    marquee(displays, "HELLO")
 
     terminated = False
     woke = False
@@ -114,13 +112,11 @@ def main(logger):
         if woke:
             logger.debug("Woken up")
 
-    logger.info("clock.py stopping, Goodbye")
-    marquee(displays, "gOOdbYe")
-
 if __name__ == '__main__':
 
     with daemon.DaemonContext() as demon:
 
+        # Setup logging to syslog
         logger = logging.getLogger()
         logfmt = logging.Formatter(LOG_FORMAT)
         syslog = logging.handlers.SysLogHandler(SYSLOG_SOCK)
@@ -129,10 +125,23 @@ if __name__ == '__main__':
         logger.setLevel(logging.INFO)
         logger.addHandler(syslog)
 
-        try:
-            main(logger)
-        except Exception, e:
-            logger.fatal(e)
-            for line in traceback.format_exc().split("\n"):
-                logger.fatal(line)
+        # Setup signal handlers for termination
+        signal.signal(signal.SIGTERM, exit_handler)
+        signal.signal(signal.SIGINT, exit_handler)
+        signal.signal(signal.SIGHUP, wake_handler)
+        signal.signal(signal.SIGALRM, wake_handler)
 
+        # Main retry loop, which will retry on IOErrors (since that's what the
+        # Adafruit library seems to throw when one of the displays doesn't
+        # respond over i2c) and exit on others.
+        logger.info("Hello, clock.py starting")
+        while True:
+            try:
+                main(logger)
+            except IOError, ioe:
+                log_tb(logger, e)
+                continue
+            except Exception, e:
+                log_tb(logger, e)
+                break
+        logger.info("clock.py stopping, Goodbye")
