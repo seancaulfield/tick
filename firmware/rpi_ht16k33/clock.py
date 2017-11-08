@@ -18,8 +18,8 @@ DP_LOWER_R = 2
 
 DISP_ADDRS = {
     DP_UPPER   : 0x70,
-    DP_LOWER_L : 0x72,
-    DP_LOWER_R : 0x71,
+    DP_LOWER_L : 0x71,
+    DP_LOWER_R : 0x72,
 }
 
 LOG_FORMAT  = "%(filename)s[%(process)d]: %(message)s"
