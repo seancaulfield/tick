@@ -30,6 +30,17 @@ SYSLOG_SOCK = "/dev/log"
 terminated = False
 woke = False
 
+def blank(displays):
+
+    displays[DP_LOWER_R].clear()
+    displays[DP_LOWER_R].write_display()
+
+    displays[DP_LOWER_L].clear()
+    displays[DP_LOWER_L].write_display()
+
+    displays[DP_UPPER].clear()
+    displays[DP_UPPER].write_display()
+
 def refresh(displays, dateSep=True, timeSep=True):
 
     now = datetime.datetime.now()
@@ -95,6 +106,8 @@ def main(logger):
     global terminated
     global woke
 
+    logger.info("clock.py starting")
+
     displays = [SevenSegment(address=a) for n, a in DISP_ADDRS.items()]
     for d in displays:
         d.begin()
@@ -111,6 +124,9 @@ def main(logger):
         signal.pause()
         if woke:
             logger.debug("Woken up")
+
+    blank(displays)
+    logger.info("clock.py stopping")
 
 if __name__ == '__main__':
 
@@ -134,7 +150,6 @@ if __name__ == '__main__':
         # Main retry loop, which will retry on IOErrors (since that's what the
         # Adafruit library seems to throw when one of the displays doesn't
         # respond over i2c) and exit on others.
-        logger.info("Hello, clock.py starting")
         while True:
             try:
                 main(logger)
@@ -144,4 +159,3 @@ if __name__ == '__main__':
             except Exception, e:
                 log_tb(logger, e)
                 break
-        logger.info("clock.py stopping, Goodbye")

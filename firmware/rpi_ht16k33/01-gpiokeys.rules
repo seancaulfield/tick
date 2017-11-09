@@ -1,1 +1,1 @@
-SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_PATH}=="platform:soc", ATTRS{keys}=="116", TAG+="power-switch"
+SUBSYSTEM=="input", KERNEL=="event*", DRIVER="gpio-keys", ATTRS{keys}=="116", TAG+="power-switch"
