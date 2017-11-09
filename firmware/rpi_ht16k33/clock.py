@@ -27,39 +27,31 @@ LOG_FORMAT += " (%(funcName)s:%(lineno)d)"
 
 SYSLOG_SOCK = "/dev/log"
 
+DAEMONIZE = True
+
 terminated = False
-woke = False
 
-def blank(displays):
+def blank(displays, begin=False):
+    for d in displays:
+        if begin:
+            d.begin()
+        d.clear()
+        d.write_display()
 
-    displays[DP_LOWER_R].clear()
-    displays[DP_LOWER_R].write_display()
+def refresh(now, displays, dateSep=True, timeSep=True):
 
-    displays[DP_LOWER_L].clear()
-    displays[DP_LOWER_L].write_display()
-
-    displays[DP_UPPER].clear()
-    displays[DP_UPPER].write_display()
-
-def refresh(displays, dateSep=True, timeSep=True):
-
-    now = datetime.datetime.now()
-
-    displays[DP_LOWER_R].clear()
     displays[DP_LOWER_R].set_digit(0, now.month / 10)
     displays[DP_LOWER_R].set_digit(1, now.month % 10, decimal=dateSep)
     displays[DP_LOWER_R].set_digit(2, now.day / 10)
-    displays[DP_LOWER_R].set_digit(3, now.day % 10, decimal=dateSep)
+    displays[DP_LOWER_R].set_digit(3, now.day % 10)
     displays[DP_LOWER_R].write_display()
 
-    displays[DP_LOWER_L].clear()
     displays[DP_LOWER_L].set_digit(0, (now.year / 1000) % 10)
     displays[DP_LOWER_L].set_digit(1, (now.year / 100)  % 10)
     displays[DP_LOWER_L].set_digit(2, (now.year / 10)   % 10)
     displays[DP_LOWER_L].set_digit(3, (now.year)        % 10, decimal=dateSep)
     displays[DP_LOWER_L].write_display()
 
-    displays[DP_UPPER].clear()
     displays[DP_UPPER].set_digit(0, now.hour / 10)
     displays[DP_UPPER].set_digit(1, now.hour % 10)
     displays[DP_UPPER].set_digit(2, now.minute / 10)
@@ -68,94 +60,63 @@ def refresh(displays, dateSep=True, timeSep=True):
     displays[DP_UPPER].write_display()
 
 def wake_handler(signum, frame):
-    global woke
-    woke = True
+    pass
 
 def exit_handler(signum, frame):
     global terminated
     terminated = True
-
-def between(x, y, z):
-    """Is X >= Y AND X < Z?"""
-    return (x >= y and x < z)
 
 def log_tb(logger, e):
     logger.fatal(e)
     for line in traceback.format_exc().split("\n"):
         logger.fatal(line)
 
-def marquee(displays, text, left=True):
-    end = len(text)
-    char_if_in_bounds = lambda x: text[x] if (x >= 0 and x < end) else ' '
-    displays[DP_UPPER].clear()
-    for i in range(0, end+4):
-        if left:
-            displays[DP_UPPER].set_digit(3, char_if_in_bounds(i))
-            displays[DP_UPPER].set_digit(2, char_if_in_bounds(i - 1))
-            displays[DP_UPPER].set_digit(1, char_if_in_bounds(i - 2))
-            displays[DP_UPPER].set_digit(0, char_if_in_bounds(i - 3))
-        else:
-            displays[DP_UPPER].set_digit(0, char_if_in_bounds(end - i))
-            displays[DP_UPPER].set_digit(1, char_if_in_bounds(end - i + 1))
-            displays[DP_UPPER].set_digit(2, char_if_in_bounds(end - i + 2))
-            displays[DP_UPPER].set_digit(3, char_if_in_bounds(end - i + 3))
-        displays[DP_UPPER].write_display()
-        time.sleep(0.3)
-
 def main(logger):
     global terminated
-    global woke
 
     logger.info("clock.py starting")
 
-    displays = [SevenSegment(address=a) for n, a in DISP_ADDRS.items()]
-    for d in displays:
-        d.begin()
-        d.clear()
-        d.write_display()
+    # Setup signal handlers for termination
+    signal.signal(signal.SIGTERM, exit_handler)
+    signal.signal(signal.SIGINT, exit_handler)
+    signal.signal(signal.SIGHUP, wake_handler)
+    signal.signal(signal.SIGALRM, wake_handler)
 
-    terminated = False
-    woke = False
+    displays = [SevenSegment(address=a) for n, a in DISP_ADDRS.items()]
+    blank(displays, begin=True)
+
     while not terminated:
-        refresh(displays)
-        seconds = 60 - datetime.datetime.now().second
-        woke = False
-        signal.alarm(seconds)
+
+        # Refresh displays with current time
+        now = datetime.datetime.now()
+        refresh(now, displays)
+
+        # Set wakeup for update ~one minute from now (next time the display
+        # would need updated)
+        signal.alarm(60 - datetime.datetime.now().second)
         signal.pause()
-        if woke:
-            logger.debug("Woken up")
 
     blank(displays)
+
     logger.info("clock.py stopping")
 
 if __name__ == '__main__':
 
-    with daemon.DaemonContext() as demon:
+    # Setup logging to syslog
+    logger = logging.getLogger()
+    logfmt = logging.Formatter(LOG_FORMAT)
+    syslog = logging.handlers.SysLogHandler(SYSLOG_SOCK)
+    syslog.setFormatter(logfmt)
+    syslog.setLevel(logging.INFO)
+    logger.setLevel(logging.INFO)
+    logger.addHandler(syslog)
 
-        # Setup logging to syslog
-        logger = logging.getLogger()
-        logfmt = logging.Formatter(LOG_FORMAT)
-        syslog = logging.handlers.SysLogHandler(SYSLOG_SOCK)
-        syslog.setFormatter(logfmt)
-        syslog.setLevel(logging.INFO)
-        logger.setLevel(logging.INFO)
-        logger.addHandler(syslog)
-
-        # Setup signal handlers for termination
-        signal.signal(signal.SIGTERM, exit_handler)
-        signal.signal(signal.SIGINT, exit_handler)
-        signal.signal(signal.SIGHUP, wake_handler)
-        signal.signal(signal.SIGALRM, wake_handler)
-
-        # Main retry loop, which will retry on IOErrors (since that's what the
-        # Adafruit library seems to throw when one of the displays doesn't
-        # respond over i2c) and exit on others.
-        while True:
-            try:
+    # Catch errors from now on and dump them to syslog
+    try:
+        if DAEMONIZE:
+            with daemon.DaemonContext() as demon:
                 main(logger)
-            except IOError, ioe:
-                log_tb(logger, e)
-                continue
-            except Exception, e:
-                log_tb(logger, e)
-                break
+        else:
+            main(logger)
+    except Exception, e:
+        log_tb(logger, e)
