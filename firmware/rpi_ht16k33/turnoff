@@ -1,3 +1,4 @@
 #!/bin/sh
 
+wall "PUSHED BIG RED BUTTON, GOING DOWN!"
 sudo /sbin/shutdown -h -t now
