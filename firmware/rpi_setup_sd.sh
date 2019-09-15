@@ -12,6 +12,11 @@ set -o errexit
 
 # Should set this but...
 sudo vim ${RPIBOOT}/config.txt
+sudo tee -a ${RPIBOOT}/config.txt <<EOF
+dtoverlay=i2c-rtc,ds1307
+dtoverlay=gpio-poweroff,gpiopin=24
+dtoverlay=gpio-shutdown,gpiopin=23
+EOF
 
 # Enable SSH support on first boot
 sudo touch ${RPIBOOT}/ssh
