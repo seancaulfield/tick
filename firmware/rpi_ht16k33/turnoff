@@ -1,0 +1,4 @@
+#!/bin/sh
+
+wall "PUSHED BIG RED BUTTON, GOING DOWN!"
+sudo halt

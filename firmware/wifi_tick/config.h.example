@@ -8,6 +8,9 @@
 #define MY_WIFI_SSID "<your_wifi_ssid>"
 #define MY_WIFI_PASS "<your_wifi_password>"
 
+#define MY_WWW_USER "tick"
+#define MY_WWW_PASS "<CHANGME!>"
+
 #endif
 
 // vi: syntax=c
