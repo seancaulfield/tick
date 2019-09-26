@@ -1,0 +1,12 @@
+[Unit]
+Description=LED clock display driver
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/clockpy/bin/python /home/pi/clockpy/bin/clock.py
+
+[Install]
+WantedBy=default.target
+
+# vi: syntax=systemd
