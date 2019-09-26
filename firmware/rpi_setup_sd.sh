@@ -46,11 +46,21 @@ network={
 EOF
 
 # Copy clock program over
-sudo install -m 0755 -o root -g root -t ${RPIROOT}/usr/local/bin/ rpi_ht16k33/clock.py
+#sudo install -m 0755 -o root -g root -t ${RPIROOT}/usr/local/bin/ rpi_ht16k33/clock.py
+sudo install -m 0755 -o root -g root -t ${RPIROOT}/home/pi/bin/ rpi_ht16k33/clock.py
 
 # And add to rc.local
-sudo sed -ie "s/exit 0/sudo -u pi \/usr\/local\/bin\/clock.py/" ${RPIROOT}/etc/rc.local
-sudo tee -a ${RPIROOT}/etc/rc.local <<EOF
+#sudo sed -ie "s/exit 0/sudo -u pi \/usr\/local\/bin\/clock.py/" ${RPIROOT}/etc/rc.local
+#sudo tee -a ${RPIROOT}/etc/rc.local <<EOF
+#
+#exit 0
+#EOF
 
-exit 0
+# Enable i2c /dev entry
+sudo tee -a ${RPIROOT}/etc/modules <<EOF
+i2c-dev
 EOF
+
+sync
+sync
+sync
