@@ -135,6 +135,9 @@ def main(logger):
         # Blink twice
         if blinked:
 
+            # Disable the blinking for next time
+            blinked = False
+
             blink(displays)
             time.sleep(1)
             blank(displays)
