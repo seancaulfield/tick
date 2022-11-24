@@ -9,6 +9,6 @@ install:
 uninstall:
 	ssh chronos0 sudo systemctl stop clock
 	ssh chronos0 sudo systemctl disable clock
-	ssh chronos0 sudo rm /usr/local/bin/clock.py /etc/systemd/user/clock.service
+	ssh chronos0 sudo rm -f /usr/local/bin/clock.py
 
 .PHONY: install
