@@ -1,7 +1,14 @@
 install:
-	sudo install -m 0755 -o root -g root -t /usr/local/bin/ clock.py
+	scp clock.py clock.service chronos0:
+	ssh chronos0 sudo install -m 0755 -o root -g root -t /usr/local/bin/ clock.py
+	ssh chronos0 sudo install -m 0644 -o root -g root -t /etc/systemd/system/ clock.service
+	ssh chronos0 sudo systemctl enable clock
+	ssh chronos0 sudo systemctl start clock
+	ssh chronos0 rm clock.py clock.service
 
 uninstall:
-	sudo $(RM) /usr/local/bin/clock.py
+	ssh chronos0 sudo systemctl stop clock
+	ssh chronos0 sudo systemctl disable clock
+	ssh chronos0 sudo rm /usr/local/bin/clock.py /etc/systemd/user/clock.service
 
 .PHONY: install
